@@ -12,6 +12,20 @@ Le projet seras **100% communautaire** : chacun peut proposer du code, des sprit
 🌍 Univers & Ambiance
 
 Type de monde : ouvert, généré procéduralement, avec différents biomes.
+dont 
+Forêt tempérée 🌲
+Désert 🏜️
+Toundra / Neige ❄️
+Volcan 🌋
+Plaine 🌾
+Marais 🐸
+Caverne souterraine ⛏️
+Îles volantes ☁️
+Océan / Archipel 🌊
+Champignon géant 🍄
+Candy 🍭
+
+
 - 🕹️ **Gameplay** :  
   - Exploration et survie  
   - Crafting et construction  

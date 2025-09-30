@@ -1,18 +1,24 @@
-# 🌍 Lifedustry
 
-**Lifedustry** vas être un jeu **open-source** de type **Survival Sandbox / Action-RPG / Aventure Open World**, développé avec [LÖVE 2D (Lua)](https://love2d.org/).  
-Le projet seras **100% communautaire** : chacun peut proposer du code, des sprites, des sons, des idées ou même des tests.  
+🌍 Lifedustry
+
+Lifedustry sera un jeu open-source de type Survival Sandbox / Action-RPG / Aventure Open World, développé avec LÖVE 2D (Lua).
+Le projet sera 100% communautaire : chacun peut proposer du code, des sprites, des sons, des idées ou participer aux tests.
+
 
 ---
 
-## 🎮 Fonctionnalités prévues
+🎮 Fonctionnalités prévues
 
-- 🔓 **Open Source & Communautaire** → chacun peut contribuer  
-- 🎥 **Vue** : Top-down, isométrique ou side scroll chepa 
+🔓 Open Source & Communautaire → chacun peut contribuer
+
+🎥 Vue : Top-down, isométrique ou side-scroll
+
+
 🌍 Univers & Ambiance
 
-Type de monde : ouvert, généré procéduralement, avec différents biomes.
-dont 
+Monde ouvert et généré procéduralement
+
+Différents biomes :
 Forêt tempérée 🌲
 Désert 🏜️
 Toundra / Neige ❄️
@@ -26,16 +32,39 @@ Champignon géant 🍄
 Candy 🍭
 
 
-- 🕹️ **Gameplay** :  
-  - Exploration et survie  
-  - Crafting et construction  
-  - Combats contre différents ennemis et boss  
-  - Cycle jour/nuit (ressources rares la nuit 🌙)  
-  - Événements météo (pluie, brouillard, orages ⚡)  
-- 👥 **Modes de jeu** :  
-  - Solo  
-  - Coop locale (écran partagé)  
-  - Coop LAN (Wi-Fi PC ↔ Android)  
-- 📱 **Plateformes** :  
-  - Windows / Linux  
-  - Android (cross-play possible avec PC)  
+
+---
+
+🕹️ Gameplay
+
+Exploration et survie
+
+Crafting libre et construction
+
+Combats contre différents ennemis et boss
+
+Cycle jour/nuit (ressources rares la nuit 🌙)
+
+Événements météo dynamiques (pluie, brouillard, orages ⚡)
+
+
+
+---
+
+👥 Modes de jeu
+
+Solo
+
+Coop locale (écran partagé)
+
+Coop LAN (Wi-Fi PC ↔ Android)
+
+
+
+---
+
+📱 Plateformes
+
+Windows / Linux
+
+Android (cross-play possible avec PC)

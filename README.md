@@ -9,6 +9,9 @@ Le projet seras **100% communautaire** : chacun peut proposer du code, des sprit
 
 - 🔓 **Open Source & Communautaire** → chacun peut contribuer  
 - 🎥 **Vue** : Top-down, isométrique ou side scroll chepa 
+🌍 Univers & Ambiance
+
+Type de monde : ouvert, généré procéduralement, avec différents biomes.
 - 🕹️ **Gameplay** :  
   - Exploration et survie  
   - Crafting et construction  

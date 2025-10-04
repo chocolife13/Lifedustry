@@ -44,7 +44,7 @@ This is also the default spawn location.
 
 🌿 **Environment:**  
 
-- Flat terrain with small hills  
+- Flat terrain with small hills 
 - Covered in grass and scattered trees  
 - Daylight lasts longer due to open skies  
 - Calm and peaceful atmosphere  
@@ -52,5 +52,3 @@ This is also the default spawn location.
 ---
 
 ## Mobs
-
-*(Section à développer)*

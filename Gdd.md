@@ -91,7 +91,7 @@ the mobs are in 3 cathegories
 
 * Neutral Mobs
 
-* [Hostile Mobs](#Hostile Mobs)
+* [Hostile Mobs](#Hostile-Mobs)
 
 -----
 

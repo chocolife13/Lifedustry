@@ -85,4 +85,26 @@ Lalalalava chichichichiken
 
 ## Mobs
 
-CHIKEN
+the mobs are in 3 cathegories
+
+* Mobs pasive
+
+* Neutral Mobs
+
+* [Hostile Mobs](#Hostile Mobs)
+
+-----
+
+### Mobs Passive
+
+------
+
+#### Chicken
+
+---
+
+### Neutral Mobs
+
+---
+
+### Hostile Mobs

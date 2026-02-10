@@ -24,7 +24,7 @@ function player.collide()-- pour detecter la colision du joueur maybe use a stab
   end
 end
 
-function player.reset_velocity()-- pour que le perso ne glisse pas a l'infini
+function player.reset_velocity()-- for not infinite Garou slide
   player.velocity.x = 0
   player.velocity.y = 0
 end

@@ -1,4 +1,6 @@
 --[[
+
+      -- Ici on charge tout ce dont le jeu a besoin pour fonctionner
 ]]
 require("src.map")
 require("src.tiles")
@@ -9,16 +11,15 @@ require("src.keys")
 require("src.player")
 require("src.ui")
 
--- ces deux ligne servent a savoir la resolution de l'ecran
-screenWidth  = love.graphics.getWidth()  
+
+screenWidth  = love.graphics.getWidth() -- Ça sert a savoir la resolution de l'ecran 
 screenHeight = love.graphics.getHeight()
 
 
 
 
--- ces ytois boucles sont les boucle principale du jeux
 
-function love.load()
+function love.load() -- Fonction lancée au démarrage du jeu qui sert a génère la map au début
   gen.flat_map()
 end
 

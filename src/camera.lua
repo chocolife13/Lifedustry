@@ -1,8 +1,12 @@
 require("src.keys") 
 camera = {}
+-- Positionement par default de la caméra
 camera.x = 0
 camera.y = 0
+-- Zoom de la caméra
 camera.z = 1
+
+-- Vitesse de la caméra
 camera.lerp = 5
 
 local function lerp(a, b, t)

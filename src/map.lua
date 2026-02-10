@@ -1,7 +1,7 @@
 require("src.camera")
 
 map = {}
-map.size = 100
+map.size = 100 
 
 
 function map.tile(x, y, z)

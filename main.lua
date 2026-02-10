@@ -1,5 +1,4 @@
 --[[
-HIIIIIIIIII
 ]]
 require("src.map")
 require("src.tiles")

@@ -27,6 +27,11 @@ require("src.ui")
 screenWidth  = love.graphics.getWidth()  
 screenHeight = love.graphics.getHeight()
 
+
+
+
+-- ces ytois boucles sont les boucle principale du jeux
+
 function love.load()
   gen.flat_map()
 end

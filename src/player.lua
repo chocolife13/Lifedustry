@@ -2,38 +2,39 @@ require("src.map")
 require("src.function")
 
 player = {}
+-- intialisation
 player.x = 0
 player.y = 0
 player.z = 1
 player.speed = 1000
 player.texture = love.graphics.newImage("assets/textures/player.png")
-player.velocity = {x = 0, y = 0}
+player.velocity = {x = 0,y = 0}
 
 
-function player.draw()
+function player.draw() -- pour dessiner le joueur en jeux sur l'écran
   mouseWorldX = love.mouse.getX() + camera.x - screenWidth / 2
   mouseWorldY = love.mouse.getY() + camera.y - screenHeight / 2
   local angle = math.atan2(mouseWorldY - player.y, mouseWorldX - player.x)
   love.graphics.draw(player.texture, player.x - camera.x + screenWidth / 2, player.y - camera.y + screenHeight / 2, angle, 1, 1, player.texture:getWidth() / 2, player.texture:getHeight() / 2)
 end
 
-function player.collide()
+function player.collide()-- pour detecter la colision du joueur maybe use a stable lib
   if map.getTile(map.player_x, map.player_y, player.z) ~= 0 then
     player.velocity.x = 0 - player.velocity.x
   end
 end
 
-function player.reset_velocity()
+function player.reset_velocity()-- pour que le perso ne glisse pas a l'infini
   player.velocity.x = 0
   player.velocity.y = 0
 end
 
-function player.move()
+function player.move()-- for move the player par raport a la velocité
   player.x = player.x + player.velocity.x
   player.y = player.y + player.velocity.y
 end
 
-function player.update(dt)
+function player.update(dt) -- euhhh
   player.reset_velocity()
   map.player_x = math.ceil((player.x + screenWidth / 2) / 32) - 1
   map.player_y = math.ceil((player.y + screenHeight / 2) / 32) - 1
@@ -59,7 +60,7 @@ player.move()
 player.collide()
 end
 
-
+-- function detect mouse click for placing or delete blocks
 function love.mousepressed(x, y, button, istouch, presses)
     if button == 1 then 
         map.setTile(map.selectedTileX(), map.selectedTileY(), map.selectedTileZ(), 0)

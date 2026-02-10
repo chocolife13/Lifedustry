@@ -1,18 +1,5 @@
 --[[
-Bienvenu dans le code de Lifedustry
-
-la partit code de trouve dans ./src
-et les image/son /musique son dans ./assets
-
-
-ce code est en lua en avec love2D
-
-Ex pour l'installation de Love 2D sur arch :
-
-love pacman -S love
-et le lancemant
-
-love ./ ou ./start.sh
+HIIIIIIIIII
 ]]
 require("src.map")
 require("src.tiles")

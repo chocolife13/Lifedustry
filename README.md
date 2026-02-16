@@ -3,10 +3,10 @@
 
 
 
+# TODO
+add a license
+better "contributing.md" english 
 
 
 
 
-
-
-"snake_case" btw

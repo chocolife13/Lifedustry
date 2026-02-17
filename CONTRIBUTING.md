@@ -1,13 +1,11 @@
 # Contributing
 
-Merci de vouloir contribuer !
+Thank for ur time
 
-## Workflow
-
-1. Fork le repo
-2. Crée une branche
-3. Fais tes modifications
-4. Ouvre une Pull Request
+1. Fork the repo
+2. creat a branch
+3. change the code
+4. and open a Pull Request
 
 ## Règles
 

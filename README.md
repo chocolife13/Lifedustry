@@ -9,3 +9,5 @@ better "contributing.md" english
 
 
 
+# Requirement
+win vista +

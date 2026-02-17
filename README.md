@@ -7,7 +7,7 @@ un jeux opensource rpg sandbox bullethell en generation procedural infini des bo
 # TODO
 better "contributing.md" english 
 
-
+love2D
 
 
 # Requirement

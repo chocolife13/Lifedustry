@@ -11,3 +11,8 @@ GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
 Windows Vista x86 (32 Bits)
 
 Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project/One-Core-API-Binaries)
+
+
+# Contributing
+
+You can contributing [here](https://github.com/chocolife13/Lifedustry/tree/main?tab=contributing-ov-file)

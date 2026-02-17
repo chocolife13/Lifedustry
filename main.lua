@@ -14,5 +14,5 @@ end
 
 
 function love.draw() -- la partit graphique
-    love.graphics.print('Lifedustry', screen.relative_to_percent(50, 50))
+    love.graphics.printf("Lifedustry", ,screen.relative_to_percent(50, 50), 25, "center")
 end

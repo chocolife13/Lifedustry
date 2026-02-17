@@ -4,7 +4,6 @@
 
 
 # TODO
-add a license
 better "contributing.md" english 
 
 

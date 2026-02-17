@@ -3,10 +3,6 @@
 
 Lifedustry est un RPG sandbox bullethell en génération procedural infini. Il intègre différente mechanique comme des bosses comme ceux de Terraria, Undertale ou Pixelquest aussi des systèmes d'automatisation de ressource, des craft et des loot. Tout en étant un jeu en LAN ou en solo avec une vue 2D de haut.
 
-# TODO
-better "contributing.md" english 
-
-
 
 # Requirement
 

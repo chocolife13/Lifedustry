@@ -1,14 +1,17 @@
 # Welcome to the code of Lifedustry
 
 
-c'est un jeux ou tu mix minedustry pixelquest(Roblox)
-un jeux opensource rpg sandbox bullethell en generation procedural infini des bosse et un sysytem de audomartition de mindustry des bosse comme terrraion/ undertale/ pixelquest des craft comme minecraft/ des loot comme pixelquest / terraia en LAN en solo et c une vue de haut
+Lifedustry est un RPG sandbox bullethell en génération procedural infini. Il intègre différente mechanique comme des bosses comme ceux de Terraria, Undertale ou Pixelquest aussi des systèmes d'automatisation de ressource, des craft et des loot. Tout en étant un jeu en LAN ou en solo avec une vue 2D de haut.
 
 # TODO
 better "contributing.md" english 
 
-love2D
 
 
 # Requirement
-win vista +
+
+GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
+
+Windows Vista x86 (32 Bits)
+
+Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project/One-Core-API-Binaries)

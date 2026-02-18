@@ -1,7 +1,9 @@
+require("src.scene.scene_manager")
 require("src.screen")
 
 function love.load() 
-    
+    scene_manager.scene = "splash_screen"
+    scene_manager.load()
 end
 
 
@@ -14,5 +16,5 @@ end
 
 
 function love.draw() -- la partit graphique
-    love.graphics.printf("Lifedustry", ,screen.relative_to_percent(50, 50), 25, "center")
+    
 end

@@ -1,18 +1,20 @@
-# Contributing
+Thank you for your interest in Lifedustry! We welcome contributions from the community to help make this project better.
+How to Contribute
 
-Thank for ur time
+Suggesting Features
 
-1. Fork the repo
-2. creat a branch
-3. change the code
-4. and open a Pull Request
+    Open an issue labeled enhancement.
 
-## Règles
+    Explain why this feature would be useful and how it should work.
 
-* Commits clairs
-* Code testé
-* Respect du style du projet
+ Submitting Pull Requests (PR)
 
-## Bugs / idées
+    Fork the repository.
 
-Utilisez les Issues.
+    Create a branch for your feature (git checkout -b feature/amazing-feature).
+
+    Commit your changes (git commit -m 'Add some amazing feature').
+
+    Push to the branch (git push origin feature/amazing-feature).
+
+    Open a Pull Request.

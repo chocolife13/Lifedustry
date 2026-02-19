@@ -15,4 +15,4 @@ Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project
 
 # Contributing
 
-You can contributing [here](https://github.com/chocolife13/Lifedustry/tree/main?tab=contributing-ov-file)
+If you want to contribue you can click [here](https://github.com/chocolife13/Lifedustry/tree/main?tab=contributing-ov-file)

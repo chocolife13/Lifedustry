@@ -1,0 +1,1 @@
+the scene manager manage the scene like game menu settings

@@ -1,6 +1,6 @@
 function love.conf(t)
-	t.window.title = "Lidustry V0.0.0" -- La fenêtre du jeu
-	t.console = true -- Active la console
-  t.window.resizable = true -- Empêche le redimensionnement de la fenêtre
-  t.window.vsync = 0 -- Désactive la V-Sync
+	t.window.title = "Lidustry V0.0.0" -- the main windows title
+	t.console = true -- activate the console
+  t.window.resizable = true -- allow the windows to be resizable
+  t.window.vsync = 0 -- V-Sync
 end

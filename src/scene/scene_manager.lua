@@ -1,7 +1,7 @@
 scene_manager = {}
 
 scene_manager.list = {
-    splash_screen = require("src.scene.splash_screen")
+    loading = require("src.scene.loading")
 }
 
 

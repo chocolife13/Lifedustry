@@ -1,4 +1,5 @@
-require("src.scene.scene_manager")
+local scene_manager = require("src.scene.scene_manager")
+local assets = require("src.assets")
 require("src.screen")
 require("src.ui")
 -- ces trois boucles sont les boucle principale du jeux
@@ -7,7 +8,7 @@ require("src.ui")
 function love.load()
     
     scene_manager.scene = "loading" -- set the first scene splash screen
-    require("src.assets")
+    assets.preload()
     scene_manager.load() -- start the actual scene
 end
 

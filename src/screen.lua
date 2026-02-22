@@ -1,18 +1,15 @@
-screen = {}
+local api = {}
+api.relative_to_percent = {}
 
-
-
-
-screen.relative_to_percent = {}
-function screen.relative_to_percent.width(x)  
-    screen.width, screen.height = love.graphics.getDimensions() 
-    return (x / 100)* screen.width
+function api.relative_to_percent.width(x)  
+    local width, height = love.graphics.getDimensions() 
+    return (x / 100)* width
 end
 
-function screen.relative_to_percent.height(y)
-    screen.width, screen.height = love.graphics.getDimensions()
-    return (y / 100)* screen.height
+function api.relative_to_percent.height(y)
+    local width, height = love.graphics.getDimensions()
+    return (y / 100)* height
 end
 
 
-return screen
+return api

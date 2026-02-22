@@ -1,12 +1,12 @@
--- this scipt load all assets
+local api = {}
+api.textures = {}
 
-print("loading assets")
-assets = {}
-assets.textures = {}
-
-function assets.perload()
-
+function api.preload()
+    print("loading assets")
+    love.graphics.setDefaultFilter("nearest", "nearest")
+    
+    api.textures.splash_screen = love.graphics.newImage("assets/textures/splash_screen.png")
 end
 
-love.graphics.setDefaultFilter("nearest", "nearest")
-assets.textures.splash_screen = love.graphics.newImage("/assets/textures/splash_screen.png")
+
+return api

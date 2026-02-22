@@ -18,3 +18,24 @@ Suggesting Features
     Push to the branch (git push origin feature/amazing-feature).
 
     Open a Pull Request.
+
+
+
+
+so
+
+
+
+
+use this template for new file:
+
+
+local "urname" = require(""ur path"")
+
+local api = {}
+
+function api.urfunction()
+-- ur code
+end
+
+return api

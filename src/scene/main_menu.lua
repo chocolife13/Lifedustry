@@ -1,6 +1,7 @@
 local screen = require("src.screen")
 local assets = require("src.assets")
 local ui = require("src.ui")
+local gui = require("src.gui")
 
 local api = {}
 
@@ -9,7 +10,9 @@ function api.load()
 end
 
 function api.draw()
-    ui.print_centered("The main menu", screen.relative_to_percent.width(50), screen.relative_to_percent.height(50))
+    ui.print_centered("Lifedustry", screen.relative_to_percent.width(50), screen.relative_to_percent.height(15))
+    gui.button("Hiiii", 50, 50, 200, 35, print("bro literaly think this button work"))
+    
 end
 
 function api.update(dt)
@@ -17,3 +20,4 @@ function api.update(dt)
 end
 
 return api
+

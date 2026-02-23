@@ -2,6 +2,8 @@ local screen = require("src.screen")
 local assets = require("src.assets")
 local ui = require("src.ui")
 
+
+
 local api = {}
 
 function api.load()
@@ -13,7 +15,7 @@ function api.draw()
 end
 
 function api.update(dt)
-    
+    require("src.scene.scene_manager").scene = "main_menu"
 end
 
 return api

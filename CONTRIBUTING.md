@@ -30,12 +30,18 @@ so
 use this template for new file:
 
 
-local "urname" = require(""ur path"")
+-- Example: 
 
-local api = {}
+local utils = require("src.utils")
 
-function api.urfunction()
--- ur code
+-- Use a descriptive name for your module's table
+local my_module = {}
+
+--[[
+  A brief description of what the function does.
+]]
+function my_module.my_function()
+  -- Your code here
 end
 
-return api
+return my_module

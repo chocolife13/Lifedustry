@@ -1,2 +1,2 @@
-welcom to the nerdy code of lifedustry
-gamesatte like menu game are called here "scene" and "scene manager" manage these
+Welcome to the nerdy code of Lifedustry.
+Game states (like the main menu) are called "scenes", and the "scene manager" manages them.

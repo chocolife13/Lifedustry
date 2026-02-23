@@ -1,4 +1,4 @@
-api = {}
+local api = {}
 
 function api.print_centered(text, x, y, rotation, scale_width, scale_height, text_offset_width, text_offset_height)
     local font = love.graphics.getFont()

@@ -1,7 +1,7 @@
 # Welcome to the code of Lifedustry
 
 
-Lifedustry est un RPG sandbox bullethell en génération procedural infini. Il intègre différente mechanique comme des bosses comme ceux de Terraria, Undertale ou Pixelquest aussi des systèmes d'automatisation de ressource, des craft et des loot. Tout en étant un jeu en LAN ou en solo avec une vue 2D de haut.
+Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.
 
 
 # Requirement
@@ -15,4 +15,4 @@ Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project
 
 # Contributing
 
-If you want to contribue you can click [here](https://github.com/chocolife13/Lifedustry/tree/main?tab=contributing-ov-file)
+If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).

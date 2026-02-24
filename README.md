@@ -16,10 +16,20 @@ Screenshot from the test scene
 If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).
 
 # Requirement
-Lifedustry use ![Love2D](https://love2d.org) and her min requirements are :
 
 GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
 
 Windows Vista x86 (32 Bits)
 
 Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project/One-Core-API-Binaries)
+
+
+# Quickstart
+
+1. Download LOve 2D here --> in [love2d.org](https://love2d.org).
+ 
+2. Download the repo or Clone the  repo  :
+
+ `git clone https://github.com/TON_USER/Lifedustry.git`
+ 
+5. open love2D with the main folder example with a terminal `love ./`

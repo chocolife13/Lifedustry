@@ -23,10 +23,20 @@ Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project
 
 # Quickstart
 
-1. Download LOve 2D here --> in [love2d.org](https://love2d.org).
- 
-2. Download the repo or Clone the  repo  :
+### 1. Download LOve 2D 
+## windows 
+for windows users download in the oficial website here --> in [love2d.org](https://love2d.org).
+## Linux
+it should be in ur packet manager like arch:
+ `sudo pacman -S love`
+
+### 2. Download the repo or Clone the  repo  :
 
  `git clone https://github.com/TON_USER/Lifedustry.git`
  
-5. open love2D with the main folder example with a terminal `love ./`
+### 5. open love2D with the main folder example with a terminal
+## windows 
+for windows users launch love2D with arg the main folder like shortcut, put the folder in the love.exe, and terminal
+## Linux
+and for linux users
+`love ./`

@@ -6,11 +6,15 @@
 [![GPLv3](https://img.shields.io/badge/GPLv3%20-%20%23BD0000?logo=GPLv3&logoSize=auto&labelColor=%23BD0000)](LICENSE)
 ---------
 
+Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.
+
 <a href="src/scene/test.lua"><img src="Screenshot_2026-02-24_10-42-21.png" alt="Screenshot" width="450"></img></a>
 
 Screenshot from the test scene
 
-Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.
+# Contributing
+If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).
+
 # Requirement
 
 GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
@@ -18,8 +22,3 @@ GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
 Windows Vista x86 (32 Bits)
 
 Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project/One-Core-API-Binaries)
-
-
-# Contributing
-
-If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).

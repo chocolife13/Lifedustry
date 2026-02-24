@@ -1,4 +1,6 @@
 <img src="/docs/Lifedustry_v2.svg" alt="Lifdustry" width="500"></img>
+<br>
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=&pause=1000&color=6AC813&repeat=false&width=435&lines=Explore%2C+Build%2C+Fight;Contribue+to+lifedustry+now+!)](https://git.io/typing-svg)
 
 [![Love2D](https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1)](https://love2d.org) 
 [![Lua](https://img.shields.io/badge/Powered%20by%20-%20Lua-%20blue?logo=lua&labelColor=%23000080&color=%230000F8)](https://www.lua.org/) 
@@ -45,3 +47,15 @@ for windows users launch love2D with arg the main folder like shortcut, put the 
 ## Linux
 and for linux users
 `love ./`
+
+
+
+
+<p align="center">
+  <img src="/doc/Lifedustry_v2.svg" alt="Lifedustry Logo" width="600"></img>
+  <br>
+  <b>L'industrie rencontre le chaos dans un monde procédural.</b>
+  <br><br>
+  <a href="https://love2d.org"><img src="https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1" /></a>
+  <a href="https://opensource.org/"><img src="https://img.shields.io/badge/Open%20Source-Approved-3DA639?logo=opensourceinitiative&logoColor=white" /></a>
+</p>

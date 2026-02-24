@@ -11,7 +11,7 @@ end
 
 function api.draw()
     ui.print_centered("Lifedustry", screen.relative_to_percent.width(50), screen.relative_to_percent.height(15))
-    gui.button("Hiiii", 50, 50, 200, 35, print("bro literaly think this button work"))
+    gui.button("If u tryed to click ur a fuckin idiot", 50, 50, 250, 35, print("bro literaly think this button work"))
     
 end
 

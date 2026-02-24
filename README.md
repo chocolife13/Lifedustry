@@ -50,12 +50,3 @@ and for linux users
 
 
 
-
-<p align="center">
-  <img src="/doc/Lifedustry_v2.svg" alt="Lifedustry Logo" width="600"></img>
-  <br>
-  <b>L'industrie rencontre le chaos dans un monde procédural.</b>
-  <br><br>
-  <a href="https://love2d.org"><img src="https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1" /></a>
-  <a href="https://opensource.org/"><img src="https://img.shields.io/badge/Open%20Source-Approved-3DA639?logo=opensourceinitiative&logoColor=white" /></a>
-</p>

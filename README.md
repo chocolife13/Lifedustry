@@ -35,7 +35,7 @@ it should be in ur packet manager like arch:
  `sudo pacman -S love`
 
 ### 2. Download the repo or Clone the  repo  :
-
+<a href="src/scene/test.lua"><img src="Screenshot_2026-02-24_10-42-21.png" alt="Screenshot" width="450"></img></a>
  `git clone https://github.com/TON_USER/Lifedustry.git`
  
 ### 5. open love2D with the main folder example with a terminal

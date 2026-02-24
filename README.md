@@ -4,8 +4,9 @@
 [![Opensource](https://img.shields.io/badge/Open%20Source%20-%20grey?logo=Open%20Source%20Initiative&logoColor=%233DA639&labelColor=grey&color=%233DA639)](https://opensource.org/)
 [![GPLv3](https://img.shields.io/badge/GPLv3%20-%20%23BD0000?logo=GPLv3&logoSize=auto&labelColor=%23BD0000)](LICENSE)
 
-![screenshot](Screenshot_2026-02-24_10-42-21.png)
+[![screenshot](Screenshot_2026-02-24_10-42-21.png)](src/scene/test.lua)
 
+Screenshot from the test scene
 
 Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.
 # Requirement

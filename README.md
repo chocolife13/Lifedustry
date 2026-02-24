@@ -1,9 +1,6 @@
 <img src="Lifedustry_v2.svg" alt="Lifdustry" width="500"></img>
 
-[![Love2D](https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1)](https://love2d.org)
-[![Lua](https://img.shields.io/badge/Powered%20by%20-%20Lua-%20blue?logo=lua&labelColor=%23000080&color=%230000F8)](https://www.lua.org/)
-[![Opensource](https://img.shields.io/badge/Open%20Source%20-%20grey?logo=Open%20Source%20Initiative&logoColor=%233DA639&labelColor=grey&color=%233DA639)](https://opensource.org/)
-[![GPLv3](https://img.shields.io/badge/GPLv3%20-%20%23BD0000?logo=GPLv3&logoSize=auto&labelColor=%23BD0000)](LICENSE)
+[![Love2D](https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1)](https://love2d.org) [![Lua](https://img.shields.io/badge/Powered%20by%20-%20Lua-%20blue?logo=lua&labelColor=%23000080&color=%230000F8)](https://www.lua.org/) [![Opensource](https://img.shields.io/badge/Open%20Source%20-%20grey?logo=Open%20Source%20Initiative&logoColor=%233DA639&labelColor=grey&color=%233DA639)](https://opensource.org/) [![GPLv3](https://img.shields.io/badge/GPLv3%20-%20%23BD0000?logo=GPLv3&logoSize=auto&labelColor=%23BD0000)](LICENSE)
 ---------
 
 Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.

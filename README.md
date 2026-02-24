@@ -2,8 +2,7 @@
 
 
 Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.
-
-![love2D](https://raw.githubusercontent.com/gist/DarkWiiPlayer/6abc4042e3e4b786e8cf7a63125178e8/raw/d9a631676671aceda526e5e2f3142d473a94654f/badge.svg)
+![Framework | Love 2D](https://img.shields.io/badge/Framwork-Love2D-blue)
 # Requirement
 
 GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics

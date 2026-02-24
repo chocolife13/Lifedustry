@@ -1,6 +1,9 @@
 # Welcome to the code of Lifedustry
-[![Framework - Love2D](https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1)](https://love2d.org)
-[![Static Badge](https://img.shields.io/badge/Powered%20by%20-%20Lua-%20blue?logo=lua&labelColor=%23000080&color=%230000F8)](https://www.lua.org/)
+[![Love2D](https://img.shields.io/badge/Framework-Love2D-blue?labelColor=%23e74a99&color=%2327aae1)](https://love2d.org)
+[![Lua](https://img.shields.io/badge/Powered%20by%20-%20Lua-%20blue?logo=lua&labelColor=%23000080&color=%230000F8)](https://www.lua.org/)
+[![Opensource](https://img.shields.io/badge/Open%20Source%20-%20grey?logo=Open%20Source%20Initiative&logoColor=%233DA639&labelColor=grey&color=%233DA639)](https://opensource.org/)
+[![GPLv3](https://img.shields.io/badge/GPLv3%20-%20%23BD0000?logo=GPLv3&logoSize=auto&labelColor=%23BD0000)](LICENSE)
+
 
 
 

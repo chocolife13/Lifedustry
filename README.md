@@ -35,9 +35,9 @@ it should be in ur packet manager like arch:
  `sudo pacman -S love`
 
 ### 2. Download the repo or Clone the  repo  :
-<a href="src/scene/test.lua"><img src="tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>
+<a href="src/scene/test.lua"><img src="/docs/tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>
 
- `git clone https://github.com/TON_USER/Lifedustry.git`
+ `git clone https://github.com/chocolife13/UndertaleLauncher.git`
  
 ### 5. open love2D with the main folder example with a terminal
 ## windows 

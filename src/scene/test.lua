@@ -1,6 +1,6 @@
-local screen = require("src.screen")
+local screen = require("src.display.screen")
 local assets = require("src.assets")
-local ui = require("src.ui")
+local ui = require("src.display.ui")
 
 local api = {}
 

@@ -1,5 +1,5 @@
-local ui = require("src.ui")
-local screen = require("src.screen")
+local ui = require("src.display.ui")
+local screen = require("src.display.screen")
 local api = {}
 
 function api.button(text, x, y, width, height, callback)

@@ -35,13 +35,24 @@ Windows XP nécessite l’installation de [OneCoreAPI](https://github.com/shorth
 Pour les utilisateurs Windows, téléchargez-le sur le site officiel ici --> [love2d.org](https://love2d.org).
 ## Linux
 Il devrait être disponible dans tout les gestionnaire de paquets, comme sur :
-Arch
+
+Arch 
+
  `sudo pacman -S love`
-Debian ses couzin distro avec apt
+ 
+-----
+ 
+ Debian ses couzin distro avec apt
+
  `sudo apt install love`
-Android (termux et termux x11)
+
+ ------
+ 
+ Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops))
+
  `pkg i love`
 
+-----
 
  
 ### 2. Télécharger le repo ou cloner le repo :
@@ -56,5 +67,6 @@ Pour les utilisateurs Windows, lancez Love2D en passant le dossier principal en 
 Et pour les utulisateur sur linux
 
 `love ./`
+
 
 

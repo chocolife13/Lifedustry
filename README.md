@@ -50,7 +50,7 @@ and for linux users
 
 
  ## Language
-  [FRENCHE](REDAME[FR].md)
+  [FRENCH](REDAME[FR].md)
 
 
 

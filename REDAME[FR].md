@@ -34,10 +34,17 @@ Windows XP nécessite l’installation de [OneCoreAPI](https://github.com/shorth
 ## Windows
 Pour les utilisateurs Windows, téléchargez-le sur le site officiel ici --> [love2d.org](https://love2d.org).
 ## Linux
-Il devrait être disponible dans ton gestionnaire de paquets, comme sur Arch
+Il devrait être disponible dans tout les gestionnaire de paquets, comme sur :
+Arch
  `sudo pacman -S love`
+Debian ses couzin distro avec apt
+ `sudo apt install love`
+Android (termux et termux x11)
+ `pkg i love`
 
-### 2. Télécharger le dépôt ou cloner le dépôt :
+
+ 
+### 2. Télécharger le repo ou cloner le repo :
 <a href="src/scene/test.lua"><img src="/docs/tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>
 
  `git clone https://github.com/chocolife13/UndertaleLauncher.git`
@@ -46,7 +53,8 @@ Il devrait être disponible dans ton gestionnaire de paquets, comme sur Arch
 ## Windows
 Pour les utilisateurs Windows, lancez Love2D en passant le dossier principal en argument, comme avec un raccourci : mettez le dossier sur love.exe ou utilisez le terminal.
 ## Linux
-and for linux users
+Et pour les utulisateur sur linux
 
 `love ./`
+
 

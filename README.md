@@ -33,8 +33,26 @@ Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project
 ## Windows 
 for windows users download in the oficial website here --> in [love2d.org](https://love2d.org).
 ## Linux
-it should be in ur packet manager like arch:
+it should be in ur packet manager like:
+
+Arch 
+
  `sudo pacman -S love`
+ 
+-----
+ 
+ Debian ses couzin distro avec apt
+
+ `sudo apt install love`
+
+ ------
+ 
+ Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops))
+
+ `pkg i love`
+
+-----
+
 
 ### 2. Download the repo or Clone the  repo  :
 <a href="src/scene/test.lua"><img src="/docs/tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>

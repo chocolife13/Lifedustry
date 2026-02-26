@@ -28,7 +28,7 @@ Windows Vista x86 (32 Bits)
 Windows XP nécessite l’installation de [OneCoreAPI](https://github.com/shorthorn-project/One-Core-API-Binaries)
 
 
-# Guide d'Installation
+# Guide de Configuration
 
 ### 1. Télécharger LÖVE 2D
 ## Windows
@@ -49,3 +49,4 @@ Pour les utilisateurs Windows, lancez Love2D en passant le dossier principal en 
 and for linux users
 
 `love ./`
+

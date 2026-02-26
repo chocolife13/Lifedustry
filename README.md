@@ -49,4 +49,8 @@ and for linux users
 `love ./`
 
 
+ ## Language
+  [FRENCHE](REDAME[FR].md)
+
+
 

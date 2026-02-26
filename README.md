@@ -9,7 +9,7 @@
 ![Last-Commit](https://img.shields.io/github/last-commit/chocolife13/lifedustry?style=flat-square&color=blue)
 ---------
 
-Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C'est un jeu jouable en solo ou en LAN avec une vue 2D de dessus.
+Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C’est un jeu jouable en solo, en LAN ou en multijoueur en ligne. avec une vue 2D de dessus.
 
 <a href="src/scene/test.lua"><img src="/docs/screenshot.png" alt="Screenshot" width="450"></img></a>
 
@@ -30,7 +30,7 @@ Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project
 # Quickstart
 
 ### 1. Download LOve 2D 
-## windows 
+## Windows 
 for windows users download in the oficial website here --> in [love2d.org](https://love2d.org).
 ## Linux
 it should be in ur packet manager like arch:
@@ -42,11 +42,15 @@ it should be in ur packet manager like arch:
  `git clone https://github.com/chocolife13/UndertaleLauncher.git`
  
 ### 5. open love2D with the main folder example with a terminal
-## windows 
+## Windows 
 for windows users launch love2D with arg the main folder like shortcut, put the folder in the love.exe, and terminal
 ## Linux
 and for linux users
 `love ./`
+
+
+ ## Language
+  [FRENCH](REDAME[FR].md)
 
 
 

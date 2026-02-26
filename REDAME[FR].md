@@ -19,7 +19,7 @@ Capture d’écran de la scène de test
 # Contribution
 Si vous souhaitez contribuer, vous pouvez [lire les directives de contribution](CONTRIBUTING.md).
 
-# Configuration requise
+# Configuration minimale
 
 GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
 
@@ -47,4 +47,5 @@ Il devrait être disponible dans ton gestionnaire de paquets, comme sur Arch
 Pour les utilisateurs Windows, lancez Love2D en passant le dossier principal en argument, comme avec un raccourci : mettez le dossier sur love.exe ou utilisez le terminal.
 ## Linux
 and for linux users
+
 `love ./`

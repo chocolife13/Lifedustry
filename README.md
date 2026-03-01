@@ -68,7 +68,7 @@ and for linux users
 
 
  ## Language
-  [FRENCH](REDAME[FR].md)
+  [FRENCH](docs/REDAME[FR].md)
 
 
 

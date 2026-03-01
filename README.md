@@ -78,8 +78,4 @@ and for linux users
 `love ./`
 
 
- ## Language
-  [FRENCH](docs/README[FR].md)
-
-
 

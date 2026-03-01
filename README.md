@@ -1,10 +1,11 @@
-<table>
+<table align="right">
   <tr>
-    <td><a href="./README.md"><b>English</b></a></td>
-    <td><a href="./README.fr.md"><b>Français</b></a></td>
-    <td><a href="./README.es.md"><b>Español</b></a></td>
+    <td><a href="/README.md"><b>English</b></a></td>
+    <td><a href="/docs/README.fr.md"><b>Français</b></a></td>
   </tr>
 </table>
+
+
 <img src="/docs/Lifedustry_v2.svg" alt="Lifdustry" width="500"></img>
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=&pause=1000&color=6AC813&repeat=false&width=435&lines=Explore%2C+Build%2C+Fight;Contribue+to+lifedustry+now+!)](https://git.io/typing-svg)

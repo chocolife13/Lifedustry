@@ -16,7 +16,9 @@ https://github.com/chocolife13/Lifedustry/raw/refs/heads/main/docs/showcase_old.
   <source src="https://github.com/chocolife13/Lifedustry/raw/refs/heads/main/docs/showcase_old.mp4" type="video/mp4">
   Votre navigateur ne supporte pas la lecture de vidéos.
 </video>
-Screenshot from the test scene
+<p align="center">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/jVtHqCzEsNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</p>
 
 # Contributing
 If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).

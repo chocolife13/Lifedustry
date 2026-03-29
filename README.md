@@ -10,12 +10,7 @@
 ---------
 
 Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C’est un jeu jouable en solo, en LAN ou en multijoueur en ligne. avec une vue 2D de dessus.
-[Video Title](/docs/showcase_old.mp4)
-https://github.com/chocolife13/Lifedustry/raw/refs/heads/main/docs/showcase_old.mp4
-<video width="100%" controls>
-  <source src="https://github.com/chocolife13/Lifedustry/raw/refs/heads/main/docs/showcase_old.mp4" type="video/mp4">
-  Votre navigateur ne supporte pas la lecture de vidéos.
-</video>
+
 <p align="center">
   <iframe width="560" height="315" src="https://www.youtube.com/embed/jVtHqCzEsNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 </p>

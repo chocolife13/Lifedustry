@@ -13,7 +13,9 @@ Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/jVtHqCzEsNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>yepe</iframe>
 
-https://youtu.be/jVtHqCzEsNg
+[![Watch the video](https://raw.githubusercontent.com/chocolife13/Lifedustry/main/docs/screenshot.png)](https://raw.githubusercontent.com/chocolife13/Lifedustry/main/docs/showcase.mp4)
+
+
 
 # Contributing
 If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).

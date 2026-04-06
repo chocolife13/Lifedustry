@@ -7,7 +7,7 @@ local gui = require("src.display.gui")
 local api = {}
 
 function butonclick_test()
-    scene_manager.scene = "loading"
+    scene_manager.scene = "test"
     scene_manager.load()
 end
 

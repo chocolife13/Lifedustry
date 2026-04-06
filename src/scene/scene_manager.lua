@@ -3,7 +3,10 @@ local api = {}
 api.list = {
     test = require("src.scene.test"),
     loading = require("src.scene.loading"),
-    main_menu = require("src.scene.main_menu")
+    main_menu = require("src.scene.main_menu"),
+    play_menu = require("src.scene.play_menu"),
+    game = require("src.scene.game")
+
 }
 
 

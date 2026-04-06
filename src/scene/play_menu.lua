@@ -6,15 +6,11 @@ local gui = require("src.display.gui")
 
 local api = {}
 
-function butonclick_play()
-    scene_manager.scene = "play_menu"
+function butonclick_preview()
+     scene_manager.scene = "game"
     scene_manager.load()
 end
 
-function butonclick_test()
-    scene_manager.scene = "test"
-    scene_manager.load()
-end
 
 function api.load()
     
@@ -22,8 +18,7 @@ end
 
 function api.draw()
     ui.print_centered("Lifedustry", screen.relative_to_percent.width(50), screen.relative_to_percent.height(15))
-    gui.button("Play", 50, 50, 250, 35, function() butonclick_play() end)
-    gui.button("Test", 50, 67, 250, 35, function() butonclick_test() end)
+    gui.button("Preview a world with a seed", 50, 50, 250, 35, function() butonclick_preview() end)
     
 end
 

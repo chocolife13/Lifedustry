@@ -52,7 +52,7 @@ Arch
 
  ------
  
- Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops))
+ Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
 
  `pkg i love`
 

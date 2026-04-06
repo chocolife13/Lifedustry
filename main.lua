@@ -1,4 +1,4 @@
-local scene_manager = require("src.scene.scene_manager")
+scene_manager = require("src.scene.scene_manager")
 local assets = require("src.assets")
 local args_manager = require("src.args_manager")
 

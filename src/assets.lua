@@ -1,6 +1,7 @@
 local api = {}
 api.textures = {}
-
+api.textures.block = {}
+api.textures.ui = {}
 function api.preload()
     print("preloading assets")
     love.graphics.setDefaultFilter("nearest", "nearest")
@@ -11,8 +12,10 @@ end
 function api.load()
     print("loading assets")
     love.graphics.setDefaultFilter("nearest", "nearest")
+    api.textures.block.grass = love.graphics.newImage("assets/textures/block/grass.png")
+    api.textures.ui.logo = love.graphics.newImage("assets/textures/ui/logo.png")
     
     
 end
-
+api.load()
 return api

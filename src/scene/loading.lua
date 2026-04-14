@@ -11,6 +11,7 @@ function api.load()
 end
 
 function api.draw()
+     love.graphics.setBackgroundColor(1, 0, 0, 0)
     ui.print_centered("Loading ...", screen.relative_to_percent.width(50), screen.relative_to_percent.height(50))
 end
 

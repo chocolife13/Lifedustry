@@ -21,14 +21,15 @@ function api.load()
 end
 
 function api.draw()
-    ui.print_centered("Lifedustry", screen.relative_to_percent.width(50), screen.relative_to_percent.height(15))
+    love.graphics.draw(assets.textures.ui.logo, screen.relative_to_percent.width(50), screen.relative_to_percent.height(15), 0, 0.1, 0.1, assets.textures.ui.logo:getWidth() / 2, assets.textures.ui.logo:getHeight() / 2)
     gui.button("Play", 50, 50, 250, 35, function() butonclick_play() end)
     gui.button("Test", 50, 67, 250, 35, function() butonclick_test() end)
+    love.graphics.setBackgroundColor(57/255, 116/255, 11/255, 0)
     
 end
 
 function api.update(dt)
-    
+   
 end
 
 return api

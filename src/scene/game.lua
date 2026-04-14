@@ -13,7 +13,8 @@ function api.load()
 end
 
 function api.draw()
-   
+    love.graphics.draw(assets.textures.block.grass, 50, 50)
+     love.graphics.setBackgroundColor(0, 0, 0, 0)
     
 end
 

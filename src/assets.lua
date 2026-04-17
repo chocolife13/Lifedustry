@@ -14,6 +14,7 @@ function api.load()
     love.graphics.setDefaultFilter("nearest", "nearest")
     api.textures.block.grass = love.graphics.newImage("assets/textures/block/grass.png")
     api.textures.ui.logo = love.graphics.newImage("assets/textures/ui/logo.png")
+    api.textures.player = love.graphics.newImage("assets/textures/player.png")
     
     
 end

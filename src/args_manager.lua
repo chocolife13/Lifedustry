@@ -6,6 +6,9 @@ function api.start_scene(args)
         scene_manager.scene = args[2]
     else
         scene_manager.scene = "loading"
+        if args[1] == "--dev" then
+            dev = true
+        end
     end
 end
 

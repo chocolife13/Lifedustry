@@ -5,8 +5,9 @@ local ui = require("src.display.ui")
 local api = {}
 
 function api.load()
-    api.orientation = 0
     print("Welcome nerdy developer to the test scene")
+    api.orientation = 0
+    
 end
 
 function api.draw()
@@ -16,7 +17,7 @@ function api.draw()
 end
 
 function api.update(dt)
-    api.orientation = api.orientation + 0.005
+    api.orientation = api.orientation + dt
 
 end
 

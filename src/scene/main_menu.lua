@@ -29,7 +29,9 @@ function api.draw()
 end
 
 function api.update(dt)
-   
+if love.keyboard.isDown("t") and dev then
+    require("src.scene.scene_manager").scene = "test"
+    end
 end
 
 return api

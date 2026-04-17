@@ -16,9 +16,7 @@ end
 
 function love.update(dt) -- la partie mise à jour
     scene_manager.update(dt) 
-    if love.keyboard.isDown("f") then
-        love.window.showMessageBox("A info from your keeboard", "Have you pressed f ?", info)
-    end
+    
 end
 
 

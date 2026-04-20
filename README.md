@@ -63,6 +63,7 @@ Arch
 <a href="src/scene/test.lua"><img src="/docs/tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>
 # Cloning
 for windows make sur you have installed git
+
 `git clone https://github.com/chocolife13/Lifedustry.git`
  
  

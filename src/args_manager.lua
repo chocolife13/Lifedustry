@@ -4,6 +4,7 @@ local api = {}
 function api.start_scene(args)
     if args[1] == "--scene" then
         scene_manager.scene = args[2]
+        dev = true
     else
         scene_manager.scene = "loading"
         if args[1] == "--dev" then

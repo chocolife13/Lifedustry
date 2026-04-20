@@ -16,9 +16,13 @@ end
 
 function love.update(dt) 
     scene_manager.update(dt) 
-    
+    if dev then
+        if love.keyboard.isDown("g") then
+            collectgarbage("collect")
+            print("garbage collected")
+        end
+    end
 end
-
 
 function love.draw() -- la partie graphique
     scene_manager.draw() 

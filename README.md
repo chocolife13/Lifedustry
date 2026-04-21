@@ -46,13 +46,13 @@ Arch
  
 -----
  
- Debian ses couzin distro avec apt
+Debian
 
  `sudo apt install love`
 
  ------
  
- Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
+Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
 
  `pkg i love`
 

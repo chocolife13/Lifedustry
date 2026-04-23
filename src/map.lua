@@ -4,22 +4,26 @@ local player = require("src.player")
 api = {}
 
 function api.draw()
-    for ix = 0, love.graphics.getWidth() / 64 do
-        for yx = 0, love.graphics.getHeight() / 64 do
-            local temp = love.math.noise((ix + player.x) / 200, (yx + player.y) / 200)
-            local height = love.math.noise((ix + player.x) / 100, (yx + player.y) / 100)
-            love.graphics.setColor(height, height, height)
-            love.graphics.rectangle("fill", (ix * 64) + player.x, (yx * 64) + player.y, 64, 64)
-            love.graphics.setColor(1, 1, 1)
-            --if height < 0.15 then   
-            --    biome.water(ix, yx)
-            --end
-            --if height > 0.15 then   
-            --    biome.plain(ix, yx)
+    -- On calcule l'indice du bloc sur lequel se trouve le joueur
+    local start_x = math.floor(player.x / 64)
+    local start_y = math.floor(player.y / 64)
+    local width, height = love.graphics.getDimensions() 
+    -- On dessine autour du joueur (par exemple 10 blocs de rayon pour éviter de voir les bords)
+    for ix = start_x - width / 2, start_x + width / 2 do
+        for iy = start_y - height / 2, start_y + height / 2 do
+            local width, height = love.graphics.getDimensions() 
+            local height = love.math.noise(ix / 100, iy / 100)
             
-            --end
+            love.graphics.setColor(height, height, height)
+            
+            -- Affichage : (Position du bloc * taille) - Position du joueur pour l'effet caméra
+            -- On centre l'affichage au milieu de l'écran (ex: 400, 300)
+            local screen_x = (ix * 64) - player.x + 400
+            local screen_y = (iy * 64) - player.y + 300
+            
+            love.graphics.rectangle("fill", ix*64, iy*64, 64, 64)
         end
     end
-   
+    love.graphics.setColor(1, 1, 1)
 end
 return api

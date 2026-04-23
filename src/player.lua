@@ -3,24 +3,23 @@ local assets = require("src.assets")
 
 local api = {}
 
-
-
+api.speed = 100
 function api.draw()
-    love.graphics.draw(assets.textures.player, screen.relative_to_percent.width(50), screen.relative_to_percent.height(50))
+    love.graphics.draw(assets.textures.player, api.x, api.y)
 end
 
 function api.update(dt)
     if love.keyboard.isDown("up") then
-        api.y = api.y +2
+        api.y = api.y -(api.speed*dt)
     end
     if love.keyboard.isDown("down") then
-        api.y = api.y -2
+        api.y = api.y +(api.speed*dt)
     end
     if love.keyboard.isDown("left") then
-        api.x = api.x +2
+        api.x = api.x -(api.speed*dt)
     end
     if love.keyboard.isDown("right") then
-        api.x = api.x -2
+        api.x = api.x +(api.speed*dt)
     end
 end
 

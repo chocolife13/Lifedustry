@@ -17,7 +17,7 @@ function api.draw()
 end
 
 function api.update(dt)
-    api.orientation = api.orientation + 0.01
+    api.orientation = api.orientation + 0.02
 
 end
 

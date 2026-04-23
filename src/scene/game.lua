@@ -18,15 +18,17 @@ end
 function api.draw()
     
     
-    --love.graphics.push()
-    --love.graphics.translate(player.x, player.y)
+    love.graphics.push()
+    local width, height = love.graphics.getDimensions() 
+    love.graphics.translate(-player.x + width / 2, -player.y + height / 2)
+    
     map.draw()
-    --love.graphics.pop()
+    
     player.draw()
     
 
     love.graphics.setBackgroundColor(0, 0, 0, 0)
-    
+    love.graphics.pop()
 end
 
 function api.update(dt)

@@ -8,6 +8,9 @@ end
 function api.moutain(x, y)
     love.graphics.draw(blocks.stone.texture, x * 64, y * 64)
 end
+function api.sand(x, y)
+    love.graphics.draw(blocks.sand.texture, x * 64, y * 64)
+end
 function api.water(x, y)
     love.graphics.setColor(0, 0, 1)
     love.graphics.rectangle("fill", x * 64, y * 64, 64, 64)

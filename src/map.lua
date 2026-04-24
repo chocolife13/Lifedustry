@@ -25,7 +25,10 @@ function api.draw()
             if height < 0.15 then   
                 biome.water(ix, iy)
             end
-            if height > 0.15 then   
+            if height > 0.15 and height < 0.3 then   
+                biome.sand(ix, iy)
+            end
+            if height > 0.3 then   
                 biome.plain(ix, iy)
             end
         end

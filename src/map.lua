@@ -9,8 +9,8 @@ function api.draw()
     local start_y = math.floor(player.y / 64)
     local width, height = love.graphics.getDimensions() 
     -- On dessine autour du joueur (par exemple 10 blocs de rayon pour éviter de voir les bords)
-    for ix = start_x - width / 2, start_x + width / 2 do
-        for iy = start_y - height / 2, start_y + height / 2 do
+    for ix = start_x - (width / 2)/64, start_x + (width / 2) / 64 do
+        for iy = start_y - (height / 2)/64, start_y + ((height / 2)/64)+1 do
             local width, height = love.graphics.getDimensions() 
             local height = love.math.noise(ix / 100, iy / 100)
             

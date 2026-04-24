@@ -3,7 +3,7 @@ local assets = require("src.assets")
 
 local api = {}
 
-api.speed = 100
+api.speed = 6000
 function api.draw()
     love.graphics.draw(assets.textures.player, api.x, api.y)
 end

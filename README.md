@@ -44,7 +44,7 @@ Arch
  
 -----
  
-Debian
+Debian n' friends (with 'apt')
 
  `sudo apt install love`
 

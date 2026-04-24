@@ -68,10 +68,10 @@ For windows, make sure you have Git downloaded
 ### 5. Open Love2D with the main folder example with a terminal
 ## Windows 
 For Windows users start love2D with arg the main folder like shortcut, put the folder in the love.exe, and terminal
-Make sure Love2D is in your Windows PATH :
-1- Press Windows and type 'env'
-2- Press 'environment variables'
-3- Under 'System Variable' double click 'Path'
+Make sure Love2D is in your Windows PATH :\
+1- Press Windows and type 'env'\
+2- Press 'environment variables'\
+3- Under 'System Variable' double click 'Path'\
 4- Press 'New' and type 'C:\Program Files\love' (64bit) or 'C:\Program Files (x86)\love' (32bit)
 
 Go in your command prompt

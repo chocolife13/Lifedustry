@@ -15,6 +15,7 @@ function api.load()
     api.textures.block.grass = love.graphics.newImage("assets/textures/block/grass.png")
     api.textures.block.stone = love.graphics.newImage("assets/textures/block/stone.png")
     api.textures.block.sand = love.graphics.newImage("assets/textures/block/sand.png")
+    api.textures.block.water = love.graphics.newImage("assets/textures/block/water.png")
     api.textures.ui.logo = love.graphics.newImage("assets/textures/ui/logo.png")
     api.textures.player = love.graphics.newImage("assets/textures/player.png")
     

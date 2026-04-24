@@ -9,9 +9,7 @@
 ![Last-Commit](https://img.shields.io/github/last-commit/chocolife13/lifedustry?style=flat-square&color=blue)
 ---------
 
-Lifedustry est un RPG sandbox de type "bullet hell" en génération procédurale infinie. Il intègre différentes mécaniques comme des boss (similaires à ceux de Terraria, Undertale ou PixelQuest), des systèmes d'automatisation de ressources, de l'artisanat (crafting) et du butin (loot). C’est un jeu jouable en solo, en LAN ou en multijoueur en ligne. avec une vue 2D de dessus.
-
-
+Lifedustry is an infinite, procedurally generated bullet hell sandbox RPG. It blends various mechanics such as boss fights (reminiscent of Terraria, Undertale, or PixelQuest), resource automation systems, crafting, and loot. The game features a top-down 2D perspective and is playable in single-player, LAN, or online multiplayer.
 
 
 https://github.com/user-attachments/assets/a10ddf67-41e2-4e24-96d7-bc44b8d854fa
@@ -27,18 +25,18 @@ If you want to contribute, you can read the [contributing guidelines](CONTRIBUTI
 
 GPU : OpenGL 2.1 ou OpenGL ES 2-capable graphics
 
-Windows Vista x86 (32 Bits)
+Windows Vista x86 (32 Bits) or more
 
 Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project/One-Core-API-Binaries)
 
 
 # Quickstart
 
-### 1. Download LOve 2D 
+### 1. Download Love2D 
 ## Windows 
-for windows users download in the oficial website here --> in [love2d.org](https://love2d.org).
+For windows users download in the official website here --> [love2d.org](https://love2d.org).
 ## Linux
-it should be in ur packet manager like:
+You should be able to download it with your packet manager:
 
 Arch 
 
@@ -52,7 +50,7 @@ Debian
 
  ------
  
-Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
+Android ([termux and termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
 
  `pkg i love`
 
@@ -62,14 +60,23 @@ Android ([termux et termux x11](https://github.com/LinuxDroidMaster/Termux-Deskt
 ### 2. Download the repo or Clone the branch  :
 <a href="src/scene/test.lua"><img src="/docs/tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>
 #### Cloning
-for windows make sur you have installed git
+For windows, make sure you have Git downloaded
 
 `git clone https://github.com/chocolife13/Lifedustry.git`
  
  
-### 5. open love2D with the main folder example with a terminal
+### 5. Open Love2D with the main folder example with a terminal
 ## Windows 
-for windows users launch love2D with arg the main folder like shortcut, put the folder in the love.exe, and terminal
+For Windows users start love2D with arg the main folder like shortcut, put the folder in the love.exe, and terminal
+Make sure Love2D is in your Windows PATH :
+1- Press Windows and type 'env'
+2- Press 'environment variables'
+3- Under 'System Variable' double click 'Path'
+4- Press 'New' and type 'C:\Program Files\love' (64bit) or 'C:\Program Files (x86)\love' (32bit)
+
+Go in your command prompt
+Then into the game's folder, type : 'love ./' to start the game
+
 ## Linux
 and for linux users
 `love ./`

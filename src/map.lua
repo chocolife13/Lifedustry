@@ -14,14 +14,20 @@ function api.draw()
             local width, height = love.graphics.getDimensions() 
             local height = love.math.noise(ix / 100, iy / 100)
             
-            love.graphics.setColor(height, height, height)
+            --love.graphics.setColor(height, height, height)
             
             -- Affichage : (Position du bloc * taille) - Position du joueur pour l'effet caméra
             -- On centre l'affichage au milieu de l'écran (ex: 400, 300)
             local screen_x = (ix * 64) - player.x + 400
             local screen_y = (iy * 64) - player.y + 300
             
-            love.graphics.rectangle("fill", ix*64, iy*64, 64, 64)
+            --love.graphics.rectangle("fill", ix*64, iy*64, 64, 64)
+            if height < 0.15 then   
+                biome.water(ix, iy)
+            end
+            if height > 0.15 then   
+                biome.plain(ix, iy)
+            end
         end
     end
     love.graphics.setColor(1, 1, 1)

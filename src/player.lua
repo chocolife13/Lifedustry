@@ -2,8 +2,11 @@ local screen = require("src.display.screen")
 local assets = require("src.assets")
 
 local api = {}
-
-api.speed = 250
+if dev then
+   api.speed = 6000
+else
+    api.speed = 250
+end
 function api.draw()
     love.graphics.draw(assets.textures.player, api.x, api.y)
 end

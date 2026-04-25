@@ -1,7 +1,7 @@
 local screen = require("src.display.screen")
 local assets = require("src.assets")
 local ui = require("src.display.ui")
-
+-- u can benchmark btw
 local api = {}
 
 function api.load()

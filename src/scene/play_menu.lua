@@ -18,7 +18,7 @@ end
 
 function api.draw()
     ui.print_centered("Lifedustry", screen.relative_to_percent.width(50), screen.relative_to_percent.height(15))
-    gui.button("Preview a world", 50, 50, 250, 35, function() butonclick_preview() end)
+    gui.button("Preview a world with no seed", 50, 50, 250, 35, function() butonclick_preview() end)
     
 end
 

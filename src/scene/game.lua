@@ -10,17 +10,14 @@ local api = {}
 
 
 function api.load()
-    x = 0
-    player.x = 0
-    player.y = 0
 end
 
 function api.draw()
     
     
-    love.graphics.push()
-    local width, height = love.graphics.getDimensions() 
-    love.graphics.translate(-player.x + width / 2, -player.y + height / 2)
+    love.graphics.push() --save the position screen here at origin
+    local width, height = love.graphics.getDimensions() --bruh
+    love.graphics.translate(-player.x + width / 2, -player.y + height / 2)-- move from the push(origin) to the player
     
     map.draw()
     
@@ -28,7 +25,7 @@ function api.draw()
     
 
     love.graphics.setBackgroundColor(0, 0, 0, 0)
-    love.graphics.pop()
+    love.graphics.pop() -- go to last save (push(origin))
 end
 
 function api.update(dt)

@@ -7,7 +7,7 @@ local ui = require("src.display.ui")
 local api = {}
 
 function api.load()
-    
+    api.timer = 0
 end
 
 function api.draw()
@@ -16,7 +16,10 @@ function api.draw()
 end
 
 function api.update(dt)
-    require("src.scene.scene_manager").scene = "main_menu"
+    api.timer = api.timer + 1 --wait 1000 frame bc loading screen is way too fast
+    if api.timer > 1000 then
+        require("src.scene.scene_manager").scene = "main_menu"
+    end
 end
 
 return api

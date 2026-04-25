@@ -1,5 +1,6 @@
 local api = {}
 
+--this is the list of all scene avaible
 api.list = {
     test = require("src.scene.test"),
     loading = require("src.scene.loading"),
@@ -9,7 +10,7 @@ api.list = {
 
 }
 
-
+-- these 3 function run the function load update draw of the scene if exist
 function api.load()
      local s = api.list[api.scene]
 

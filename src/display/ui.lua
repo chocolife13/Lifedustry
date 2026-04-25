@@ -7,7 +7,7 @@ function api.print_centered(text, x, y, rotation, scale_width, scale_height, tex
 
     rotation = rotation or 0
     scale_width = scale_width or 1
-    scale_height = scale_height or scale_width -- Si sy n'est pas défini, on utilise scale_width pour garder le ratio
+    scale_height = scale_height or scale_width 
     local text_offset_width = text_offset_width or 0
     local text_offset_height = text_offset_height or 0
 	love.graphics.print(text, x, y, rotation, scale_width, scale_height, (text_width/2)+ text_offset_width, (text_height/2)+ text_offset_height)

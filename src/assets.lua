@@ -19,6 +19,7 @@ function api.load() --loading the assets until loading sceen
     api.textures.block.stone = love.graphics.newImage("assets/textures/block/stone.png")
     api.textures.block.sand = love.graphics.newImage("assets/textures/block/sand.png")
     api.textures.block.water = love.graphics.newImage("assets/textures/block/water.png")
+    api.textures.block.snow = love.graphics.newImage("assets/textures/block/snow.png")
     api.textures.splash_screen = love.graphics.newImage("assets/textures/splash_screen.png")
     api.textures.player = love.graphics.newImage("assets/textures/player.png")
     

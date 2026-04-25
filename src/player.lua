@@ -3,9 +3,9 @@ local assets = require("src.assets")
 
 local api = {}
 
-api.speed = 6000
-api.x = 0
-api.y = 0
+api.speed = 600000000
+api.x = 1073741835
+api.y = 1073741835
 api.velocity ={}
 api.velocity.x = 0
 api.velocity.y = 0
@@ -26,6 +26,11 @@ function api.update(dt)
     end
     if love.keyboard.isDown("right") then
         api.velocity.x = (api.speed*dt)
+    end
+    if love.keyboard.isDown("lshift") then
+       api.speed = 600000000000
+    else
+        api.speed = 3000
     end
     api.x = api.x + api.velocity.x --increse the x with the velocity
     api.y = api.y + api.velocity.y

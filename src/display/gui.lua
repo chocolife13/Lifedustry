@@ -5,21 +5,32 @@ local screen = require("src.display.screen")
 
 local api = {}
 
-function api.button(text, x, y, width, height, callback) -- the callback is the function to do when the button is click
-    local x = screen.relative_to_percent.width(x) - width / 2
-    local y = screen.relative_to_percent.height(y) - height / 2
-    local mx, my = love.mouse.getPosition() -- m = mouse
-    local button = 1 --the button of the mouse see the docs for all button id
-    local isHover = (mx > (x) and mx < (x) + width and my > (y) and my < (y) + height)
-    if isHover then
-        function love.mousereleased(x, y, button)
-            callback()
+local waspressed = false
+
+
+
+function api.button(text, x, y, width, height, callback) --help for not click for all
+    local bx = screen.relative_to_percent.width(x) - width / 2
+    local by = screen.relative_to_percent.height(y) - height / 2
+    local mx, my = love.mouse.getPosition()
+    local isHover = (mx > bx and mx < bx + width and my > by and my < by + height)
+
+    
+    
+    function love.mousereleased(x, y, button)
+        if button == 1 then
+            if isHover then 
+                callback()
+            end
         end
     end
-    ui.print_centered(text, x + width / 2, y + height / 2)
-    love.graphics.rectangle("line", x , y, width, height) -- that so ugly can some one help
-end
+        
+        
 
+    
+    love.graphics.rectangle("line", bx, by, width, height)
+    ui.print_centered(text, bx + width / 2, by + height / 2)
+end
 
 
 return api

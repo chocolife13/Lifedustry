@@ -12,7 +12,6 @@ function api.draw()
             local width, height = love.graphics.getDimensions() 
             local height = love.math.noise(ix / 100, iy / 100) --gen a noise for height
             local temp = love.math.noise(ix / 200, iy / 200) --gen a noise for height
-            
             --biome conditions
             if height < 0.1 then   
                 biome.water(ix, iy)

@@ -10,4 +10,16 @@ function api.info()
     love.graphics.print(string.format("DrawCalls: %d", love.graphics.getStats().drawcalls), 10, 90)
     --love.graphics.print("player x: " .. player.x .. ", y: " .. player.y, 10, 110)
 end
+
+
+function api.keycheck()
+    if love.keyboard.isDown("f") then --go to farland
+       player.x = 1073741835
+    end
+    if love.keyboard.isDown("lshift") then
+       player.speed = 14000
+    else
+        player.speed = 2000
+    end
+end
 return api

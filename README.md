@@ -50,7 +50,7 @@ Debian n' friends (with 'apt')
 
  ------
  
-Android ([termux and termux x11](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
+Android ([termux](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
 
  `pkg i love`
 

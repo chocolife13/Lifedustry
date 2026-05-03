@@ -3,13 +3,11 @@ local api = {}
 api.relative_to_percent = {}
 
 function api.relative_to_percent.width(x)  
-    --local width, height = love.graphics.getDimensions() 
-    return (x / 100)* width
+    return (x / 100)* api.width
 end
 
 function api.relative_to_percent.height(y)
-    --local width, height = love.graphics.getDimensions()
-    return (y / 100)* height
+    return (y / 100)* api.height
 end
 
 function api.update()

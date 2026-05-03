@@ -2,6 +2,14 @@
 local player = require("src.player")
 
 api = {}
+
+
+function api.load()
+    print("debug mod activated")
+end
+
+
+
 function api.info()
     love.graphics.print("scene: " .. scene_manager.scene, 10, 10)
     love.graphics.print("FPS: " .. love.timer.getFPS(), 10, 30)
@@ -20,6 +28,10 @@ function api.keycheck()
        player.speed = 14000
     else
         player.speed = 2000
+    end
+    if love.keyboard.isDown("g") then
+            collectgarbage("collect")
+            print("garbage collected")
     end
 end
 return api

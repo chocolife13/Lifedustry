@@ -1,7 +1,7 @@
 -- this file is for dev mode is not better to rename this file to devmode.lua instead ?
 local player = require("src.player")
 
-api = {}
+local api = {}
 
 
 function api.load()

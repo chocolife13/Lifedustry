@@ -17,8 +17,7 @@ api.zoom = 1
 
 function api.draw()
     love.graphics.push() --save the position screen here at origin
-    local width, height = love.graphics.getDimensions() --bruh
-    love.graphics.translate(-api.x + (width / 2)*api.zoom, -api.y + (height / 2)*api.zoom)-- move from the push(origin) to the player
+    love.graphics.translate(-api.x + (screen.width / 2)*api.zoom, -api.y + (screen.height / 2)*api.zoom)-- move from the push(origin) to the player
     love.graphics.scale(api.zoom, api.zoom)  
     map.draw(api.x, api.y, api.zoom)
     

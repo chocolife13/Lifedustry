@@ -12,7 +12,8 @@ api.list = {
 
 -- these 3 function run the function load update draw of the scene if exist
 function api.load()
-     local s = api.list[api.scene]
+    api.scene = api.scene or "loading"
+    local s = api.list[api.scene]
 
     if s and s.load then
         print("scene manager: loading the " .. api.scene .. " scene" ) 

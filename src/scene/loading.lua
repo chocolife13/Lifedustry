@@ -16,8 +16,8 @@ function api.draw()
 end
 
 function api.update(dt)
-    api.timer = api.timer + 1 --wait 1000 frame bc loading screen is way too fast
-    if api.timer > 1000 then
+    api.timer = api.timer + 1 --wait 200 frame bc loading screen is way too fast (can't even see it)
+    if api.timer > 200 then
         require("src.scene.scene_manager").scene = "main_menu"
     end
 end

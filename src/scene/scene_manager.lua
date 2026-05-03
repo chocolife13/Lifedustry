@@ -23,7 +23,7 @@ function api.load()
         print("scene manager: loading the " .. api.scene .. " scene" ) 
         s.load()
     else
-       print('Error : This scene dosnt exist or not in << the api.list >> in ./src/scene/scenemanager :" ' .. tostring(api.scene) .. " n'existe pas !")
+       error('Error : The "' .. tostring(api.scene) .. '" scene not found in ./src/scene/')
     end
 end
 
@@ -34,7 +34,7 @@ function api.draw()
     if s and s.draw then
         s.draw()
     else
-        -- print('Error : This scene dosnt exist or not in << the api.list >> in ./src/scene/scenemanager :" ' .. tostring(api.scene) .. " n'existe pas !")
+        error('Error : The "' .. tostring(api.scene) .. '" scene not found in ./src/scene/')
     end
 end
 
@@ -44,7 +44,7 @@ function api.update(dt)
     if s and s.update then
         s.update(dt)
     else
-        -- print('Error : This scene dosnt exist or not in << the api.list >> in ./src/scene/scenemanager :" ' .. tostring(api.scene) .. " n'existe pas !")
+        error('Error : The "' .. tostring(api.scene) .. '" scene not found in ./src/scene/')
     end
 end
 

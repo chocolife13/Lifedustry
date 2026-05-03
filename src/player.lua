@@ -9,7 +9,7 @@ api.y = 0
 api.velocity ={}
 api.velocity.x = 0
 api.velocity.y = 0
-api.zoom = 1
+
 
 function api.draw()
     love.graphics.draw(assets.textures.player, api.x, api.y)
@@ -28,12 +28,7 @@ function api.update(dt)
     if love.keyboard.isDown("right") then
         api.velocity.x = (api.speed*dt)
     end
-    if love.keyboard.isDown("+") then
-        api.zoom = api.zoom + 0.01
-    end
-    if love.keyboard.isDown("-") then
-        api.zoom = api.zoom - 0.01
-    end
+    
     
     api.x = api.x + api.velocity.x --increse the x with the velocity
     api.y = api.y + api.velocity.y

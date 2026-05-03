@@ -12,6 +12,7 @@ end
 
 function api.update()
     api.width, api.height = love.graphics.getDimensions()
+    api.fullscreen, api.fstype = love.window.getFullscreen( )
 end
 
 return api

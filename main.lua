@@ -8,7 +8,7 @@ local args_manager = require("src.args_manager")
 
 function love.load(args) -- loading the game and retunr an arguments like --dev
     debug.load()
-    args_manager.start_scene(args)
+    args_manager.start_scene(args) --checks for arguments and loads the scene
     assets.preload() -- loading the assets for the loading screen
     scene_manager.load() -- start the scene set in arg manager
 end

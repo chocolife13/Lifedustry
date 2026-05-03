@@ -30,8 +30,8 @@ end
 
 
 function api.update(dt)
-    api.x = math.lerp(api.x, player.x, 0.02)
-    api.y = math.lerp(api.y, player.y, 0.02)
+    api.x = math.cerp(api.x, player.x, 0.05)
+    api.y = math.cerp(api.y, player.y, 0.05)
     if love.keyboard.isDown("+") then
         api.zoom = api.zoom + 0.01
     end

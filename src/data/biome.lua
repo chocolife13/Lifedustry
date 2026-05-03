@@ -1,6 +1,6 @@
 blocks = require("src.data.blocks")
 
-api = {}
+local api = {}
 
 function api.plain(x, y)
     love.graphics.draw(blocks.grass.texture, x * 64, y * 64)

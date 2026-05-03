@@ -1,5 +1,5 @@
 assets = require("src.assets")
-api = {}
+local api = {}
 api.grass = {name = "grass", texture = assets.textures.block.grass} -- stocking name in locales for the future
 api.stone = {name = "stone", texture = assets.textures.block.stone}
 api.sand = {name = "sand", texture = assets.textures.block.sand}

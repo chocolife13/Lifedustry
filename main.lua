@@ -1,7 +1,7 @@
 scene_manager = require("src.scene.scene_manager")
-assets = require("src.assets")
-debug = require("src.core.debug")
-screen = require("src.display.screen")
+local assets = require("src.assets")
+local debug = require("src.core.debug")
+local screen = require("src.display.screen")
 local args_manager = require("src.args_manager")
 
 -- THese 3 function are the 3 main function in LOVE2D

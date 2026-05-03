@@ -1,6 +1,7 @@
 scene_manager = require("src.scene.scene_manager")
 assets = require("src.assets")
 debug = require("src.core.debug")
+screen = require("src.display.screen")
 local args_manager = require("src.args_manager")
 
 -- THese 3 function are the 3 main function in LOVE2D
@@ -16,7 +17,8 @@ end
 
 
 function love.update(dt) --update all frames
-    scene_manager.update(dt) 
+    scene_manager.update(dt)
+    screen.update()
     if dev then
         if love.keyboard.isDown("g") then
             collectgarbage("collect")

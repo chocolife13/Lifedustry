@@ -16,15 +16,12 @@ function api.draw(x, y, zoom)
             --biome conditions
             if height < 0.1 then   
                 biome.water(ix, iy)
-            end
-            if height > 0.1 then   
-                biome.plain(ix, iy)
-            end
-            if height > 0.5 and temp < 0.3 then   
-                biome.snow(ix, iy)
-            end
-            if temp > 0.8 then   
+            elseif temp > 0.8 then   
                 biome.desert(ix, iy)
+            elseif height > 0.5 and temp < 0.3 then   
+                biome.snow(ix, iy)
+            elseif height > 0.1 then   
+                biome.plain(ix, iy)
             end
         end
     end

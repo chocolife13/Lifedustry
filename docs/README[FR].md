@@ -62,8 +62,8 @@ Arch
 
 ### 5.Ouvrir Love2D avec le dossier principal en utilisant un terminal
 ## Windows
-Pour les utilisateurs Windows, lancez Love2D en passant le dossier principal en argument, comme avec un raccourci : mettez le dossier sur love.exe ou utilisez le terminal.
-## Linux
+Pour les utilisateurs Windows, lancez love2D en spécifiant le dossier principal comme raccourci, placez ce dossier dans le répertoire de love.exe, puis ouvrez le terminal. Assurez-vous que Love2D figure dans votre variable d'environnement PATH :
+1- Appuyez sur la touche Windows et tapez « env ». 2- Cliquez sur « Variables d'environnement ». 3- Sous « Variables système », double-cliquez sur « Path ». 4- Cliquez sur « Nouveau » et saisissez « C:\Program Files\love » (64 bits) ou « C:\Program Files (x86)\love » (32 bits).
 Et pour les utulisateur sur linux
 
 `love ./`

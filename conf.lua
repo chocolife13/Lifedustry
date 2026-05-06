@@ -1,5 +1,6 @@
 function love.conf(t)
 	t.window.title = "Lifedustry" -- the main windows title
+  t.window.icon = "/assets/textures/player.png" --window icon
 	t.window.width = 640	      
   t.window.height = 480
   t.console = true -- activate the console

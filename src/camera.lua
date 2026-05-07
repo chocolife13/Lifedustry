@@ -4,6 +4,7 @@ local ui = require("src.display.ui")
 local gui = require("src.display.gui")
 local map = require("src.map")
 local player = require("src.player")
+local mobs = require("src.mobs")
 local math = require("src.core.math")
 
 
@@ -22,7 +23,7 @@ function api.draw()
     map.draw(api.x, api.y, api.zoom)
     
     player.draw()
-    
+    mobs.draw()
 
     love.graphics.setBackgroundColor(0, 0, 0, 0)
     love.graphics.pop() -- go to last save (push(origin))

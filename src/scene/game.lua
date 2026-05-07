@@ -1,4 +1,5 @@
 local player = require("src.player")
+local mobs = require("src.mobs")
 local camera = require("src.camera")
 local debug = require("src.core.debug")
 
@@ -15,6 +16,7 @@ function api.draw()
 end
 
 function api.update(dt)
+    mobs.update(dt)
     player.update(dt)
     camera.update(dt)
     

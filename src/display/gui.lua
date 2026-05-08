@@ -46,5 +46,8 @@ function api.mousereleased(x, y, button)
     end
 end
 
+function love.mousereleased(x, y, button)
+    api.mousereleased(x, y, button)
+end
 
 return api

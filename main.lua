@@ -26,6 +26,4 @@ function love.draw() -- graphics
     if dev then debug.info() end --if dev print dev info that all !
 end 
 
-function love.mousereleased(x, y, button)
-    gui.mousereleased(x, y, button)
-end
+

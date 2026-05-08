@@ -2,6 +2,7 @@ scene_manager = require("src.scene.scene_manager")
 local assets = require("src.assets")
 local debug = require("src.core.debug")
 local screen = require("src.display.screen")
+local gui = require("src.display.gui")
 local args_manager = require("src.args_manager")
 
 -- THese 3 function are the 3 main function in LOVE2D
@@ -20,6 +21,11 @@ function love.update(dt) --update all frames
 end
 
 function love.draw() -- graphics
+    gui.begin_frame()
     scene_manager.draw() --draw the content of the actual scene
     if dev then debug.info() end --if dev print dev info that all !
 end 
+
+function love.mousereleased(x, y, button)
+    gui.mousereleased(x, y, button)
+end

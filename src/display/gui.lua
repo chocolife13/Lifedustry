@@ -5,31 +5,45 @@ local screen = require("src.display.screen")
 
 local api = {}
 
-local waspressed = false
+local buttons = {}
 
+function api.begin_frame()
+    buttons = {}
+end
 
 
 function api.button(text, x, y, width, height, callback) --help for not click for all
     local bx = screen.relative_to_percent.width(x) - width / 2
     local by = screen.relative_to_percent.height(y) - height / 2
-    local mx, my = love.mouse.getPosition()
-    local isHover = (mx > bx and mx < bx + width and my > by and my < by + height)
 
-    
-    
-    function love.mousereleased(x, y, button)
-        if button == 1 then
-            if isHover then 
-                callback()
-            end
-        end
-    end
-        
-        
+    table.insert(buttons, {
+        x = bx,
+        y = by,
+        width = width,
+        height = height,
+        callback = callback
+    })
 
-    
     love.graphics.rectangle("line", bx, by, width, height)
     ui.print_centered(text, bx + width / 2, by + height / 2)
+end
+
+function api.mousereleased(x, y, button)
+    if button ~= 1 then return end
+
+    for _, gui_button in ipairs(buttons) do
+        local isHover = (
+            x > gui_button.x and
+            x < gui_button.x + gui_button.width and
+            y > gui_button.y and
+            y < gui_button.y + gui_button.height
+        )
+
+        if isHover then
+            gui_button.callback()
+            return
+        end
+    end
 end
 
 

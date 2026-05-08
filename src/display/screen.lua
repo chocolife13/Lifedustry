@@ -12,7 +12,8 @@ end
 
 function api.update()
     api.width, api.height = love.graphics.getDimensions()
-    api.fullscreen, api.fstype = love.window.getFullscreen( )
+    api.fullscreen, api.fstype = love.window.getFullscreen() --default value for fstype = desktop, DO NOT CHANGE IT, it's useless (i warned you)
+    api.vsync = love.window.getVSync()
 end
 
 return api

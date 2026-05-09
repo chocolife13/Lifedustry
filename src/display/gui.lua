@@ -21,7 +21,7 @@ function api.button(text, x, y, width, height, callback) --help for not click fo
         y = by,
         width = width,
         height = height,
-        callback = callback
+        callback = callback --callback is a function called by the button when pressed
     })
 
     love.graphics.rectangle("line", bx, by, width, height)

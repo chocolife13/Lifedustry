@@ -2,6 +2,7 @@ local screen = require("src.display.screen")
 local assets = require("src.assets")
 local ui = require("src.display.ui")
 local gui = require("src.display.gui")
+local func = require("src.core.functions")
 
 local buttonPercentageWidth = 250
 local buttonPercentageHeight = 35
@@ -20,11 +21,6 @@ function buttonclick_vsync()
     end
 end
 
-function boolToString(t) --used to show correctly setting's value
-    if t==true or t==1 then return "On" end
-    if t==false or t==0 then return "Off" end
-end
-
 function api.load()
     
 end
@@ -39,13 +35,13 @@ function api.draw()
     )
 
     gui.button(
-        ("Fullscreen : " .. boolToString(screen.fullscreen)),
+        ("Fullscreen : " .. func.boolToString(screen.fullscreen)),
         50, 50, buttonPercentageWidth, buttonPercentageHeight,
         function() buttonclick_fullscreen() end
     )
 
     gui.button(
-        ("VSync : " .. boolToString(screen.vsync)),
+        ("VSync : " .. func.boolToString(screen.vsync)),
         50, 60, buttonPercentageWidth, buttonPercentageHeight,
         function() buttonclick_vsync() end
     )

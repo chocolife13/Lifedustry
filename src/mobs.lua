@@ -29,31 +29,36 @@ function api.movement(mob, dt)
 end
 
 
-function api.create(x, y)
+function api.create(x, y, name, type)
     api.amount = api.amount + 1
     api[api.amount] = {} 
     api[api.amount].x = x or 0
     api[api.amount].y = y or 0
-    api[api.amount].name = api.amount
-    api[api.amount].type = type
+    api[api.amount].name = name
+    api[api.amount].type = type or "npc"
     api[api.amount].timer = 0
     api[api.amount].goal = {x=0,y=0}
 end
 
-api.create(nil)
-api.create(20, -200)
-api.create(20, -160)
-api[3].name = "gilbert"
+
+api.create(20, -160, "Gilbert", "npc")
+api.create(nil,-160,"bob","statue")
+api.create(20, -160, "random", "npc")
 
 function api.update(dt)
     api[1].x = maths.lerp(api[1].x, player.x, .01)
-    api[2].x = api[2].x + dt * 100
-    api.movement(api[3], dt) --makes gilbert move like a bot
+    for i=1, api.amount do
+        if api[i].type == "npc" then
+            api.movement(api[i], dt) --makes gilbert move like a bot
+        end
+    end
+    
+   
 end
 
 function api.draw()
     for i=1, api.amount  do
-        ui.print_centered(api[i].name, api[i].x, api[i].y -20)
+        ui.print_centered(api[i].name or i, api[i].x, api[i].y -20)
         love.graphics.draw(assets.textures.player, api[i].x, api[i].y)
     end
 end

@@ -7,6 +7,6 @@ function love.conf(t)
   t.window.minheight = 480 --minimum height of the window
   t.console = true -- activate the console
   t.window.resizable = true -- allow the windows to be resizable
-  t.window.vsync = 0 -- V-Sync
+  t.window.vsync = 1 -- V-Sync
 end
 

@@ -6,6 +6,7 @@ local api = {}
 
 function api.load()
     print("debug mod activated")
+    love.window.setVSync(0)
 end
 
 

@@ -2,6 +2,7 @@ local assets = require("src.assets")
 local ui = require("src.display.ui")
 local maths = require("src.core.math")
 local player = require("src.player")
+local screen = require("src.display.screen")
 
 local api = {}
 api.amount = 0
@@ -57,10 +58,19 @@ function api.update(dt)
 end
 
 function api.draw()
-    for i=1, api.amount  do
-        ui.print_centered(api[i].name or i, api[i].x, api[i].y -20)
-        love.graphics.draw(assets.textures.player, api[i].x, api[i].y)
+    for i=1, api.amount  do 
+        -- if api[i].x > player.x + (screen.width)/2 then -- try cliping
+            ui.print_centered(api[i].name or i, api[i].x, api[i].y -20)
+            love.graphics.draw(assets.textures.player, api[i].x, api[i].y)
+        -- end
     end
 end
 
 return api
+
+
+
+-- random part of i think somting can help cliping
+
+--(start_x - (screen.width / 2)/64)/zoom, (start_x + (screen.width / 2) / 64)/zoom do --cliping for x and y and btw 64 is thi tile dimmension 64x64
+        --for iy = (start_y - (screen.height / 2)/64)/zoom, (start_y + ((screen.height / 2)/64)+1)/zoom do

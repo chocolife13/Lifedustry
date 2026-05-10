@@ -18,6 +18,7 @@ end
 function love.update(dt) --update all frames
     scene_manager.update(dt)
     screen.update()
+    if dev then debug.keycheck() end
 end
 
 function love.draw() -- graphics

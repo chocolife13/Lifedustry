@@ -20,7 +20,7 @@ function api.update(dt)
     player.update(dt)
     camera.update(dt)
     
-    if dev then debug.keycheck() end
+    
 end
 
 return api

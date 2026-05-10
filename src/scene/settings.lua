@@ -30,7 +30,7 @@ function api.draw()
     ui.print_centered("Settings", screen.relative_to_percent.width(50), screen.relative_to_percent.height(15))
     ui.print_centered("Press Escape to leave settings...", screen.relative_to_percent.width(50), screen.relative_to_percent.height(20))
     ui.print_centered( --shows the resolution selected (may need a resolution selector later)
-        "Current resolution : x=" .. screen.width .. ", y=".. screen.height, 
+        "Current resolution : " .. screen.width .. "x".. screen.height, 
         screen.relative_to_percent.width(50), screen.relative_to_percent.height(70)
     )
 

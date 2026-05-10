@@ -17,16 +17,16 @@ end
 
 function api.update(dt) 
     if love.keyboard.isDown("up") then
-        api.velocity.y = -api.speed
+        api.velocity.y = api.velocity.y-api.speed
     end
     if love.keyboard.isDown("down") then
-        api.velocity.y = api.speed
+        api.velocity.y = api.velocity.y+api.speed
     end
     if love.keyboard.isDown("left") then
-        api.velocity.x = -api.speed
+        api.velocity.x = api.velocity.x-api.speed
     end
     if love.keyboard.isDown("right") then
-        api.velocity.x = api.speed
+        api.velocity.x = api.velocity.x+api.speed
     end
 
     if api.velocity.x ~= 0 or api.velocity.y ~= 0 then --ajusting the speed values when both x and y movement happen

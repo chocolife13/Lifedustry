@@ -1,5 +1,9 @@
 -- this file is for dev mode is not better to rename this file to devmode.lua instead ?
 local player = require("src.player")
+local mobs = require("src.mobs")
+local screen = require("src.display.screen")
+local camera = require("src.camera")
+
 
 local api = {}
 
@@ -32,6 +36,12 @@ function api.keycheck()
        love.event.quit("restart")
 
     end
+    function love.keyreleased(key)
+        if key == "e" then
+            mobs.create((screen.mouse.x + camera.x)- screen.width/2, (screen.mouse.y + camera.y) - screen.height/2)
+        end
+    end
+
     if love.keyboard.isDown("lshift") then
        player.speed = 10040000000
     else

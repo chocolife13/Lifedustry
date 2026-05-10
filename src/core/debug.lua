@@ -27,6 +27,10 @@ function api.keycheck()
        player.x = 1073741835
        player.y = 1073741835
     end
+    if love.keyboard.isDown("r") then --reset the game
+       love.event.quit("restart")
+
+    end
     if love.keyboard.isDown("lshift") then
        player.speed = 10040000000
     else

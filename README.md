@@ -19,7 +19,7 @@ https://github.com/user-attachments/assets/a10ddf67-41e2-4e24-96d7-bc44b8d854fa
 
 
 # Contributing
-If you want to contribute, you can read the [contributing guidelines](CONTRIBUTING.md).
+If you want to contribute, you can access the list of issue that need help [right here](https://github.com/users/chocolife13/projects/9).
 
 # Requirement
 

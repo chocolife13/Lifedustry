@@ -38,7 +38,7 @@ function api.keycheck()
     end
     function love.keyreleased(key)
         if key == "e" then
-            mobs.create((screen.mouse.x + camera.x)- screen.width/2, (screen.mouse.y + camera.y) - screen.height/2)
+            mobs.create((screen.mouse.x + camera.x)- screen.width/2, (screen.mouse.y + camera.y) - screen.height/2, nil, "npc")
         end
     end
 

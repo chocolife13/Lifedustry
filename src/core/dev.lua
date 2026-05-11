@@ -41,16 +41,19 @@ function dev.keycheck()
 				"npc"
 			)
 		end
-		if key == "lshift" then -- speed boost
-			player.speed = 10040000000
-		else
-			player.speed = 2000
-		end
+
 		if key == "g" then -- force GC
 			collectgarbage("collect")
 			print("dev: garbage collected")
 		end
 	end
+	if love.keyboard.isDown("lshift") then
+		player.speed = 5000
+	else
+		player.speed = 500
+	end
+
+
 end
 
 return dev

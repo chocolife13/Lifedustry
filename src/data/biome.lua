@@ -1,20 +1,37 @@
-blocks = require("src.data.blocks")
+local blocks = require("src.data.blocks")
 
-local api = {}
+local biome = {}
 
-function api.plain(x, y)
-    love.graphics.draw(blocks.grass.texture, x * 64, y * 64)
+local TILE = 64 -- tile size in pixels
+
+---@param x integer  tile column
+---@param y integer  tile row
+function biome.plain(x, y)
+    love.graphics.draw(blocks.grass.texture(), x * TILE, y * TILE)
 end
-function api.moutain(x, y)
-    love.graphics.draw(blocks.stone.texture, x * 64, y * 64)
+
+---@param x integer
+---@param y integer
+function biome.mountain(x, y)
+    love.graphics.draw(blocks.stone.texture(), x * TILE, y * TILE)
 end
-function api.desert(x, y)
-    love.graphics.draw(blocks.sand.texture, x * 64, y * 64)
+
+---@param x integer
+---@param y integer
+function biome.desert(x, y)
+    love.graphics.draw(blocks.sand.texture(), x * TILE, y * TILE)
 end
-function api.water(x, y)
-    love.graphics.draw(blocks.water.texture, x * 64, y * 64)
+
+---@param x integer
+---@param y integer
+function biome.water(x, y)
+    love.graphics.draw(blocks.water.texture(), x * TILE, y * TILE)
 end
-function api.snow(x, y)
-    love.graphics.draw(blocks.snow.texture, x * 64, y * 64)
+
+---@param x integer
+---@param y integer
+function biome.snow(x, y)
+    love.graphics.draw(blocks.snow.texture(), x * TILE, y * TILE)
 end
-return api
+
+return biome

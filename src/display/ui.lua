@@ -1,16 +1,26 @@
-local api = {}
+-- chance that these will be rewritten on UI update.
 
-function api.print_centered(text, x, y, rotation, scale_width, scale_height, text_offset_width, text_offset_height)
-    local font = love.graphics.getFont()
-	local text_width = font:getWidth(text)
-	local text_height = font:getHeight()
+local ui = {}
 
-    rotation = rotation or 0
-    scale_width = scale_width or 1
-    scale_height = scale_height or scale_width 
-    local text_offset_width = text_offset_width or 0
-    local text_offset_height = text_offset_height or 0
-	love.graphics.print(text, x, y, rotation, scale_width, scale_height, (text_width/2)+ text_offset_width, (text_height/2)+ text_offset_height)
+--- Draws `text` centred on (`x`, `y`).
+---@param text     string
+---@param x        number
+---@param y        number
+---@param rotation? number   default 0
+---@param sx?      number    x scale, default 1
+---@param sy?      number    y scale, defaults to `sx`
+---@param ox?      number    extra x origin offset
+---@param oy?      number    extra y origin offset
+function ui.print_centered(text, x, y, rotation, sx, sy, ox, oy)
+	local font = love.graphics.getFont()
+	local text_w = font:getWidth(tostring(text))
+	local text_h = font:getHeight()
+	rotation = rotation or 0
+	sx = sx or 1
+	sy = sy or sx
+	ox = ox or 0
+	oy = oy or 0
+	love.graphics.print(tostring(text), x, y, rotation, sx, sy, text_w / 2 + ox, text_h / 2 + oy)
 end
 
-return api
+return ui

@@ -2,7 +2,7 @@ local assets = require("src.assets")
 
 local player = {}
 
-player.speed = 2000
+player.speed = 500
 player.x = 0
 player.y = 0
 

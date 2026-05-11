@@ -1,3 +1,5 @@
+# May be fairly outdated.
+
 # scenes
 
 scenes is managed by the scene manager (PS: its fucking logic)

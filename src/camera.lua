@@ -1,43 +1,38 @@
 local screen = require("src.display.screen")
-local assets = require("src.assets")
-local ui = require("src.display.ui")
-local gui = require("src.display.gui")
+local lmath = require("src.core.math")
 local map = require("src.map")
 local player = require("src.player")
 local mobs = require("src.mobs")
-local math = require("src.core.math")
 
+local camera = {}
 
-local api = {}
+camera.x = 0
+camera.y = 0
+camera.zoom = 1
 
+function camera.draw()
+	love.graphics.push()
+	love.graphics.translate(-camera.x + (screen.width / 2) * camera.zoom, -camera.y + (screen.height / 2) * camera.zoom)
+	love.graphics.scale(camera.zoom, camera.zoom)
 
+	map.draw(camera.x, camera.y, camera.zoom)
+	player.draw()
+	mobs.draw()
 
-api.x = 0
-api.y = 0
-api.zoom = 1
-
-function api.draw()
-    love.graphics.push() --save the position screen here at origin
-    love.graphics.translate(-api.x + (screen.width / 2)*api.zoom, -api.y + (screen.height / 2)*api.zoom)-- move from the push(origin) to the player
-    love.graphics.scale(api.zoom, api.zoom)  
-    map.draw(api.x, api.y, api.zoom)
-    
-    player.draw()
-    mobs.draw()
-
-    love.graphics.setBackgroundColor(0, 0, 0, 0)
-    love.graphics.pop() -- go to last save (push(origin))
+	love.graphics.setBackgroundColor(0, 0, 0, 0)
+	love.graphics.pop()
 end
 
+function camera.update(dt)
+	camera.x = lmath.cerp(camera.x, player.x, 18 * dt)
+	camera.y = lmath.cerp(camera.y, player.y, 18 * dt)
 
-function api.update(dt)
-    api.x = math.cerp(api.x, player.x, 18*dt)
-    api.y = math.cerp(api.y, player.y, 18*dt)
-    if love.keyboard.isDown("+") then
-        api.zoom = api.zoom + 0.01
-    end
-    if love.keyboard.isDown("-") then
-        api.zoom = api.zoom - 0.01
-    end
+	if love.keyboard.isDown("+") then
+		camera.zoom = camera.zoom + 0.01
+	end
+	if love.keyboard.isDown("-") then
+		camera.zoom = camera.zoom - 0.01
+	end
 end
-return api
+
+return camera

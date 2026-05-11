@@ -1,3 +1,5 @@
+# This one documentation may be fairly outdated since the refactor(?)
+
 # Scenes
 
 In Lifedustry, game states (such as the main menu, the game world, or a settings screen) are called **scenes**. The `scene_manager` is responsible for loading and switching between these scenes.

@@ -1,30 +1,28 @@
-scene_manager = require("src.scene.scene_manager")
-local assets = require("src.assets")
-local debug = require("src.core.debug")
-local screen = require("src.display.screen")
-local gui = require("src.display.gui")
-local args_manager = require("src.args_manager")
+local SceneManager = require("src.scene_manager")
+local assets       = require("src.assets")
+local dev          = require("src.core.dev")
+local screen       = require("src.display.screen")
+local gui          = require("src.display.gui")
+local args         = require("src.args")
 
--- THese 3 function are the 3 main function in LOVE2D
+---@type boolean
+_G.DEV = false -- set by args; global so every module can read it
 
-function love.load(args) -- loading the game and retunr an arguments like --dev
-    if dev then debug.load() end
-    args_manager.start_scene(args) --checks for arguments and loads the scene
-    assets.preload() -- loading the assets for the loading screen
-    scene_manager.load() -- start the scene set in arg manager
+function love.load(arg)
+    args.start(arg)
+    if DEV then dev.load() end
+    assets.preload()
+    SceneManager.load()
 end
- 
 
-function love.update(dt) --update all frames
-    scene_manager.update(dt)
+function love.update(dt)
+    SceneManager.update(dt)
     screen.update()
-    if dev then debug.keycheck() end
+    if DEV then dev.keycheck() end
 end
 
-function love.draw() -- graphics
+function love.draw()
     gui.begin_frame()
-    scene_manager.draw() --draw the content of the actual scene
-    if dev then debug.info() end --if dev print dev info that all !
-end 
-
-
+    SceneManager.draw()
+    if DEV then dev.info() end
+end

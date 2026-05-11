@@ -1,8 +1,41 @@
-assets = require("src.assets")
-local api = {}
-api.grass = {name = "grass", texture = assets.textures.block.grass} -- stocking name in locales for the future
-api.stone = {name = "stone", texture = assets.textures.block.stone}
-api.sand = {name = "sand", texture = assets.textures.block.sand}
-api.water = {name = "water", texture = assets.textures.block.water}
-api.snow = {name = "snow", texture = assets.textures.block.snow}
-return api
+local assets = require("src.assets")
+
+---@class BlockDef
+---@field name    string
+---@field texture fun(): love.Image  Returns the texture (resolved lazily at draw time)
+
+---@type table<string, BlockDef>
+local blocks = {
+	grass = {
+		name = "grass",
+		texture = function()
+			return assets.textures.block.grass
+		end,
+	},
+	stone = {
+		name = "stone",
+		texture = function()
+			return assets.textures.block.stone
+		end,
+	},
+	sand = {
+		name = "sand",
+		texture = function()
+			return assets.textures.block.sand
+		end,
+	},
+	water = {
+		name = "water",
+		texture = function()
+			return assets.textures.block.water
+		end,
+	},
+	snow = {
+		name = "snow",
+		texture = function()
+			return assets.textures.block.snow
+		end,
+	},
+}
+
+return blocks

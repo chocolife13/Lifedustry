@@ -32,6 +32,7 @@ function assets.load()
 	assets.textures.block.snow = love.graphics.newImage("assets/textures/block/snow.png")
 	assets.textures.splash_screen = love.graphics.newImage("assets/textures/splash_screen.png")
 	assets.textures.player = love.graphics.newImage("assets/textures/player.png")
+	assets.textures.god = love.graphics.newImage("assets/textures/god.png")
 end
 
 return assets

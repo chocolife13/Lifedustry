@@ -56,6 +56,7 @@ end
 mobs.create(20, -160, "Gilbert", "npc")
 mobs.create(nil, -160, "Bob", "statue")
 mobs.create(20, -160, "Random", "npc")
+mobs.create(0, -1000, "God of rocks", "god")
 
 function mobs.update(dt)
     -- Gilbert chases player w/ lerp
@@ -76,7 +77,11 @@ function mobs.draw()
         -- Draw name and texture
 	-- if api[i].x > player.x + (screen.width)/2 then -- try cliping
         ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
-        love.graphics.draw(assets.textures.player, mob.x, mob.y)
+        if mob.type == "god" then
+            love.graphics.draw(assets.textures.god, mob.x, mob.y)
+        else
+            love.graphics.draw(assets.textures.player, mob.x, mob.y)
+        end
 	-- end
     end
 end

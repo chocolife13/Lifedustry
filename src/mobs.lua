@@ -68,6 +68,7 @@ function mobs.update(dt)
         if mob.type == "folower" then
             mob.x = lmath.lerp(mob.x, player.x, 0.001)
             mob.y = lmath.lerp(mob.y, player.y, 0.001)
+            
         end
         
         if mob.type == "run" then
@@ -83,6 +84,8 @@ function mobs.update(dt)
             if distance < safe_distance and distance > 0 then
                 mob.x = mob.x + (dx / distance) * run_speed * dt
                 mob.y = mob.y + (dy / distance) * run_speed * dt
+            else
+                mobs.apply_wandering(mob, dt)
             end
         end
     end

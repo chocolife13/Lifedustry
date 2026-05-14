@@ -20,6 +20,7 @@ function dev.info()
 	love.graphics.print(string.format("RAM: %.1f MB", collectgarbage("count") / 1024), 10, 50)
 	love.graphics.print(string.format("VRAM: %.1f MB", love.graphics.getStats().texturememory / (1024 * 1024)), 10, 70)
 	love.graphics.print(string.format("DrawCalls: %d", love.graphics.getStats().drawcalls), 10, 90)
+	love.graphics.print("Entity Count: " .. tostring(#mobs.list), 10, 110)
 	love.graphics.setColor(1, 1, 1)
 end
 
@@ -33,11 +34,33 @@ function dev.keycheck()
 		if key == "r" then -- restart the game
 			love.event.quit("restart")
 		end
+		if key == "u" then 
+			for _, mob in ipairs(mobs.list) do
+				mob.x = player.x
+				mob.y = player.y
+			end
+		end
+		if key == "t" then 
+			for _, mob in ipairs(mobs.list) do
+				if mob.type == "gilbert" then
+					player.x = mob.x
+					player.y = mob.y
+				end
+			end
+		end
 		if key == "e" then -- spawn mob
 			mobs.create(
 				(screen.mouse.x + camera.x) - screen.width / 2,
 				(screen.mouse.y + camera.y) - screen.height / 2,
-				"female",
+				"future kfc employe",
+				"chicken"
+			)
+		end
+		if key == "a" then -- spawn mob
+			mobs.create(
+				(screen.mouse.x + camera.x) - screen.width / 2,
+				(screen.mouse.y + camera.y) - screen.height / 2,
+				"random haters",
 				"run"
 			)
 		end

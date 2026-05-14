@@ -37,8 +37,8 @@ function dev.keycheck()
 			mobs.create(
 				(screen.mouse.x + camera.x) - screen.width / 2,
 				(screen.mouse.y + camera.y) - screen.height / 2,
-				nil,
-				"npc"
+				"female",
+				"run"
 			)
 		end
 

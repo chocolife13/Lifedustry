@@ -1,5 +1,7 @@
 local biome = require("src.data.biome")
 local screen = require("src.display.screen")
+local mobs = require("src.mobs")
+
 
 local map = {}
 

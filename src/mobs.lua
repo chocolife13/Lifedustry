@@ -57,6 +57,11 @@ function mobs.create(x, y, name, mob_type)
     return mob
 end
 
+function mobs.delete(id)
+    table.remove(mobs.list, id)
+end
+
+
 -- The mobs added for testing ig
 mobs.create(20, -160, "Gilbert (Bro)", "gilbert")
 mobs.create(nil, -160, "Bob", "statue")
@@ -66,7 +71,7 @@ mobs.create(0, -1000, "God of rocks", "god")
 function mobs.update(dt)
 
     -- Update movement for all NPCs
-    for _, mob in ipairs(mobs.list) do
+    for i, mob in ipairs(mobs.list) do
         local dx = mob.x - player.x
         local dy = mob.y - player.y
         local distance = math.sqrt(dx * dx + dy * dy)
@@ -119,6 +124,14 @@ function mobs.update(dt)
                 else
                     mobs.apply_wandering(mob, dt)
                 end
+                
+            end
+            if mob.type == "item" then
+                mob.timer = mob.timer + 1 or 0
+                if mob.timer > 100 then
+                        mobs.delete(i)
+                    mob.timer = 0
+                end 
             end
         end
     end
@@ -131,6 +144,12 @@ function mobs.draw()
         ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
         if mob.type == "god" then
             love.graphics.draw(assets.textures.god, mob.x, mob.y)
+        elseif mob.type == "item" then
+            if mob.name == "rock" then
+                love.graphics.draw(assets.textures.god, mob.x, mob.y)
+            else
+                love.graphics.draw(assets.textures.snowball, mob.x, mob.y)
+            end
         elseif mob.type == "chicken" then
             love.graphics.draw(assets.textures.chicken, mob.x, mob.y)
         elseif mob.type == "fish" then
@@ -139,7 +158,7 @@ function mobs.draw()
             love.graphics.draw(assets.textures.ball, mob.x, mob.y, mob.rotation)
         elseif mob.type == "snowman" then
             love.graphics.draw(assets.textures.snowman, mob.x, mob.y)
-         elseif mob.type == "snowball" then
+        elseif mob.type == "snowball" then
             love.graphics.draw(assets.textures.snowball, mob.x, mob.y)
         else
             love.graphics.draw(assets.textures.player, mob.x, mob.y)

@@ -38,6 +38,7 @@ function assets.load()
 	assets.textures.ball = love.graphics.newImage("assets/textures/entity/ball.png")
 	assets.textures.snowman = love.graphics.newImage("assets/textures/entity/snowman.png")
 	assets.textures.snowball = love.graphics.newImage("assets/textures/entity/snowball.png")
+	assets.textures.inventory = love.graphics.newImage("assets/textures/ui/inventory.png")
 end
 
 return assets

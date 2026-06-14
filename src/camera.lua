@@ -27,10 +27,10 @@ function camera.update(dt)
 	camera.x = lmath.cerp(camera.x, player.x, 18 * dt)
 	camera.y = lmath.cerp(camera.y, player.y, 18 * dt)
 
-	if love.keyboard.isDown("+") then
+	if love.keyboard.isDown("i") then
 		camera.zoom = camera.zoom + 0.01
 	end
-	if love.keyboard.isDown("-") then
+	if love.keyboard.isDown("o") then
 		camera.zoom = camera.zoom - 0.01
 	end
 end

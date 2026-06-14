@@ -12,10 +12,10 @@ camera.zoom = 1
 
 function camera.draw()
 	love.graphics.push()
-	love.graphics.translate(-camera.x + (screen.width / 2) * camera.zoom, -camera.y + (screen.height / 2) * camera.zoom)
+	love.graphics.translate((-camera.x*camera.zoom +((screen.width) / 2) ), (-camera.y * camera.zoom + (screen.height / 2)))
 	love.graphics.scale(camera.zoom, camera.zoom)
 
-	map.draw(camera.x, camera.y, camera.zoom)
+	map.draw(camera.x*camera.zoom, camera.y*camera.zoom, camera.zoom)
 	player.draw()
 	mobs.draw()
 

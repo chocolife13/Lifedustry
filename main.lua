@@ -6,7 +6,7 @@ local gui          = require("src.display.gui")
 local args         = require("src.args")
 
 ---@type boolean
-_G.DEV = false -- set devmode by default ex for android if u want dev mode enable here
+_G.DEV = true -- set devmode by default ex for android if u want dev mode enable here
 
 function love.load(arg)
     args.start(arg)

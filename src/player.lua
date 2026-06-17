@@ -1,4 +1,5 @@
 local assets = require("src.assets")
+local keys = require("src.data.keys")
 
 local player = {}
 
@@ -14,16 +15,16 @@ function player.draw()
 end
 
 function player.update(dt)
-    if love.keyboard.isDown("up") then
+    if love.keyboard.isDown(keys.player.up) then
         player.velocity.y = -player.speed
     end
-    if love.keyboard.isDown("down") then
+    if love.keyboard.isDown(keys.player.down) then
         player.velocity.y = player.speed
     end
-    if love.keyboard.isDown("left") then
+    if love.keyboard.isDown(keys.player.left) then
         player.velocity.x = -player.speed
     end
-    if love.keyboard.isDown("right") then
+    if love.keyboard.isDown(keys.player.right) then
         player.velocity.x = player.speed
     end
 

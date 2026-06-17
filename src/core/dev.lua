@@ -3,7 +3,7 @@ local mobs = require("src.mobs")
 local screen = require("src.display.screen")
 local camera = require("src.camera")
 local SceneManager = require("src.scene_manager")
-
+local keys = require("src.data.keys")
 local dev = {}
 
 --- Dev mode: prints a notice and disables VSync for raw FPS.
@@ -27,11 +27,11 @@ end
 --- Handles dev-only hotkeys every frame.
 function dev.keycheck()
 	function love.keyreleased(key)
-		if key == "f" then -- teleport to the far lands
+		if key == "keys.dev.farland" then -- teleport to the far lands
 			player.x = 1073741835
 			player.y = 1073741835
 		end
-		if key == "r" then -- restart the game
+		if key == "keys.dev.restart" then -- restart the game
 			love.event.quit("restart")
 		end
 		if key == "u" then 
@@ -65,7 +65,7 @@ function dev.keycheck()
 			print("dev: garbage collected")
 		end
 	end
-	if love.keyboard.isDown("lshift") then
+	if love.keyboard.isDown(keys.dev.speed) then
 		player.speed = 5000
 	else
 		player.speed = 500

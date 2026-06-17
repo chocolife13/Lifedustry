@@ -3,7 +3,7 @@ local lmath = require("src.core.math")
 local map = require("src.map")
 local player = require("src.player")
 local mobs = require("src.mobs")
-
+local keys = require("src.data.keys")
 local camera = {}
 
 camera.x = 0
@@ -27,10 +27,10 @@ function camera.update(dt)
 	camera.x = lmath.cerp(camera.x, player.x, 18 * dt)
 	camera.y = lmath.cerp(camera.y, player.y, 18 * dt)
 
-	if love.keyboard.isDown("i") then
+	if love.keyboard.isDown(keys.camera.zoomin) then
 		camera.zoom = camera.zoom + 0.01
 	end
-	if love.keyboard.isDown("o") then
+	if love.keyboard.isDown(keys.camera.zoomout) then
 		camera.zoom = camera.zoom - 0.01
 	end
 end

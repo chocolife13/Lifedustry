@@ -1,17 +1,24 @@
 local screen = require("src.display.screen")
 local assets = require("src.assets")
 local gui = require("src.display.gui")
+local ui = require("src.display.ui")
 local SceneManager = require("src.scene_manager")
+local funfact = require("src.data.funfact")
+
 
 local main = {}
 
-function main.load() end
+function main.load() 
+	main.funfact = funfact.random()
+end
 
 function main.draw()
 	love.graphics.setBackgroundColor(57 / 255, 116 / 255, 11 / 255)
 
 	local logo = assets.textures.ui.logo
 	love.graphics.draw(logo, screen.pct_x(50), screen.pct_y(15), 0, 0.1, 0.1, logo:getWidth() / 2, logo:getHeight() / 2)
+
+	ui.print_percent(funfact.list[main.funfact], 50, 22)
 
 	gui.button("Play", 50, 50, 250, 35, function()
 		SceneManager.switch("play")

@@ -1,5 +1,5 @@
 -- chance that these will be rewritten on UI update.
-
+local screen = require("src.display.screen")
 local ui = {}
 
 --- Draws `text` centred on (`x`, `y`).
@@ -23,4 +23,7 @@ function ui.print_centered(text, x, y, rotation, sx, sy, ox, oy)
 	love.graphics.print(tostring(text), x, y, rotation, sx, sy, text_w / 2 + ox, text_h / 2 + oy)
 end
 
+function ui.print_percent(text, x, y, rotation, sx, sy, ox, oy)
+	ui.print_centered(tostring(text), screen.pct_x(x), screen.pct_y(y), rotation, sx, sy, ox, oy)
+end
 return ui

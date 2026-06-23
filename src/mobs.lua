@@ -4,15 +4,13 @@ local lmath = require("src.core.math")
 local player = require("src.player")
 local screen = require("src.display.screen")
 
-
-
 ---@class Mob
----@field x      number
----@field y      number
----@field name   string|number
----@field type   string
----@field timer  number
----@field goal   {x: number, y: number}
+---@field x        number
+---@field y        number
+---@field name     string | number
+---@field type     string
+---@field timer    number
+---@field goal     { x: number, y: number }
 ---@field rotation number
 
 local mobs = {}
@@ -49,9 +47,9 @@ function mobs.create(x, y, name, mob_type)
         y = y or 0,
         name = name or (#mobs.list + 1),
         type = mob_type or "npc",
-        rotation =  rotation or 0,
+        rotation = rotation or 0,
         timer = 0,
-        goal = {x = 0, y = 0}
+        goal = { x = 0, y = 0 }
     }
     table.insert(mobs.list, mob)
     return mob
@@ -61,7 +59,6 @@ function mobs.delete(id)
     table.remove(mobs.list, id)
 end
 
-
 -- The mobs added for testing ig
 mobs.create(20, -160, "Gilbert (Bro)", "gilbert")
 mobs.create(nil, -160, "Bob", "statue")
@@ -69,7 +66,6 @@ mobs.create(20, -160, "Random", "npc")
 mobs.create(0, -1000, "God of rocks", "god")
 
 function mobs.update(dt)
-
     -- Update movement for all NPCs
     for i, mob in ipairs(mobs.list) do
         local dx = mob.x - player.x
@@ -91,47 +87,41 @@ function mobs.update(dt)
             if mob.type == "folower" then
                 mob.x = lmath.lerp(mob.x, player.x, 0.05)
                 mob.y = lmath.lerp(mob.y, player.y, 0.05)
-                
-            end
-            
-            if mob.type == "gilbert" then
-                mob.x =  mob.x + 1
-                
-                
             end
 
+            if mob.type == "gilbert" then
+                mob.x = mob.x + 1
+            end
 
             if mob.type == "ball" then
                 mob.x = mob.x + 1
-                mob.rotation = mob.rotation + (dt *2)
-                
+                mob.rotation = mob.rotation + (dt * 2)
             end
-            
+
             if mob.type == "snowball" then
                 mob.x = lmath.lerp(mob.x, player.x, 0.001)
                 mob.y = lmath.lerp(mob.y, player.y, 0.001)
-                
             end
-            
+
             if mob.type == "run" then
                 local run_speed = 300
-                local safe_distance = 300 
+                local safe_distance = 300
 
-                
                 if distance < safe_distance and distance > 0 then
                     mob.x = mob.x + (dx / distance) * run_speed * dt
                     mob.y = mob.y + (dy / distance) * run_speed * dt
                 else
                     mobs.apply_wandering(mob, dt)
                 end
-                
             end
             if mob.type == "item" then
-                mob.timer = mob.timer + 1 or 0
-                if mob.timer > 100 then
-                        mobs.delete(i)
+                local dx = mob.x - player.x
+                local dy = mob.y - player.y
+                local distance = math.sqrt(dx * dx + dy * dy)
+                if distance < 50 then
+                    mobs.delete(i)
                     mob.timer = 0
-                end 
+                end
             end
         end
     end
@@ -140,7 +130,7 @@ end
 function mobs.draw()
     for _, mob in ipairs(mobs.list) do
         -- Draw name and texture
-	-- if api[i].x > player.x + (screen.width)/2 then -- try cliping
+        -- if api[i].x > player.x + (screen.width)/2 then -- try cliping
         ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
         if mob.type == "god" then
             love.graphics.draw(assets.textures.god, mob.x, mob.y)
@@ -163,7 +153,7 @@ function mobs.draw()
         else
             love.graphics.draw(assets.textures.player, mob.x, mob.y)
         end
-	-- end
+        -- end
     end
 end
 
@@ -171,5 +161,5 @@ return mobs
 
 -- TODO: random part of i think somting can help cliping
 
---(start_x - (screen.width / 2)/64)/zoom, (start_x + (screen.width / 2) / 64)/zoom do -- cliping for x and y and btw 64 is the tile dimmension 64x64
---for iy = (start_y - (screen.height / 2)/64)/zoom, (start_y + ((screen.height / 2)/64)+1)/zoom do
+-- (start_x - (screen.width / 2)/64)/zoom, (start_x + (screen.width / 2) / 64)/zoom do -- cliping for x and y and btw 64 is the tile dimmension 64x64
+-- for iy = (start_y - (screen.height / 2)/64)/zoom, (start_y + ((screen.height / 2)/64)+1)/zoom do

@@ -3,6 +3,7 @@ local ui = require("src.display.ui")
 local lmath = require("src.core.math")
 local player = require("src.player")
 local screen = require("src.display.screen")
+local inventory = require("src.inventory")
 
 ---@class Mob
 ---@field x        number
@@ -120,7 +121,8 @@ function mobs.update(dt)
                 local distance = math.sqrt(dx * dx + dy * dy)
                 if distance < 50 then
                     mobs.delete(i)
-                    mob.timer = 0
+                    inventory.add("yes", 20)
+                    inventory.print()
                 end
             end
         end

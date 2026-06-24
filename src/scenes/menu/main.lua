@@ -13,7 +13,8 @@ function main.load()
 end
 
 function main.draw()
-	love.graphics.setBackgroundColor(57 / 255, 116 / 255, 11 / 255)
+	
+	love.graphics.draw(assets.textures.bg, 0, 0, 0, screen.width/640, screen.height/480)
 
 	local logo = assets.textures.ui.logo
 	love.graphics.draw(logo, screen.pct_x(50), screen.pct_y(15), 0, 0.1, 0.1, logo:getWidth() / 2, logo:getHeight() / 2)

@@ -3,6 +3,7 @@ local ui = require("src.display.ui")
 local gui = require("src.display.gui")
 local util = require("src.core.util")
 local SceneManager = require("src.scene_manager")
+local assets = require("src.assets")
 
 local settings = {}
 
@@ -12,7 +13,7 @@ local BTN_H = 35
 function settings.load() end
 
 function settings.draw()
-	love.graphics.setBackgroundColor(57 / 255, 116 / 255, 11 / 255)
+	love.graphics.draw(assets.textures.bg, 0, 0, 0, screen.width/640, screen.height/480)
 
 	ui.print_centered("Settings", screen.pct_x(50), screen.pct_y(15))
 	ui.print_centered("Press Escape to go back", screen.pct_x(50), screen.pct_y(20))

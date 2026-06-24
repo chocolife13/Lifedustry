@@ -40,7 +40,7 @@ function assets.load()
     assets.textures.item.apple = love.graphics.newImage("assets/textures/item/apple.png")
     assets.textures.item.rock = love.graphics.newImage("assets/textures/entity/god.png")
     assets.textures.item.mushroom = love.graphics.newImage("assets/textures/item/mushroom.png")
-
+    assets.textures.item.turnip = love.graphics.newImage("assets/textures/item/turnip.png")
 end
 
 return assets

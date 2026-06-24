@@ -121,7 +121,7 @@ function mobs.update(dt)
                 local distance = math.sqrt(dx * dx + dy * dy)
                 if distance < 50 then
                     mobs.delete(i)
-                    inventory.add("yes", 20)
+                    inventory.add(mob.name, 1)
                     inventory.print()
                 end
             end
@@ -137,11 +137,7 @@ function mobs.draw()
         if mob.type == "god" then
             love.graphics.draw(assets.textures.god, mob.x, mob.y)
         elseif mob.type == "item" then
-            if mob.name == "rock" then
-                love.graphics.draw(assets.textures.god, mob.x, mob.y)
-            else
-                love.graphics.draw(assets.textures.snowball, mob.x, mob.y)
-            end
+            love.graphics.draw(assets.textures.item[mob.name], mob.x, mob.y)
         elseif mob.type == "chicken" then
             love.graphics.draw(assets.textures.chicken, mob.x, mob.y)
         elseif mob.type == "fish" then

@@ -1,10 +1,6 @@
 {
-  "runtime.special": {
-    "love.filesystem.load": "loadfile"
-  },
-  "workspace.library": ["${3rd}/love2d/library"],
-  "completion.autoRequire": true,
-    "diagnostics.disable": [
-        "undefined-global"
-    ]
+	"workspace.library": ["${3rd}/love2d/library"],
+	"diagnostics.globals": ["love"],
+	"workspace.checkThirdParty": "Apply",
+	"completion.autoRequire": false
 }

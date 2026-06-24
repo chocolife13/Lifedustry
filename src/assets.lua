@@ -46,14 +46,16 @@ function assets.load()
 
 
 
-    for _, file in ipairs(love.filesystem.getDirectoryItems("assets/textures/")) do
-        if love.filesystem.getInfo("assets/textures/" .. file) == "file" then
-        	local name, extension = file:match("(.+)%.%w+$")
-         	if extension == "png" then
+    for i, file in ipairs(love.filesystem.getDirectoryItems("assets/textures/")) do
+        if love.filesystem.getInfo("assets/textures/" .. file).type == "file" then
+            local name, endname = file:match("(.+)%.(%w+)$")
+         	if endname == "png" then
+                print("loading" .. "assets/textures/" .. file .. " | " .. i .. "/"  .. (#love.filesystem.getDirectoryItems("assets/textures/") .. " | ".. math.floor((i/#love.filesystem.getDirectoryItems("assets/textures/"))*100) .. "%"))
           		assets.textures[name] = love.graphics.newImage("assets/textures/" .. file)
-          	end
+            end
         end
     end
+    print("ended loading all assets")
 end
 
 return assets

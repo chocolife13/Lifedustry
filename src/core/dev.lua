@@ -58,6 +58,10 @@ function dev.keycheck()
         if key == "m" then -- spawn mob
         	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "mushroom", "item")
         end
+        
+        if key == "l" then -- spawn mob
+        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "slingshot", "item")
+        end
 
         if key == "g" then -- force GC
             collectgarbage("collect")
@@ -74,6 +78,11 @@ function dev.keycheck()
         else
             player.speed = 500
         end
+
+       
+    
+
+
 end
 
 return dev

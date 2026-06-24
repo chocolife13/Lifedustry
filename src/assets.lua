@@ -28,8 +28,8 @@ function assets.load()
     assets.textures.block.sand = love.graphics.newImage("assets/textures/block/sand.png")
     assets.textures.block.water = love.graphics.newImage("assets/textures/block/water.png")
     assets.textures.block.snow = love.graphics.newImage("assets/textures/block/snow.png")
-    assets.textures.splash_screen = love.graphics.newImage("assets/textures/splash_screen.png")
-    assets.textures.player = love.graphics.newImage("assets/textures/player.png")
+    --assets.textures.splash_screen = love.graphics.newImage("assets/textures/splash_screen.png")
+    --assets.textures.player = love.graphics.newImage("assets/textures/player.png")
     assets.textures.god = love.graphics.newImage("assets/textures/entity/god.png")
     assets.textures.chicken = love.graphics.newImage("assets/textures/entity/chicken.png")
     assets.textures.fish = love.graphics.newImage("assets/textures/entity/fish.png")
@@ -45,6 +45,15 @@ function assets.load()
     assets.textures.ui.button = love.graphics.newImage("assets/textures/ui/button.png")
 
 
+
+    for _, file in ipairs(love.filesystem.getDirectoryItems("assets/textures/")) do
+        if love.filesystem.getInfo("assets/textures/" .. file) == "file" then
+        	local name, extension = file:match("(.+)%.%w+$")
+         	if extension == "png" then
+          		assets.textures[name] = love.graphics.newImage("assets/textures/" .. file)
+          	end
+        end
+    end
 end
 
 return assets

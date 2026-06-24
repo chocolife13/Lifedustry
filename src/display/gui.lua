@@ -2,6 +2,7 @@
 
 local ui = require("src.display.ui")
 local screen = require("src.display.screen")
+local assets = require("src.assets")
 
 local gui = {}
 
@@ -33,7 +34,8 @@ function gui.button(text, pct_x, pct_y, width, height, callback)
 		callback = callback,
 	})
 
-	love.graphics.rectangle("line", bx, by, width, height)
+    --love.graphics.rectangle("line", bx, by, width, height)
+	love.graphics.draw(assets.textures.ui.button, bx, by, 0, width / assets.textures.ui.button:getWidth(), height / assets.textures.ui.button:getHeight())
 	ui.print_centered(text, bx + width / 2, by + height / 2)
 end
 

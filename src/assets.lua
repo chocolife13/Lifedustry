@@ -42,7 +42,8 @@ function assets.load()
     assets.textures.item.mushroom = love.graphics.newImage("assets/textures/item/mushroom.png")
     assets.textures.item.turnip = love.graphics.newImage("assets/textures/item/turnip.png")
     assets.textures.item.slingshot = love.graphics.newImage("assets/textures/item/slingshot.png")
-    
+    assets.textures.ui.button = love.graphics.newImage("assets/textures/ui/button.png")
+
 
 end
 

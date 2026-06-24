@@ -55,6 +55,10 @@ function dev.keycheck()
         	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "apple", "item")
         end
 
+        if key == "m" then -- spawn mob
+        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "mushroom", "item")
+        end
+
         if key == "g" then -- force GC
             collectgarbage("collect")
             print("dev: garbage collected")

@@ -61,7 +61,8 @@ funfact.list = {
     "Go back and do your homeworks",
     "Belive in the god of rock",
     "Fun fact: RAM is cheaper than a ram",
-    "We don't take ram only money !" 
+    "We don't take ram only money !",
+    "Undertale is a very good game"
 }
 
 function funfact.random()

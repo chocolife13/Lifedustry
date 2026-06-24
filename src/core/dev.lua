@@ -49,13 +49,10 @@ function dev.keycheck()
             end
         end
         if key == "e" then -- spawn mob
-            mobs.create(
-                (screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "rock",
-                "item"
-            )
+            mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "rock", "item")
         end
         if key == "a" then -- spawn mob
-            mobs.delete(2)
+        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "apple", "item")
         end
 
         if key == "g" then -- force GC

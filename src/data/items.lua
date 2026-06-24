@@ -8,6 +8,6 @@ local assets = require("src.assets")
 local items = {
 	rock = {name = "rock", texture = assets.textures.block.god},
 	apple = {name = "Apple", texture = assets.textures.apple}
-}
+}   mushroom = {name = "mushroom", texture = assets.textures.mushroom} 
 
 return items

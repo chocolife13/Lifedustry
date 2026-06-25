@@ -13,7 +13,7 @@ don't work on x86 computer (old computer)
 only work on win10 and 11
 
 
-[if u read click here to download](https://raw.githubusercontent.com/chocolife13/Lifedustry/refs/heads/main/docs/lifedustry_automatic_setup.bat)
+[if u read click here to download](https://github.com/chocolife13/Lifedustry/blob/main/docs/lifedustry_automatic_setup.bat)
 
 
 # Manual Setup

@@ -1,6 +1,0 @@
-{
-	"workspace.library": ["${3rd}/love2d/library"],
-	"diagnostics.globals": ["love"],
-	"workspace.checkThirdParty": "Apply",
-	"completion.autoRequire": false
-}

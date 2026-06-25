@@ -11,6 +11,9 @@ Debian n' friends (with 'apt')
 
  `sudo apt install love`
 
+Android ([termux](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
+
+ `pkg i love`
 
 ## Download the repo or Clone the repo
 ### for downloading
@@ -21,9 +24,6 @@ make sure you have Git downloaded
 `git clone https://github.com/chocolife13/Lifedustry.git`
  
 
-Android ([termux](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
-
- `pkg i love`
 
 ## Run lifedustry
 now go to the lifedustry folder and in a terminal type 

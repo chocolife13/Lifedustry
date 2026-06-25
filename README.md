@@ -25,6 +25,6 @@ Windows XP requires installing [OneCoreAPI](https://github.com/shorthorn-project
 
 
 # Contributing
-If you want to contribute, you can access the list of issue that need help [right here](/docs/CONTRIBUTING.md).
+If you want to contribute, you can read the guide [right here](/docs/CONTRIBUTING.md).
 
 

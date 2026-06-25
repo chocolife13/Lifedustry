@@ -1,0 +1,14 @@
+body {
+	background-color: black;
+	color: white;
+}
+
+
+marquee {
+	background-color: yellow;
+	color: black;
+}
+
+a {
+	color: yellow;
+}

@@ -1,6 +1,7 @@
 body {
-	background-color: black;
+	background-color: green;
 	color: white;
+	text-align: center;
 }
 
 
@@ -10,5 +11,5 @@ marquee {
 }
 
 a {
-	color: yellow;
+	color:white;
 }

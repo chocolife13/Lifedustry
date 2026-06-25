@@ -1,4 +1,23 @@
 # Windows 
+# Automatic script
+
+Setup lifedsutry on windows is verry annoying
+
+You can use a automatic script READ This beafore
+
+Good part
+this script is portable so don't need adminstrator
+
+Bad part
+don't work on x86 computer (old computer)
+only work on win10 and 11
+
+
+[if u read click here to download](https://raw.githubusercontent.com/chocolife13/Lifedustry/refs/heads/main/docs/lifedustry_automatic_setup.bat)
+
+
+# Manual Setup
+
 
 ## download love2D
 For windows users download in the official website here --> [love2d.org](https://love2d.org).

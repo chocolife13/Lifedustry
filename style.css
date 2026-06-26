@@ -2,6 +2,10 @@ body {
 	background-color: green;
 	color: #a7f175;
 	text-align: center;
+	
+	background-image: url('assets/bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 }
 
 

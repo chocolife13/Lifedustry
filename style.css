@@ -1,20 +1,43 @@
-body {
-	background-color: green;
-	color: #a7f175;
-	text-align: center;
-	
-	background-image: url('assets/bg.png');
-	background-repeat: no-repeat;
-	background-size: cover;
+:root {
+  /* Positions initiales au centre */
+  --bg-x: 0px;
+  --bg-y: 0px;
 }
 
+/* Le body ne doit PLUS bouger, il sert juste de conteneur fixe */
+body {
+  background-color: green;
+  color: #a7f175;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow: hidden; /* Évite les barres de défilement bizarres */
+}
 
+/* C'est CETTE DIV qui va contenir le fond et bouger toute seule */
+.parallax-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url('assets/bg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  /* Seul le fond zoome et bouge avec la souris */
+  transform: scale(2) translate(var(--bg-x), var(--bg-y));
+  transition: transform 0.5s ease-out; 
+  z-index: -1; /* Reste bien DERRIÈRE le texte */
+}
+
+/* Tes autres styles restent inchangés */
 marquee {
-	background-color: yellow;
-	color: black;
+  background-color: yellow;
+  color: black;
 }
 
 a {
-	color:white;
+  color: white;
 }
-

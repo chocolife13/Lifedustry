@@ -21,6 +21,7 @@ function dev.info()
     love.graphics.print(string.format("VRAM: %.1f MB", love.graphics.getStats().texturememory / (1024 * 1024)), 10, 70)
     love.graphics.print(string.format("DrawCalls: %d", love.graphics.getStats().drawcalls), 10, 90)
     love.graphics.print("Entity Count: " .. tostring(#mobs.list), 10, 110)
+    love.graphics.print("Entity Count: " .. tostring(#mobs.list), 10, 130)
     love.graphics.setColor(1, 1, 1)
 end
 

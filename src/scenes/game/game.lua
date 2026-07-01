@@ -17,9 +17,10 @@ function game.update(dt)
 	mobs.update(dt)
 	player.update(dt)
 	camera.update(dt)
+    hud.update(dt)
 end
 
-function love.keypressed(key)
+function love.keypressed(key, scancode)
     if key == "f11" then
         screen.fullscreen = not screen.fullscreen
         love.window.setFullscreen(screen.fullscreen)

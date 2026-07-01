@@ -122,7 +122,6 @@ function mobs.update(dt)
                 if distance < 50 then
                     mobs.delete(i)
                     inventory.add(mob.name, 1)
-                    inventory.print()
                 end
             end
         end

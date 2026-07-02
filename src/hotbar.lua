@@ -28,6 +28,15 @@ end
 
 
 function hotbar.update(dt)
+	function love.keypressed(key)
+		key = tonumber(key)
+        if key then
+			if key == 0 then
+				inventory.selected = 10
+			end
+			inventory.selected = key
+		end
+	end
 	function love.wheelmoved(x, y)
         if y > 0 then
         	if inventory.selected < #inventory.list then
@@ -51,6 +60,8 @@ function hotbar.update(dt)
             end
      	end
 	end
+
+	
 
     function love.mousepressed(x, y, button, istouch, presses)
         if button == 1 then

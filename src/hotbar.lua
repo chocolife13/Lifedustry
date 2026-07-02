@@ -31,7 +31,7 @@ function hotbar.update(dt)
 	function love.wheelmoved(x, y)
         if y > 0 then
         	if inventory.selected < #inventory.list then
-                while not inventory.list[inventory.selected + 1].name do
+         		while inventory.list[inventory.selected + 1] and not inventory.list[inventory.selected + 1].name do
                 	inventory.selected = inventory.selected + 1
                 end
                 inventory.selected = inventory.selected + 1
@@ -42,7 +42,7 @@ function hotbar.update(dt)
 
         if y < 0 then
             if inventory.selected > 1 then
-           		while not inventory.list[inventory.selected - 1].name do
+          		while inventory.list[inventory.selected - 1] and not inventory.list[inventory.selected - 1].name do
             		inventory.selected = inventory.selected - 1
              	end
             	inventory.selected = inventory.selected - 1

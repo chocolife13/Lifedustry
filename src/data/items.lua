@@ -25,7 +25,15 @@ local items = {
         end
 		},
     mushroom = { name = "mushroom", texture = assets.textures.mushroom },
-    turnip = { name = "turnip", texture = assets.textures.turnip },
+    turnip = {
+        name = "turnip", 
+        texture = assets.textures.turnip,
+        onUse = function(x, y)
+        	assets.audios.sfx.crunch:stop()
+        	assets.audios.sfx.crunch:play()
+        end 
+    },
+    
     slingshot = { name = "slingshot", texture = assets.textures.slingshot,
     onUse = function(x, y)
     	local mobs = require("src.mobs")

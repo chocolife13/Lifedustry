@@ -49,8 +49,7 @@ function assets.load()
     assets.audios.sfx.bell = love.audio.newSource("assets/audios/sfx/bell.wav", "static")
     assets.audios.sfx.click = love.audio.newSource("assets/audios/sfx/click.ogg", "static")
     assets.audios.music.menu = love.audio.newSource("assets/audios/music/menu.wav", "stream")
-
-
+    assets.audios.sfx.crunch = love.audio.newSource("assets/audios/sfx/crunch.wav", "static")
 
 
     for i, file in ipairs(love.filesystem.getDirectoryItems("assets/textures/")) do

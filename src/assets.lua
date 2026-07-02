@@ -8,6 +8,7 @@ local assets = {}
 ---@field item          table<string, love.Image>
 ---@field player        love.Image
 ---@field splash_screen love.Image
+assets.audios = {sfx = {},music = {}}
 assets.textures = {block = {}, ui = {}, item = {}}
 
 --- Loads the minimal assets needed for the loading screen.
@@ -43,7 +44,9 @@ function assets.load()
     assets.textures.item.mushroom = love.graphics.newImage("assets/textures/item/mushroom.png", {mipmaps = true})
     assets.textures.item.turnip = love.graphics.newImage("assets/textures/item/turnip.png", {mipmaps = true})
     assets.textures.item.slingshot = love.graphics.newImage("assets/textures/item/slingshot.png", {mipmaps = true})
-    assets.textures.ui.button = love.graphics.newImage("assets/textures/ui/button.png", {mipmaps = true})
+    assets.textures.ui.button = love.graphics.newImage("assets/textures/ui/button.png", { mipmaps = true })
+
+    assets.audios.sfx.bell = love.audio.newSource("assets/audios/sfx/bell.wav", "static")
 
 
 

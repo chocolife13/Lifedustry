@@ -47,9 +47,9 @@ function gui.mousereleased(x, y, button)
     if button ~= 1 then
         return
     end
-	assets.audios.sfx.click:play()
 	for _, btn in ipairs(buttons) do
         if x > btn.x and x < btn.x + btn.width and y > btn.y and y < btn.y + btn.height then
+        	assets.audios.sfx.click:play()
 			btn.callback()
 			return
 		end

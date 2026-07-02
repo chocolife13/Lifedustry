@@ -1,13 +1,13 @@
-local inventory = require("src.inventory")
+local hotbar = require("src.hotbar")
 
 local hud = {}
 
 function hud.draw()
-    inventory.draw()
+    hotbar.draw()
 end
 
 function hud.update(dt)
-    inventory.update(dt)
+    hotbar.update(dt)
 end
 
 return hud

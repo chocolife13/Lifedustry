@@ -54,13 +54,17 @@ function hotbar.update(dt)
 
     function love.mousepressed(x, y, button, istouch, presses)
         if button == 1 then
-        	if inventory.list[inventory.selected].name and inventory.list[inventory.selected].number > 0 then
-                print(inventory.list[inventory.selected].name .. " is comsumed")
-                if inventory.list[inventory.selected].number == 1 then
-                	inventory.list[inventory.selected] = {}
-                else
-                	inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1
-         		end
+        	local usedItem = inventory.list[inventory.selected]
+        	if usedItem and usedItem.name then
+                	if items[inventory.list[inventory.selected].name].onUse then
+                 		items[inventory.list[inventory.selected].name].onUse(screen.mouse.x, screen.mouse.y)
+                   	else
+                   		print("No action are defined in src/data/items for the item: " .. inventory.list[inventory.selected].name)
+                   	end
+                    inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1
+                    if inventory.list[inventory.selected].number == 0 then
+                    	inventory.list[inventory.selected] = {}
+                    end
          	end
         end
     end

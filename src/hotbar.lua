@@ -43,7 +43,7 @@ function hotbar.update(dt)
     function love.mousepressed(x, y, button, istouch, presses)
         -- button 1 correspond au clic gauche
         if button == 1 then
-        	if inventory.list[inventory.selected] and inventory.list[inventory.selected].number > 0 then
+        	if inventory.list[inventory.selected].name and inventory.list[inventory.selected].number > 0 then
                 print(inventory.list[inventory.selected].name .. " is comsumed")
                 if inventory.list[inventory.selected].number == 1 then
                 	inventory.list[inventory.selected] = {}

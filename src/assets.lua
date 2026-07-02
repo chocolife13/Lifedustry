@@ -47,6 +47,8 @@ function assets.load()
     assets.textures.ui.button = love.graphics.newImage("assets/textures/ui/button.png", { mipmaps = true })
 
     assets.audios.sfx.bell = love.audio.newSource("assets/audios/sfx/bell.wav", "static")
+    assets.audios.sfx.click = love.audio.newSource("assets/audios/sfx/click.ogg", "static")
+    assets.audios.music.menu = love.audio.newSource("assets/audios/music/menu.wav", "stream")
 
 
 

@@ -8,12 +8,15 @@ local funfact = require("src.data.funfact")
 
 local main = {}
 
-function main.load() 
-	main.funfact = funfact.random()
+function main.load()
+    main.funfact = funfact.random()
+    assets.audios.music.menu:setLooping(true)
+    assets.audios.music.menu:setVolume(0.1)
+    assets.audios.music.menu:play()
 end
 
 function main.draw()
-	
+
 	love.graphics.draw(assets.textures.bg, 0, 0, 0, screen.width/640, screen.height/480)
 
 	local logo = assets.textures.ui.logo

@@ -1,12 +1,15 @@
 local player = require("src.player")
 local mobs = require("src.mobs")
+local assets = require("src.assets")
 local camera = require("src.camera")
 local screen = require("src.display.screen")
 local hud = require("src.hud")
 
 local game = {}
 
-function game.load() end
+function game.load()
+	assets.audios.music.menu:stop()
+end
 
 function game.draw()
 	camera.draw()

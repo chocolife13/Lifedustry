@@ -9,14 +9,18 @@ inventory.list = {}
 inventory.selected = 1
 
 function inventory.add(itemToAdd, numberToAdd)
-    for itemIventory, numberIventory in pairs(inventory.list) do
-        if itemToAdd == itemIventory then
-            inventory.list[itemToAdd] = numberIventory + numberToAdd
+	inventory.FirstEmpty = nil
+    for i, item in ipairs(inventory.list) do
+    	if not item.name then
+     		inventory.FirstEmpty = i
+       end
+        if itemToAdd == item.name then
+            inventory.list[i].number = inventory.list[i].number + numberToAdd
             return
         end
     end
 
-    inventory.list[itemToAdd] = numberToAdd
+    inventory.list[inventory.FirstEmpty or #inventory.list + 1] = {name = itemToAdd, number = numberToAdd}
 end
 
 

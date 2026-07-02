@@ -28,20 +28,31 @@ end
 
 
 function hotbar.update(dt)
-    if love.keyboard.isScancodeDown(keys.inventory.swapto["1"]) then
-        inventory.selected = 1
-    end
+	function love.wheelmoved(x, y)
+        if y > 0 then
+        	if inventory.selected < #inventory.list then
+                while not inventory.list[inventory.selected + 1].name do
+                	inventory.selected = inventory.selected + 1
+                end
+                inventory.selected = inventory.selected + 1
+            else
+                inventory.selected = 1
+           	end
+        end
 
-    if love.keyboard.isScancodeDown(keys.inventory.swapto["2"]) then
-        inventory.selected = 2
-    end
-
-    if love.keyboard.isScancodeDown(keys.inventory.swapto["3"]) then
-        inventory.selected = 3
-    end
+        if y < 0 then
+            if inventory.selected > 1 then
+           		while not inventory.list[inventory.selected - 1].name do
+            		inventory.selected = inventory.selected - 1
+             	end
+            	inventory.selected = inventory.selected - 1
+            else
+                inventory.selected = #inventory.list
+            end
+     	end
+	end
 
     function love.mousepressed(x, y, button, istouch, presses)
-        -- button 1 correspond au clic gauche
         if button == 1 then
         	if inventory.list[inventory.selected].name and inventory.list[inventory.selected].number > 0 then
                 print(inventory.list[inventory.selected].name .. " is comsumed")

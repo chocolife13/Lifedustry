@@ -11,7 +11,7 @@ inventory.selected = 1
 function inventory.add(itemToAdd, numberToAdd)
 	inventory.FirstEmpty = nil
     for i, item in ipairs(inventory.list) do
-    	if not item.name then
+    	if not item.name and not inventory.FirstEmpty then
      		inventory.FirstEmpty = i
        end
         if itemToAdd == item.name then

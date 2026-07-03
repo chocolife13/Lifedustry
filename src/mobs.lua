@@ -99,11 +99,34 @@ function mobs.update(dt)
                 mob.rotation = mob.rotation + (dt * 2)
             end
 
-            if mob.type == "snowball" then
-                mob.x = lmath.lerp(mob.x, player.x, 0.001)
-                mob.y = lmath.lerp(mob.y, player.y, 0.001)
+          if mob.type == "snowball" then
+            if not mob.vx or not mob.vy  then
+                local dx = player.x - mob.x
+                local dy = player.y - mob.y
+        
+        
+                if distance > 0 then
+                    local speed = 1
+                    mob.vx = (dx / distance) * speed
+                    mob.vy = (dy / distance) * speed
+                else
+                    mob.vx = 0
+                    mob.vy = 0
+                end
             end
 
+
+    mob.x = mob.x + mob.vx
+    mob.y = mob.y + mob.vy
+    if distance > 3000 then
+        mobs.delete(i)
+    end
+    if distance < 10 then
+        mobs.delete(i)
+        assets.audios.sfx.hit:stop()
+        assets.audios.sfx.hit:play()
+    end
+end
             if mob.type == "run" then
                 local run_speed = 300
                 local safe_distance = 300

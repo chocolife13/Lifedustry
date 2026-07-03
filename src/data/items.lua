@@ -33,7 +33,8 @@ local items = {
         	assets.audios.sfx.crunch:play()
         end 
     },
-    
+    pumpkin = {name = "pumpkin", texture = assets.textures.pumpkin},
+
     slingshot = { name = "slingshot", texture = assets.textures.slingshot,
     onUse = function(x, y)
     	local mobs = require("src.mobs")

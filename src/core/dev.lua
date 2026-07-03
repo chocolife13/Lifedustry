@@ -68,8 +68,9 @@ function dev.keycheck()
             collectgarbage("collect")
             print("dev: garbage collected")
         end
-    
-
+        if key == "b" then -- spawn mob
+        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "pumpkin", "item")
+        end
         if key == "n" then -- spawn mob
         	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "turnip", "item")
         end

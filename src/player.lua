@@ -1,11 +1,13 @@
 local assets = require("src.assets")
 local keys = require("src.data.keys")
+local SceneManager = require("src.scene_manager")
 
 local player = {}
 
 player.speed = 500
 player.x = 0
 player.y = 0
+player.hp = 20
 
 ---@type { x: number, y: number }
 player.velocity = { x = 0, y = 0 }
@@ -40,6 +42,20 @@ function player.update(dt)
     player.y = player.y + player.velocity.y
     player.velocity.x = 0
     player.velocity.y = 0
+
+    
+end
+
+
+function player.hit(number)
+    assets.audios.sfx.hit:stop()
+    assets.audios.sfx.hit:play()
+    player.hp = player.hp - number
+         
+    if player.hp < 1 then
+        player.hp = 20
+        SceneManager.switch("gameover")
+    end
 end
 
 return player

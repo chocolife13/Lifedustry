@@ -45,6 +45,7 @@ function assets.load()
     assets.textures.item.turnip = love.graphics.newImage("assets/textures/item/turnip.png", {mipmaps = true})
     assets.textures.item.slingshot = love.graphics.newImage("assets/textures/item/slingshot.png", {mipmaps = true})
     assets.textures.ui.button = love.graphics.newImage("assets/textures/ui/button.png", { mipmaps = true })
+    assets.textures.ui.annoying_cat = love.graphics.newImage("assets/textures/ui/annoying_cat.jpg", { mipmaps = true })
     assets.textures.item.pumpkin = love.graphics.newImage("assets/textures/item/pumpkin.png", {mipmaps = true})
     assets.textures.item.snowflake = love.graphics.newImage("assets/textures/item/snowflake.png", {mipmaps = true})
     

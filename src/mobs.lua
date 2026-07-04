@@ -5,6 +5,7 @@ local player = require("src.player")
 local screen = require("src.display.screen")
 local inventory = require("src.inventory")
 
+
 ---@class Mob
 ---@field x        number
 ---@field y        number
@@ -123,8 +124,7 @@ function mobs.update(dt)
     end
     if distance < 10 then
         mobs.delete(i)
-        assets.audios.sfx.hit:stop()
-        assets.audios.sfx.hit:play()
+        player.hit(1)
     end
 end
             if mob.type == "run" then

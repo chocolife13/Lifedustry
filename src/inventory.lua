@@ -4,7 +4,7 @@ local items = require("src.data.items")
 
 local inventory = {}
 
-inventory.list = {}
+inventory.list = {[1] = {name = "snowflake", number = -1}}
 
 inventory.selected = 1
 

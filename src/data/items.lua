@@ -16,6 +16,16 @@ local items = {
             mobs.create((x + camera.x) - screen.width / 2, (y + camera.y) - screen.height / 2, "rock", "item")
         end
         },
+    snowflake = {
+        name = "Snowflake",
+        texture = assets.textures.item.snowflake,
+        onUse = function(x, y)
+        	local mobs = require("src.mobs")
+            local camera = require("src.camera")
+            local screen = require("src.display.screen")
+            mobs.create((x + camera.x) - screen.width / 2, (y + camera.y) - screen.height / 2, nil, "snowman")
+        end
+        },
     apple = {
         name = "Apple",
         texture = assets.textures.apple,

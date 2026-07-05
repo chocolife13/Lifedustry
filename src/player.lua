@@ -13,7 +13,7 @@ player.hp = 20
 player.velocity = { x = 0, y = 0 }
 
 function player.draw()
-    love.graphics.draw(assets.textures.player, player.x, player.y)
+    love.graphics.draw(assets.textures.player, player.x, player.y, 0, 1, 1, 0 - assets.textures.player:getWidth() / 2, 0- assets.textures.player:getHeight() /2)
 end
 
 function player.update(dt)

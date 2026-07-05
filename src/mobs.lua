@@ -122,7 +122,7 @@ function mobs.update(dt)
     if distance > 3000 then
         mobs.delete(i)
     end
-    if distance < 10 then
+    if distance < assets.textures.player:getWidth() then
         mobs.delete(i)
         player.hit(1)
     end

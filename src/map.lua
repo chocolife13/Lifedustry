@@ -1,4 +1,6 @@
 local biome = require("src.data.biome")
+local biomes = require("src.data.biomes")
+local blocks = require("src.data.blocks")
 local screen = require("src.display.screen")
 local mobs = require("src.mobs")
 
@@ -23,14 +25,15 @@ function map.draw(cx, cy, zoom)
 			local height = love.math.noise((ix + map.seed) / 100, (iy + map.seed) / 100)
 			local temp = love.math.noise((ix + map.seed) / 200, (iy + map.seed) / 200)
 
-			if height < 0.1 then
-				biome.water(ix, iy)
-			elseif temp > 0.8 then
-				biome.desert(ix, iy)
-			elseif height > 0.5 and temp < 0.3 then
-				biome.snow(ix, iy)
-			else
-				biome.plain(ix, iy)
+			for list, _ in ipairs(biomes) do
+				if height > biomes[list].noises.height.min and height < biomes[list].noises.height.max then
+					if temp > biomes[list].noises.temperature.min and temp < biomes[list].noises.temperature.max then
+						love.graphics.draw(blocks[biomes[list].floor].texture(), ix * 64, iy * 64)
+    					if love.math.random(0, 500000) == 50 then
+							mobs.create((ix * 64)-2000, iy * 64, "", biomes[list].mob)	
+						end
+					end
+				end
 			end
 		end
 	end

@@ -156,24 +156,12 @@ function mobs.draw()
         -- Draw name and texture
         -- if api[i].x > player.x + (screen.width)/2 then -- try cliping
         ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
-        if mob.type == "god" then
-            love.graphics.draw(assets.textures.god, mob.x, mob.y)
-        elseif mob.type == "item" then
-            love.graphics.draw(assets.textures.item[mob.name], mob.x, mob.y)
-        elseif mob.type == "chicken" then
-            love.graphics.draw(assets.textures.chicken, mob.x, mob.y)
-        elseif mob.type == "fish" then
-            love.graphics.draw(assets.textures.fish, mob.x, mob.y)
-        elseif mob.type == "ball" then
-            love.graphics.draw(assets.textures.ball, mob.x, mob.y, mob.rotation)
-        elseif mob.type == "snowman" then
-            love.graphics.draw(assets.textures.snowman, mob.x, mob.y)
-        elseif mob.type == "snowball" then
-            love.graphics.draw(assets.textures.snowball, mob.x, mob.y)
+        if mob.type == "item" then
+            mobs.currentTexture = assets.textures.item[mob.name] or assets.textures["player"]
         else
-            love.graphics.draw(assets.textures.player, mob.x, mob.y)
+            mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]
         end
-        -- end
+        love.graphics.draw(mobs.currentTexture, mob.x, mob.y)
     end
 end
 

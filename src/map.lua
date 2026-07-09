@@ -1,4 +1,4 @@
-local biome = require("src.data.biome")
+local biomes = require("src.data.biomes")
 local biomes = require("src.data.biomes")
 local blocks = require("src.data.blocks")
 local screen = require("src.display.screen")

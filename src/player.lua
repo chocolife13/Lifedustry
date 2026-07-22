@@ -1,7 +1,7 @@
 local assets = require("src.assets")
 local keys = require("src.data.keys")
 local SceneManager = require("src.scene_manager")
-
+local screen = require("src.display.screen")
 local player = {}
 
 player.speed = 500
@@ -13,10 +13,14 @@ player.hp = 20
 player.velocity = { x = 0, y = 0 }
 
 function player.draw()
-    love.graphics.draw(assets.textures.player, player.x, player.y, 0, 1, 1, 0 - assets.textures.player:getWidth() / 2, 0- assets.textures.player:getHeight() /2)
+    love.graphics.draw(assets.textures.player, player.x, player.y, player.rotation, 1, 1, assets.textures.player:getWidth() / 2, assets.textures.player:getHeight() /2)
 end
 
 function player.update(dt)
+    
+    player.rotation = math.atan2(screen.mouse.y - screen.height/2, screen.mouse.x - screen.width/2)
+
+
     if love.keyboard.isDown(keys.player.up) then
         player.velocity.y = -player.speed
     end
@@ -37,6 +41,8 @@ function player.update(dt)
         player.velocity.x = (vx / length) * dt * player.speed
         player.velocity.y = (vy / length) * dt * player.speed
     end
+
+    
 
     player.x = player.x + player.velocity.x
     player.y = player.y + player.velocity.y

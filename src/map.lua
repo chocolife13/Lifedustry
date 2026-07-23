@@ -20,7 +20,7 @@ function map.draw(cx, cy, zoom)
 	local origin_x = math.floor(cx / TILE)
 	local origin_y = math.floor(cy / TILE)
 
-	for ix = (origin_x - half_w) / zoom, (origin_x + half_w) / zoom do
+	for ix = (origin_x - half_w) / zoom, (origin_x + half_w + 1) / zoom do
 		for iy = (origin_y - half_h) / zoom, (origin_y + half_h + 1) / zoom do
 			local height = love.math.noise((ix + map.seed) / 100, (iy + map.seed) / 100)
 			local temp = love.math.noise((ix + map.seed) / 200, (iy + map.seed) / 200)

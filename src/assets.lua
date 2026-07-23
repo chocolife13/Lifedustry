@@ -48,7 +48,7 @@ function assets.load()
     assets.textures.ui.annoying_cat = love.graphics.newImage("assets/textures/ui/annoying_cat.jpg", { mipmaps = true })
     assets.textures.item.pumpkin = love.graphics.newImage("assets/textures/item/pumpkin.png", {mipmaps = true})
     assets.textures.item.snowflake = love.graphics.newImage("assets/textures/item/snowflake.png", {mipmaps = true})
-    
+    assets.textures.item.sword = love.graphics.newImage("assets/textures/item/sword.png", {mipmaps = true})
     assets.audios.sfx.bell = love.audio.newSource("assets/audios/sfx/bell.wav", "static")
     assets.audios.sfx.click = love.audio.newSource("assets/audios/sfx/click.ogg", "static")
     assets.audios.music.menu = love.audio.newSource("assets/audios/music/menu.wav", "stream")

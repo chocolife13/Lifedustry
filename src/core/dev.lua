@@ -74,6 +74,9 @@ function dev.keycheck()
         if key == "n" then -- spawn mob
         	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "turnip", "item")
         end
+        if key == "k" then -- spawn mob
+        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "sword", "item")
+        end
     end
         if love.keyboard.isDown(keys.dev.speed) then
             player.speed = 5000

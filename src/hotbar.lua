@@ -20,15 +20,16 @@ function hotbar.draw()
            	if i == inventory.selected then
             	love.graphics.setColor(1, 1, 1)
             end
-
-            love.graphics.print(tostring(inventory.list[i].number), screen.pct_x(50) - ((assets.textures.inventory:getWidth() / 2)) + (i * 64) - 12, (screen.height - 20) - assets.textures.inventory:getHeight())
+			if inventory.list[i].number > 1 then --drawing the number of item only if not 1 (4 seeing negative item)
+            	love.graphics.print(tostring(inventory.list[i].number), screen.pct_x(50) - ((assets.textures.inventory:getWidth() / 2)) + (i * 64) - 12, (screen.height - 20) - assets.textures.inventory:getHeight())
+			end
      	end
     end
 end
 
 
 function hotbar.update(dt)
-	function love.keypressed(key)
+	function love.keypressed(key)-- Item selection with number
 		key = tonumber(key)
         if key then
 			if key == 0 then
@@ -37,7 +38,7 @@ function hotbar.update(dt)
 			inventory.selected = key
 		end
 	end
-	function love.wheelmoved(x, y)
+	function love.wheelmoved(x, y) -- Item selection with scroll
         if y > 0 then
         	if inventory.selected < #inventory.list then
          		while inventory.list[inventory.selected + 1] and not inventory.list[inventory.selected + 1].name do
@@ -61,9 +62,8 @@ function hotbar.update(dt)
      	end
 	end
 
-	
 
-    function love.mousepressed(x, y, button, istouch, presses)
+    function love.mousepressed(x, y, button, istouch, presses) --item use with click
         if button == 1 then
         	local usedItem = inventory.list[inventory.selected]
         	if usedItem and usedItem.name then
@@ -72,14 +72,15 @@ function hotbar.update(dt)
                    	else
                    		print("No action are defined in src/data/items for the item: " .. inventory.list[inventory.selected].name)
                    	end
-                    inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1
-                    if inventory.list[inventory.selected].number == 0 then
-                    	inventory.list[inventory.selected] = {}
-                    end
+                    if items[inventory.list[inventory.selected].name].isConsumable then -- only cosum consumabvle item
+						inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1
+                    	if inventory.list[inventory.selected].number == 0 then
+                    		inventory.list[inventory.selected] = {}
+                    	end
+					end
          	end
         end
     end
 
 end
-
 return hotbar

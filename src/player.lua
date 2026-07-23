@@ -2,6 +2,7 @@ local assets = require("src.assets")
 local keys = require("src.data.keys")
 local SceneManager = require("src.scene_manager")
 local screen = require("src.display.screen")
+local inventory = require("src.inventory")
 local player = {}
 
 player.speed = 500
@@ -14,6 +15,7 @@ player.velocity = { x = 0, y = 0 }
 
 function player.draw()
     love.graphics.draw(assets.textures.player, player.x, player.y, player.rotation, 1, 1, assets.textures.player:getWidth() / 2, assets.textures.player:getHeight() /2)
+    love.graphics.draw(assets.textures.item[inventory.list[inventory.selected].name], player.x, player.y, player.rotation, 0.5, 0.5)
 end
 
 function player.update(dt)

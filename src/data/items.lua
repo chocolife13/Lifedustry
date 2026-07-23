@@ -59,8 +59,8 @@ local items = {
         texture = assets.textures.sword,
         isConsumable = false,
         onUse = function(x, y)
-        	assets.audios.sfx.crunch:stop()
-        	assets.audios.sfx.crunch:play()
+        	assets.audios.sfx.swing:stop()
+        	assets.audios.sfx.swing:play()
         end 
     },
     pumpkin = {name = "pumpkin", texture = assets.textures.pumpkin},

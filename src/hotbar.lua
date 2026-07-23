@@ -3,7 +3,6 @@ local screen = require("src.display.screen")
 local items = require("src.data.items")
 local inventory = require("src.inventory")
 
-
 local hotbar = {}
 
 

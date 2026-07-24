@@ -15,8 +15,8 @@ player.velocity = { x = 0, y = 0 }
 
 function player.draw()
     love.graphics.draw(assets.textures.player, player.x, player.y, player.rotation, 1, 1, assets.textures.player:getWidth() / 2, assets.textures.player:getHeight() /2)
-    if assets.textures.item[inventory.list[inventory.selected].name] then
-        love.graphics.draw(assets.textures.item[inventory.list[inventory.selected].name], player.x, player.y, player.rotation, 0.5, 0.5)
+    if inventory.list[inventory.selected].name then
+        love.graphics.draw(assets.textures.item[inventory.list[inventory.selected].name], player.x, player.y, player.rotation, 0.5, 0.5, -20)
     end
 end
 

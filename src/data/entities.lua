@@ -3,111 +3,113 @@
 local entities = {
     snowman = {
         speed = 10,
-        update = function (dt, mob)
+        update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
-            local dx = mob.x - player.x
-            local dy = mob.y - player.y
-            mob.distance = math.sqrt(dx * dx + dy * dy)
-            mobs.apply_wandering(mob, dt)
-            mob.timer = mob.timer + 1 or 0
-            if mob.timer > 1000 then
-                mobs.create(mob.x, mob.y, nil, "snowball", nil, nil, nil, 1)
-                mob.damaged = false
-                mob.timer = 0
+            local dx = mobs.list[id].x - player.x
+            local dy = mobs.list[id].y - player.y
+            mobs.list[id].distance = math.sqrt(dx * dx + dy * dy)
+            mobs.apply_wandering(mobs.list[id], dt)
+            mobs.list[id].timer = mobs.list[id].timer + 1 or 0
+            if mobs.list[id].timer > 1000 then
+                mobs.create(mobs.list[id].x, mobs.list[id].y, nil, "snowball", nil, nil, nil, 1)
+                mobs.list[id].damaged = false
+                mobs.list[id].timer = 0
             end
-            if mob.hp < 1 then
-                mobs.create(mob.x, mob.y, "apple", "item")
-                mobs.delete(i)
+            if mobs.list[id].hp < 1 then
+                mobs.create(mobs.list[id].x, mobs.list[id].y, "apple", "item")
+                mobs.delete(id)
             end
         end
     },
     snowball = {
         speed = 10,
-        update = function (dt, mob)
+        update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
             local assets = require("src.assets")
-            if not mob.vx or not mob.vy  then
-                local dx = player.x - mob.x
-                local dy = player.y - mob.y
-                if mob.hp < 1 then
-                    mobs.delete(i)
+            if not mobs.list[id].vx or not mobs.list[id].vy  then
+                mobs.list[id].dx = player.x - mobs.list[id].x
+                mobs.list[id].dx = player.y - mobs.list[id].y
+                mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dx * mobs.list[id].dx)
+                if mobs.list[id].hp < 1 then
+                    mobs.delete(id)
                 end
-                if mob.distance > 0 then
+                if mobs.list[id].distance > 0 then
                     local speed = 1
-                    mob.vx = (dx / mob.distance) * speed
-                    mob.vy = (dy / mob.distance) * speed
+                    mobs.list[id].vx = (mobs.list[id].dx / mobs.list[id].distance) * speed
+                    mobs.list[id].vy = (mobs.list[id].dy / mobs.list[id].distance) * speed
                 else
-                    mob.vx = 0
-                    mob.vy = 0
+                    mobs.list[id].vx = 0
+                    mobs.list[id].vy = 0
                 end
             end
-            mob.x = mob.x + mob.vx
-            mob.y = mob.y + mob.vy
-            if mob.distance > 3000 then
-                mobs.delete(i)
+            mobs.list[id].x = mobs.list[id].x + mobs.list[id].vx
+            mobs.list[id].y = mobs.list[id].y + mobs.list[id].vy
+            if mobs.list[id].distance > 3000 then
+                mobs.delete(id)
             end
-            if mob.distance < assets.textures.player:getWidth() then
-                mobs.delete(i)
+            if mobs.list[id].distance < assets.textures.player:getWidth() then
+                mobs.delete(id)
                 player.hit(1)
             end
         end
     },
     chicken = {
         speed = 10,
-        update = function (dt, mob)
+        update = function (dt, id)
             local mobs = require("src.mobs")
-            mobs.apply_wandering(mob, dt)
-            if mob.hp < 1 then
-                mobs.delete(i)
+            mobs.apply_wandering(mobs.list[id], dt)
+            if mobs.list[id].hp < 1 then
+                mobs.delete(id)
             end
         end
 
     },
     fish = {
         speed = 10,
-        update = function (dt, mob)
+        update = function (dt, id)
             local mobs = require("src.mobs")
-            mobs.apply_wandering(mob, dt)
-            if mob.hp < 1 then
-                mobs.delete(i)
+            mobs.apply_wandering(mobs.list[id], dt)
+            if mobs.list[id].hp < 1 then
+                mobs.delete(id)
             end
         end
     },
     ball = {
         speed = 10,
-        update = function (dt, mob)
-            mob.x = mob.x + 1
-            mob.rotation = mob.rotation + (dt * 2)
+        update = function (dt, id)
+            local mobs = require("src.mobs")
+            mobs.list[id].x = mobs.list[id].x + 1
+            mobs.list[id].rotation = mobs.list[id].rotation + (dt * 2)
         end
     },
     item = {
         speed = 10,
-        update = function (dt, mob)
+        update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
             local inventory = require("src.inventory")
-            local dx = mob.x - player.x
-            local dy = mob.y - player.y
-            mob.distance = math.sqrt(dx * dx + dy * dy)
-            if mob.distance < 50 then
-                mobs.delete(i)
-                inventory.add(mob.name, 1)
+            local dx = mobs.list[id].x - player.x
+            local dy = mobs.list[id].y - player.y
+            mobs.list[id].distance = math.sqrt(dx * dx + dy * dy)
+            if mobs.list[id].distance < 50 then
+                inventory.add(mobs.list[id].name, 1)
+                mobs.delete(id)
             end
         end
     },
     run = {
         speed = 10,
-        update = function (dt, mob)
+        update = function (dt, id)
             local mobs = require("src.mobs")
             local run_speed = 300
             local safe_mob_distance = 300
-            if mob.distance < safe_mob_distance and mob.distance > 0 then
-                mob.x = mob.x + (mob.dx / mob.distance) * run_speed * dt
-                mob.y = mob.y + (mob.dy / mob.distance) * run_speed * dt
+            if mobs.list[id].distance < safe_mob_distance and mobs.list[id].distance > 0 then
+                mobs.list[id].x = mobs.list[id].x + (mobs.list[id].dx / mobs.list[id].distance) * run_speed * dt
+                mobs.list[id].y = mobs.list[id].y + (mobs.list[id].dy / mobs.list[id].distance) * run_speed * dt
             else
-                mobs.apply_wandering(mob, dt)
+                mobs.apply_wandering(mobs.list[id], dt)
             end
         end
     }

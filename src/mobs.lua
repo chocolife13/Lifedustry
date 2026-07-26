@@ -70,7 +70,7 @@ function mobs.update(dt)
         mob.dy = mob.y - player.y
         mob.distance = math.sqrt(mob.dx * mob.dx + mob.dy * mob.dy)
         if mob.distance < 5000 then
-            entities[mob.type].update(dt, mob)
+            entities[mob.type].update(dt, i)
         end
     end
 end

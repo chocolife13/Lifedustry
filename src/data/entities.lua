@@ -31,7 +31,7 @@ local entities = {
             if not mobs.list[id].vx or not mobs.list[id].vy  then
                 mobs.list[id].dx = player.x - mobs.list[id].x
                 mobs.list[id].dy = player.y - mobs.list[id].y
-                mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dx * mobs.list[id].dx)
+                mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dy * mobs.list[id].dy)
                 if mobs.list[id].hp < 1 then
                     mobs.delete(id)
                 end

@@ -45,12 +45,13 @@ end
 function mobs.create(args)
     local stat = {
         type = args.type or "npc",
+
         x = args.x or 0,
         y = args.y or 0,
         speed = args.spped or 1,
         name = args.name,
         rotation = args.rotation or 0,
-        hp = args.hp or 10,
+        hp = args.hp or entities[args.type].hp,
         
         timer = 0,
         goal = { x = 0, y = 0 }
@@ -67,14 +68,17 @@ end
 function mobs.update(dt)
     -- Update movement for all NPCs
     for i, mob in ipairs(mobs.list) do
-        mob.dx = mob.x - player.x
-        mob.dy = mob.y - player.y
-        mob.distance = math.sqrt(mob.dx * mob.dx + mob.dy * mob.dy)
-        if mob.distance < 5000 then
-            entities[mob.type].update(dt, i)
-        end
+        entities[mob.type].update(dt, i)
     end
 end
+
+function mobs.damage(id, amount)
+    mobs.list[id].hp = mobs.list[id].hp - amount
+    if mobs.list[id].hp <= 0 then
+        mobs.delete(id)
+    end
+end
+
 
 function mobs.draw()
     for _, mob in ipairs(mobs.list) do

@@ -42,17 +42,18 @@ function mobs.apply_wandering(mob, dt)
 end
 
 --- Creates a new mob and appends it to the Mob mobs.list.
-function mobs.create(x, y, name, mob_type)
+function mobs.create(args)
     ---@type Mob
     local mob = {
-        x = x or 0,
-        y = y or 0,
-        name = name or (#mobs.list + 1),
-        type = mob_type or "npc",
-        rotation = rotation or 0,
+        x = args.x or 0,
+        y = args.y or 0,
+        name = args.name,
+        type = args.type or "npc",
+        rotation = args.rotation or 0,
+        hp = args.hp or 10,
+        
         timer = 0,
-        goal = { x = 0, y = 0 },
-        hp = hp or 10
+        goal = { x = 0, y = 0 }
     }
     table.insert(mobs.list, mob)
     return mob
@@ -79,7 +80,9 @@ function mobs.draw()
     for _, mob in ipairs(mobs.list) do
         -- Draw name and texture
         -- if api[i].x > player.x + (screen.width)/2 then -- try cliping
-        ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
+        if mob.name then
+            ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
+        end
         if mob.type == "item" then
             mobs.currentTexture = assets.textures.item[mob.name] or assets.textures["player"]
         else

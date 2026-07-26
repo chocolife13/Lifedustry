@@ -14,7 +14,7 @@ local items = {
         	local mobs = require("src.mobs")
             local camera = require("src.camera")
             local screen = require("src.display.screen")
-            mobs.create((x + camera.x) - screen.width / 2, (y + camera.y) - screen.height / 2, "rock", "item")
+            mobs.create({x = (x + camera.x) - screen.width / 2, y = (y + camera.y) - screen.height / 2, name = "rock", type = "item"})
         end
         },
     snowflake = {
@@ -25,7 +25,7 @@ local items = {
         	local mobs = require("src.mobs")
             local camera = require("src.camera")
             local screen = require("src.display.screen")
-            mobs.create((x + camera.x) - screen.width / 2, (y + camera.y) - screen.height / 2, nil, "snowman")
+            mobs.create({x = (x + camera.x) - screen.width / 2, y = (y + camera.y) - screen.height / 2, type = "snowman"})
         end
         },
     apple = {
@@ -73,15 +73,6 @@ local items = {
         end 
     },
     pumpkin = {name = "pumpkin", texture = assets.textures.pumpkin},
-
-    slingshot = { name = "slingshot", texture = assets.textures.slingshot,
-    onUse = function(x, y)
-    	local mobs = require("src.mobs")
-        local camera = require("src.camera")
-        local screen = require("src.display.screen")
-        for i = 0, 2000 do
-        	mobs.create(((x  + camera.x) - screen.width / 2) + 10 * i, (y + camera.y) - screen.height / 2, "apple", "item")
-        end
-    end}
+    slingshot = { name = "slingshot", texture = assets.textures.slingshot}
 }
 return items

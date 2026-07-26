@@ -30,7 +30,7 @@ function map.draw(cx, cy, zoom)
 					if temp > biomes[list].noises.temperature.min and temp < biomes[list].noises.temperature.max then
 						love.graphics.draw(blocks[biomes[list].floor].texture(), ix * 64, iy * 64)
     					if love.math.random(0, 500000) == 50 then
-							mobs.create((ix * 64)-2000, iy * 64, "", biomes[list].mob)	
+							mobs.create({x = (ix * 64)-2000, y = iy * 64, "",type = biomes[list].mob})	
 						end
 					end
 				end

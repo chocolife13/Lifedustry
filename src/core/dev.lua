@@ -49,33 +49,34 @@ function dev.keycheck()
                 end
             end
         end
-        if key == "e" then -- spawn mob
-            mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "rock", "item")
+        if key == "e" then 
+            mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "rock", type = "item"})
         end
-        if key == "a" then -- spawn mob
-        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "apple", "item")
+        if key == "a" then 
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "apple", type = "item"})
         end
 
-        if key == "m" then -- spawn mob
-        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "mushroom", "item")
+        if key == "m" then 
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "mushroom", type = "item"})
         end
         
-        if key == "l" then -- spawn mob
-        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "slingshot", "item")
+        if key == "l" then 
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "slingshot", type = "item"})
         end
 
+        if key == "b" then 
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "pumpkin", type = "item"})
+        end
+        if key == "n" then -- spawn mob
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "turnip", type = "item"})
+        end
+        if key == "k" then -- spawn mob
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, name = "sword", type = "item"})
+        end
+        
         if key == "g" then -- force GC
             collectgarbage("collect")
             print("dev: garbage collected")
-        end
-        if key == "b" then -- spawn mob
-        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "pumpkin", "item")
-        end
-        if key == "n" then -- spawn mob
-        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "turnip", "item")
-        end
-        if key == "k" then -- spawn mob
-        	mobs.create((screen.mouse.x + camera.x) - screen.width / 2, (screen.mouse.y + camera.y) - screen.height / 2, "sword", "item")
         end
     end
         if love.keyboard.isDown(keys.dev.speed) then

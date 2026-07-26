@@ -12,33 +12,32 @@ local entities = {
             mobs.apply_wandering(mobs.list[id], dt)
             mobs.list[id].timer = mobs.list[id].timer + 1 or 0
             if mobs.list[id].timer > 1000 then
-                mobs.create(mobs.list[id].x, mobs.list[id].y, nil, "snowball", nil, nil, nil, 1)
+                mobs.create({x = mobs.list[id].x, y = mobs.list[id].y, type = "snowball", rotation=1})
                 mobs.list[id].damaged = false
                 mobs.list[id].timer = 0
             end
             if mobs.list[id].hp < 1 then
-                mobs.create(mobs.list[id].x, mobs.list[id].y, "apple", "item")
+                mobs.create({x = mobs.list[id].x, y = mobs.list[id].y, name = "apple", type = "item"})
                 mobs.delete(id)
             end
         end
     },
     snowball = {
-        speed = 10,
+        speed = 1,
         update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
             local assets = require("src.assets")
             if not mobs.list[id].vx or not mobs.list[id].vy  then
                 mobs.list[id].dx = player.x - mobs.list[id].x
-                mobs.list[id].dx = player.y - mobs.list[id].y
+                mobs.list[id].dy = player.y - mobs.list[id].y
                 mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dx * mobs.list[id].dx)
                 if mobs.list[id].hp < 1 then
                     mobs.delete(id)
                 end
                 if mobs.list[id].distance > 0 then
-                    local speed = 1
-                    mobs.list[id].vx = (mobs.list[id].dx / mobs.list[id].distance) * speed
-                    mobs.list[id].vy = (mobs.list[id].dy / mobs.list[id].distance) * speed
+                    mobs.list[id].vx = (mobs.list[id].dx / mobs.list[id].distance) * mobs.list[id].speed
+                    mobs.list[id].vy = (mobs.list[id].dy / mobs.list[id].distance) * mobs.list[id].speed
                 else
                     mobs.list[id].vx = 0
                     mobs.list[id].vy = 0

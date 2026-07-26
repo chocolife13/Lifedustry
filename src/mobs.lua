@@ -43,20 +43,20 @@ end
 
 --- Creates a new mob and appends it to the Mob mobs.list.
 function mobs.create(args)
-    ---@type Mob
-    local mob = {
+    local stat = {
+        type = args.type or "npc",
         x = args.x or 0,
         y = args.y or 0,
+        speed = args.spped or 1,
         name = args.name,
-        type = args.type or "npc",
         rotation = args.rotation or 0,
         hp = args.hp or 10,
         
         timer = 0,
         goal = { x = 0, y = 0 }
     }
-    table.insert(mobs.list, mob)
-    return mob
+    table.insert(mobs.list, stat)
+    return stat
 end
 
 function mobs.delete(id)

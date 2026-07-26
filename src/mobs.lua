@@ -34,8 +34,8 @@ function mobs.apply_wandering(mob, dt)
     local distance = math.sqrt(dx * dx + dy * dy)
 
     if distance > 1 then
-        mob.x = mob.x + (dx / distance) * speed * dt
-        mob.y = mob.y + (dy / distance) * speed * dt
+        mob.x = mob.x + (dx / distance ) * speed * dt
+        mob.y = mob.y + (dy / distance ) * speed * dt
     end
 
     mob.timer = mob.timer - dt
@@ -51,7 +51,8 @@ function mobs.create(x, y, name, mob_type)
         type = mob_type or "npc",
         rotation = rotation or 0,
         timer = 0,
-        goal = { x = 0, y = 0 }
+        goal = { x = 0, y = 0 },
+        hp = hp or 10
     }
     table.insert(mobs.list, mob)
     return mob
@@ -72,8 +73,8 @@ function mobs.update(dt)
     for i, mob in ipairs(mobs.list) do
         local dx = mob.x - player.x
         local dy = mob.y - player.y
-        local distance = math.sqrt(dx * dx + dy * dy)
-        if distance < 5000 then
+        mob.distance = math.sqrt(dx * dx + dy * dy)
+        if mob.distance < 5000 then
             if mob.type == "npc" or mob.type == "chicken" or mob.type == "fish" then
                 mobs.apply_wandering(mob, dt)
             end
@@ -83,6 +84,10 @@ function mobs.update(dt)
                 if mob.timer > 1000 then
                     mobs.create(mob.x, mob.y, nil, "snowball")
                     mob.timer = 0
+                end
+                if mob.hp < 1 then
+                    mobs.create(mob.x, mob.y, "apple", "item")
+                    mobs.delete(i)
                 end
             end
 
@@ -106,10 +111,10 @@ function mobs.update(dt)
                 local dy = player.y - mob.y
         
         
-                if distance > 0 then
+                if mob.distance > 0 then
                     local speed = 1
-                    mob.vx = (dx / distance) * speed
-                    mob.vy = (dy / distance) * speed
+                    mob.vx = (dx / mob.distance) * speed
+                    mob.vy = (dy / mob.distance) * speed
                 else
                     mob.vx = 0
                     mob.vy = 0
@@ -119,21 +124,21 @@ function mobs.update(dt)
 
     mob.x = mob.x + mob.vx
     mob.y = mob.y + mob.vy
-    if distance > 3000 then
+    if mob.distance > 3000 then
         mobs.delete(i)
     end
-    if distance < assets.textures.player:getWidth() then
+    if mob.distance < assets.textures.player:getWidth() then
         mobs.delete(i)
         player.hit(1)
     end
 end
             if mob.type == "run" then
                 local run_speed = 300
-                local safe_distance = 300
+                local safe_mob_distance = 300
 
-                if distance < safe_distance and distance > 0 then
-                    mob.x = mob.x + (dx / distance) * run_speed * dt
-                    mob.y = mob.y + (dy / distance) * run_speed * dt
+                if mob.distance < safe_mob_distance and mob.distance > 0 then
+                    mob.x = mob.x + (dx / mob.distance) * run_speed * dt
+                    mob.y = mob.y + (dy / mob.distance) * run_speed * dt
                 else
                     mobs.apply_wandering(mob, dt)
                 end
@@ -141,8 +146,8 @@ end
             if mob.type == "item" then
                 local dx = mob.x - player.x
                 local dy = mob.y - player.y
-                local distance = math.sqrt(dx * dx + dy * dy)
-                if distance < 50 then
+                mob.distance = math.sqrt(dx * dx + dy * dy)
+                if mob.distance < 50 then
                     mobs.delete(i)
                     inventory.add(mob.name, 1)
                 end

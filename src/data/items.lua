@@ -59,8 +59,16 @@ local items = {
         texture = assets.textures.sword,
         isConsumable = false,
         onUse = function(x, y)
-        	assets.audios.sfx.swing:stop()
-        	assets.audios.sfx.swing:play()
+            assets.audios.sfx.swing:stop()
+            assets.audios.sfx.swing:play()
+            local mobs = require("src.mobs")
+            for _, mob in ipairs(mobs.list) do
+                if mob.distance < 100 and mob.type == "snowman" then
+                    mob.hp = mob.hp - 5
+                    assets.audios.sfx.bell:stop()
+                    assets.audios.sfx.bell:play()
+                end
+            end
         end 
     },
     pumpkin = {name = "pumpkin", texture = assets.textures.pumpkin},

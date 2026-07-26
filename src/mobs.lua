@@ -82,7 +82,8 @@ function mobs.update(dt)
                 mobs.apply_wandering(mob, dt)
                 mob.timer = mob.timer + 1 or 0
                 if mob.timer > 1000 then
-                    mobs.create(mob.x, mob.y, nil, "snowball")
+                    mobs.create(mob.x, mob.y, nil, "snowball", nil, nil, nil, 1)
+                    mob.damaged = false
                     mob.timer = 0
                 end
                 if mob.hp < 1 then
@@ -109,7 +110,9 @@ function mobs.update(dt)
             if not mob.vx or not mob.vy  then
                 local dx = player.x - mob.x
                 local dy = player.y - mob.y
-        
+                if mob.hp < 1 then
+                    mobs.delete(i)
+                end
         
                 if mob.distance > 0 then
                     local speed = 1
@@ -164,9 +167,13 @@ function mobs.draw()
         if mob.type == "item" then
             mobs.currentTexture = assets.textures.item[mob.name] or assets.textures["player"]
         else
+            
             mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]
+            
         end
+        if mob.damaged then love.graphics.setColor(0.5, 0, 0, 1) end
         love.graphics.draw(mobs.currentTexture, mob.x, mob.y)
+        love.graphics.setColor(1, 1, 1, 1)
     end
 end
 

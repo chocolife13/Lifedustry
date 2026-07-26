@@ -63,7 +63,8 @@ local items = {
             assets.audios.sfx.swing:play()
             local mobs = require("src.mobs")
             for _, mob in ipairs(mobs.list) do
-                if mob.distance < 100 and mob.type == "snowman" then
+                if mob.distance < 100 then
+                    mob.damaged = true
                     mob.hp = mob.hp - 5
                     assets.audios.sfx.bell:stop()
                     assets.audios.sfx.bell:play()

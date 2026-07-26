@@ -4,7 +4,7 @@ local lmath = require("src.core.math")
 local player = require("src.player")
 local screen = require("src.display.screen")
 local inventory = require("src.inventory")
-
+local entities = require("src.data.entities")
 
 ---@class Mob
 ---@field x        number
@@ -62,102 +62,15 @@ function mobs.delete(id)
     table.remove(mobs.list, id)
 end
 
--- The mobs added for testing ig
-mobs.create(20, -160, "Gilbert (Bro)", "gilbert")
-mobs.create(nil, -160, "Bob", "statue")
-mobs.create(20, -160, "Random", "npc")
-mobs.create(0, -1000, "God of rocks", "god")
 
 function mobs.update(dt)
     -- Update movement for all NPCs
     for i, mob in ipairs(mobs.list) do
-        local dx = mob.x - player.x
-        local dy = mob.y - player.y
-        mob.distance = math.sqrt(dx * dx + dy * dy)
+        mob.dx = mob.x - player.x
+        mob.dy = mob.y - player.y
+        mob.distance = math.sqrt(mob.dx * mob.dx + mob.dy * mob.dy)
         if mob.distance < 5000 then
-            if mob.type == "npc" or mob.type == "chicken" or mob.type == "fish" then
-                mobs.apply_wandering(mob, dt)
-                if mob.hp < 1 then
-                    mobs.delete(i)
-                end
-            end
-            if mob.type == "snowman" then
-                mobs.apply_wandering(mob, dt)
-                mob.timer = mob.timer + 1 or 0
-                if mob.timer > 1000 then
-                    mobs.create(mob.x, mob.y, nil, "snowball", nil, nil, nil, 1)
-                    mob.damaged = false
-                    mob.timer = 0
-                end
-                if mob.hp < 1 then
-                    mobs.create(mob.x, mob.y, "apple", "item")
-                    mobs.delete(i)
-                end
-            end
-
-            if mob.type == "folower" then
-                mob.x = lmath.lerp(mob.x, player.x, 0.05)
-                mob.y = lmath.lerp(mob.y, player.y, 0.05)
-            end
-
-            if mob.type == "gilbert" then
-                mob.x = mob.x + 1
-            end
-
-            if mob.type == "ball" then
-                mob.x = mob.x + 1
-                mob.rotation = mob.rotation + (dt * 2)
-            end
-
-          if mob.type == "snowball" then
-            if not mob.vx or not mob.vy  then
-                local dx = player.x - mob.x
-                local dy = player.y - mob.y
-                if mob.hp < 1 then
-                    mobs.delete(i)
-                end
-        
-                if mob.distance > 0 then
-                    local speed = 1
-                    mob.vx = (dx / mob.distance) * speed
-                    mob.vy = (dy / mob.distance) * speed
-                else
-                    mob.vx = 0
-                    mob.vy = 0
-                end
-            end
-
-
-    mob.x = mob.x + mob.vx
-    mob.y = mob.y + mob.vy
-    if mob.distance > 3000 then
-        mobs.delete(i)
-    end
-    if mob.distance < assets.textures.player:getWidth() then
-        mobs.delete(i)
-        player.hit(1)
-    end
-end
-            if mob.type == "run" then
-                local run_speed = 300
-                local safe_mob_distance = 300
-
-                if mob.distance < safe_mob_distance and mob.distance > 0 then
-                    mob.x = mob.x + (dx / mob.distance) * run_speed * dt
-                    mob.y = mob.y + (dy / mob.distance) * run_speed * dt
-                else
-                    mobs.apply_wandering(mob, dt)
-                end
-            end
-            if mob.type == "item" then
-                local dx = mob.x - player.x
-                local dy = mob.y - player.y
-                mob.distance = math.sqrt(dx * dx + dy * dy)
-                if mob.distance < 50 then
-                    mobs.delete(i)
-                    inventory.add(mob.name, 1)
-                end
-            end
+            entities[mob.type].update(dt, mob)
         end
     end
 end

@@ -77,6 +77,9 @@ function mobs.update(dt)
         if mob.distance < 5000 then
             if mob.type == "npc" or mob.type == "chicken" or mob.type == "fish" then
                 mobs.apply_wandering(mob, dt)
+                if mob.hp < 1 then
+                    mobs.delete(i)
+                end
             end
             if mob.type == "snowman" then
                 mobs.apply_wandering(mob, dt)
@@ -171,7 +174,7 @@ function mobs.draw()
             mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]
             
         end
-        if mob.damaged then love.graphics.setColor(0.5, 0, 0, 1) end
+        if mob.damaged then love.graphics.setColor(1, 0.5, 0, 1) end
         love.graphics.draw(mobs.currentTexture, mob.x, mob.y)
         love.graphics.setColor(1, 1, 1, 1)
     end

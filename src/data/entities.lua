@@ -59,6 +59,10 @@ local entities = {
         speed = 10,
         update = function (dt, id)
             local mobs = require("src.mobs")
+            local player = require("src.player")
+            mobs.list[id].dx = player.x - mobs.list[id].x
+            mobs.list[id].dy = player.y - mobs.list[id].y
+            mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dy * mobs.list[id].dy)
             mobs.apply_wandering(mobs.list[id], dt)
         end
 
@@ -68,6 +72,10 @@ local entities = {
         speed = 10,
         update = function (dt, id)
             local mobs = require("src.mobs")
+            local player = require("src.player")
+            mobs.list[id].dx = player.x - mobs.list[id].x
+            mobs.list[id].dy = player.y - mobs.list[id].y
+            mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dy * mobs.list[id].dy)
             mobs.apply_wandering(mobs.list[id], dt)
         end
     },
@@ -76,7 +84,11 @@ local entities = {
         speed = 10,
         update = function (dt, id)
             local mobs = require("src.mobs")
+            local player = require("src.player")
             mobs.list[id].x = mobs.list[id].x + 1
+            mobs.list[id].dx = player.x - mobs.list[id].x
+            mobs.list[id].dy = player.y - mobs.list[id].y
+            mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dy * mobs.list[id].dy)
             mobs.list[id].rotation = mobs.list[id].rotation + (dt * 2)
         end
     },
@@ -90,7 +102,7 @@ local entities = {
             local dy = mobs.list[id].y - player.y
             mobs.list[id].distance = math.sqrt(dx * dx + dy * dy)
             if mobs.list[id].distance < 50 then
-                inventory.add(mobs.list[id].name, 1)
+                inventory.add(mobs.list[id].item, 1)
                 mobs.delete(id)
             end
         end

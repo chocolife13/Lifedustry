@@ -20,45 +20,57 @@ local mobs = {}
 ---@type Mob[]
 mobs.list = {}
 
---- Wandering logic
-function mobs.apply_wandering(mob, dt)
-    local speed = 50
-    if mob.timer <= 0 then
-        mob.goal.x = love.math.random(mob.x - 320, mob.x + 320)
-        mob.goal.y = love.math.random(mob.y - 320, mob.y + 320)
-        mob.timer = love.math.random(6, 7)
-    end
-
-    local dx = mob.goal.x - mob.x
-    local dy = mob.goal.y - mob.y
-    local distance = math.sqrt(dx * dx + dy * dy)
-
-    if distance > 1 then
-        mob.x = mob.x + (dx / distance ) * speed * dt
-        mob.y = mob.y + (dy / distance ) * speed * dt
-    end
-
-    mob.timer = mob.timer - dt
-end
 
 --- Creates a new mob and appends it to the Mob mobs.list.
 function mobs.create(args)
-    local stat = {
-        type = args.type or "npc",
-
-        x = args.x or 0,
-        y = args.y or 0,
-        speed = args.spped or 1,
-        name = args.name,
-        rotation = args.rotation or 0,
-        hp = args.hp or entities[args.type].hp,
-        
-        timer = 0,
-        goal = { x = 0, y = 0 }
-    }
+    local stat = {}
+    for k, v in pairs(entities[args.type]) do
+        stat[k] = v
+    end
+    for k, v in pairs(args) do
+        stat[k] = v
+    end
+    stat.x = stat.x or 0
+    stat.y = stat.y or 0
+    stat.timer = stat.timer or 1
+    stat.rotation = stat.rotattion or 0
+    stat.goal = stat.goal or {x = 0, y = 0}
+        stat.name = setmetatable(stat, {
+            __tostring = function(t)
+                local result = ""
+                -- On parcourt toutes les clés/valeurs de la table avec une boucle for
+                for k, v in pairs(t) do
+                    -- On évite d'afficher les tables imbriquées (comme 'goal') ou la métatable elle-même pour pas tout casser
+                    if type(v) ~= "table" then
+                        result = result .. k .. ": " .. tostring(v) .. " | "
+                    end
+                end
+                return result
+            end
+        })
     table.insert(mobs.list, stat)
     return stat
 end
+
+--- Wandering logic
+function mobs.apply_wandering(mob, dt)
+    local speed = 50
+        if mob.timer <= 0 then
+            mob.goal.x = love.math.random(mob.x - 320, mob.x + 320)
+            mob.goal.y = love.math.random(mob.y - 320, mob.y + 320)
+            mob.timer = love.math.random(6, 7)
+        end
+        local dx = mob.goal.x - mob.x
+        local dy = mob.goal.y - mob.y
+        local distance = math.sqrt(dx * dx + dy * dy)
+        if distance > 1 then
+            mob.x = mob.x + (dx / distance ) * speed * dt
+            mob.y = mob.y + (dy / distance ) * speed * dt
+        end
+        mob.timer = mob.timer - dt
+end
+
+
 
 function mobs.delete(id)
     table.remove(mobs.list, id)
@@ -73,9 +85,11 @@ function mobs.update(dt)
 end
 
 function mobs.damage(id, amount)
-    mobs.list[id].hp = mobs.list[id].hp - amount
-    if mobs.list[id].hp <= 0 then
-        mobs.delete(id)
+    if mobs.list[id].hp then
+        mobs.list[id].hp = mobs.list[id].hp - amount
+        if mobs.list[id].hp < 1 then
+            mobs.delete(id)
+        end
     end
 end
 
@@ -88,7 +102,8 @@ function mobs.draw()
             ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
         end
         if mob.type == "item" then
-            mobs.currentTexture = assets.textures.item[mob.name] or assets.textures["player"]
+            
+            mobs.currentTexture = assets.textures.item[mob.item]
         else
             
             mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]

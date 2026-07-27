@@ -35,19 +35,20 @@ function mobs.create(args)
     stat.timer = stat.timer or 1
     stat.rotation = stat.rotattion or 0
     stat.goal = stat.goal or {x = 0, y = 0}
+    stat.name = stat.name or ""
+    if _G.DEV then
         stat.name = setmetatable(stat, {
-            __tostring = function(t)
-                local result = ""
-                -- On parcourt toutes les clés/valeurs de la table avec une boucle for
-                for k, v in pairs(t) do
-                    -- On évite d'afficher les tables imbriquées (comme 'goal') ou la métatable elle-même pour pas tout casser
+                __tostring = function(t)
+                    local result = ""
+                    for k, v in pairs(t) do
                     if type(v) ~= "table" then
                         result = result .. k .. ": " .. tostring(v) .. " | "
                     end
                 end
-                return result
-            end
-        })
+                return result 
+            end 
+        }) 
+    end
     table.insert(mobs.list, stat)
     return stat
 end

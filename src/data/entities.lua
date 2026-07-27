@@ -4,21 +4,23 @@ local entities = {
     snowman = {
         speed = 10,
         hp = 10,
+        Ondead = function (id)
+            local mobs = require("src.mobs")
+            mobs.create({x = mobs.list[id].x, y = mobs.list[id].y, item = "apple", type = "item"})
+            mobs.delete(id)
+        end,
         update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
             local dx = mobs.list[id].x - player.x
             local dy = mobs.list[id].y - player.y
-            mobs.list[id].distance = math.sqrt(dx * dx + dy * dy)
+            mobs.list[id].distance = math.exp(0.5 * math.log(dx * dx + dy * dy))
             mobs.apply_wandering(mobs.list[id], dt)
             mobs.list[id].timer = mobs.list[id].timer + 1 or 0
             if mobs.list[id].timer > 1000 then
                 mobs.create({x = mobs.list[id].x, y = mobs.list[id].y, type = "snowball", rotation=1})
                 mobs.list[id].damaged = false
                 mobs.list[id].timer = 0
-            end
-            if mobs.list[id].hp < 1 then
-                mobs.create({x = mobs.list[id].x, y = mobs.list[id].y, name = "apple", type = "item"})
             end
         end
     },
@@ -98,9 +100,11 @@ local entities = {
             local mobs = require("src.mobs")
             local player = require("src.player")
             local inventory = require("src.inventory")
+            mobs.list[id].timer = mobs.list[id].timer + 1
             local dx = mobs.list[id].x - player.x
             local dy = mobs.list[id].y - player.y
             mobs.list[id].distance = math.sqrt(dx * dx + dy * dy)
+            mobs.list[id].y = math.sin(mobs.list[id].timer * 0.01) * 20
             if mobs.list[id].distance < 50 then
                 inventory.add(mobs.list[id].item, 1)
                 mobs.delete(id)

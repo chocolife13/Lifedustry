@@ -88,7 +88,11 @@ function mobs.damage(id, amount)
     if mobs.list[id].hp then
         mobs.list[id].hp = mobs.list[id].hp - amount
         if mobs.list[id].hp < 1 then
-            mobs.delete(id)
+            if mobs.list[id].Ondead then
+                mobs.list[id].Ondead(id)
+            else
+                mobs.delete(id)
+            end
         end
     end
 end
@@ -102,7 +106,6 @@ function mobs.draw()
             ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
         end
         if mob.type == "item" then
-            
             mobs.currentTexture = assets.textures.item[mob.item]
         else
             

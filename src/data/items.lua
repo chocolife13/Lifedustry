@@ -62,8 +62,12 @@ local items = {
             assets.audios.sfx.swing:stop()
             assets.audios.sfx.swing:play()
             local mobs = require("src.mobs")
+            local player = require("src.player")
             for id, mob in ipairs(mobs.list) do
-                if mob.distance < 100 then
+                local dx = mobs.list[id].x - player.x
+                local dy = mobs.list[id].y - player.y
+                mobs.list[id].distance = math.exp(0.5 * math.log(dx * dx + dy * dy))
+                if mobs.list[id].distance < 100 then
                     mobs.damage(id, 10)
                     assets.audios.sfx.bell:stop()
                     assets.audios.sfx.bell:play()

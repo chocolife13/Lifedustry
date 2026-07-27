@@ -117,12 +117,17 @@ local entities = {
         update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
+            mobs.list[id].timer = mobs.list[id].timer + 1
             mobs.list[id].dx = player.x - mobs.list[id].x
             mobs.list[id].dy = player.y - mobs.list[id].y
             mobs.list[id].distance = math.sqrt(mobs.list[id].dx * mobs.list[id].dx + mobs.list[id].dy * mobs.list[id].dy)
             local run_speed = 300
             local safe_mob_distance = 300
             if mobs.list[id].distance < safe_mob_distance and mobs.list[id].distance > 0 then
+                if mobs.list[id].distance < 30 and mobs.list[id].timer > 100 then
+                    player.hit(1)
+                    mobs.list[id].timer = 0
+                end
                 mobs.list[id].x = mobs.list[id].x + (mobs.list[id].dx / mobs.list[id].distance) * run_speed * dt
                 mobs.list[id].y = mobs.list[id].y + (mobs.list[id].dy / mobs.list[id].distance) * run_speed * dt
             else

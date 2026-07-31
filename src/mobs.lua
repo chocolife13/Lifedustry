@@ -32,6 +32,7 @@ function mobs.create(args)
     end
     stat.x = stat.x or 0
     stat.y = stat.y or 0
+    stat.offset = stat.offset or {x = (assets.textures[stat.type]:getWidth() / 2), y = (assets.textures[stat.type]:getHeight() / 2)}
     stat.timer = stat.timer or 1
     stat.rotation = stat.rotattion or 0
     stat.goal = stat.goal or {x = 0, y = 0}
@@ -114,7 +115,7 @@ function mobs.draw()
             
         end
         if mob.damaged then love.graphics.setColor(1, 0.5, 0, 1) end
-        love.graphics.draw(mobs.currentTexture, mob.x, mob.y)
+        love.graphics.draw(mobs.currentTexture, mob.x, mob.y, 0, 1, 1, mob.offset.x, mob.offset.y)
         love.graphics.setColor(1, 1, 1, 1)
     end
 end

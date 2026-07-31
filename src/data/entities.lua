@@ -96,6 +96,7 @@ local entities = {
     },
     item = {
         speed = 10,
+        offset = {x=0, y=0},
         update = function (dt, id)
             local mobs = require("src.mobs")
             local player = require("src.player")
@@ -104,7 +105,7 @@ local entities = {
             local dx = mobs.list[id].x - player.x
             local dy = mobs.list[id].y - player.y
             mobs.list[id].distance = math.sqrt(dx * dx + dy * dy)
-            mobs.list[id].y = math.sin(mobs.list[id].timer * 0.01) * 20
+            mobs.list[id].offset.y = math.sin(mobs.list[id].timer * 0.1) * 20
             if mobs.list[id].distance < 50 then
                 inventory.add(mobs.list[id].item, 1)
                 mobs.delete(id)

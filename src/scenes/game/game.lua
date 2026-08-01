@@ -8,6 +8,7 @@ local hud = require("src.hud")
 local game = {}
 
 function game.load()
+    game.timeStop = false
 	assets.audios.music.menu:stop()
 end
 
@@ -17,7 +18,9 @@ function game.draw()
 end
 
 function game.update(dt)
-	mobs.update(dt)
+	if _G.DEV and love.keyboard.isDown("t") then game.timeStop = not game.timeStop end
+    if not game.timeStop then mobs.update(dt) end
+
 	player.update(dt)
 	camera.update(dt)
     hud.update(dt)

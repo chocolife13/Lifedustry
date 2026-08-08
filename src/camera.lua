@@ -15,7 +15,7 @@ function camera.draw()
 	love.graphics.translate((-camera.x*camera.zoom +((screen.width) / 2) ), (-camera.y * camera.zoom + (screen.height / 2)))
 	love.graphics.scale(camera.zoom, camera.zoom)
 
-	map.draw(camera.x*camera.zoom, camera.y*camera.zoom, camera.zoom)
+	map.draw(camera.x, camera.y, camera.zoom)
 	player.draw()
 	mobs.draw()
 
@@ -24,6 +24,7 @@ function camera.draw()
 end
 
 function camera.update(dt)
+	map.update(camera.x, camera.y)
 	camera.x = lmath.cerp(camera.x, player.x, 18 * dt)
 	camera.y = lmath.cerp(camera.y, player.y, 18 * dt)
 

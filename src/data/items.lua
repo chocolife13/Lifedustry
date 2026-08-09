@@ -16,7 +16,25 @@ local items = {
             local screen = require("src.display.screen")
             mobs.create({x = (x + camera.x) - screen.width / 2, y = (y + camera.y) - screen.height / 2, name = "rock", type = "item"})
         end
-        },
+    },
+    stone = {
+        name = "stone",
+        texture = assets.textures.item.stone,
+        isConsumable = false,
+        onUse = function(x, y)
+            local map = require("src.map")
+            local blocks = require("src.data.blocks")
+            local camera = require("src.camera")
+            local screen = require("src.display.screen")
+
+            local world_x = (x - screen.width / 2) / camera.zoom + camera.x
+            local world_y = (y - screen.height / 2) / camera.zoom + camera.y
+            local x_place = math.floor(world_x / 64)
+            local y_place = math.floor(world_y / 64)
+            print( x_place .. "," .. y_place )
+            map.world[ x_place .. "," .. y_place ] = blocks.stone.texture()
+        end
+    },
     snowflake = {
         name = "Snowflake",
         texture = assets.textures.item.snowflake,

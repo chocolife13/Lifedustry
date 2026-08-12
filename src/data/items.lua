@@ -1,14 +1,8 @@
 local assets = require("src.assets")
----@class ItemDef
----@field name    string
----@field texture fun(): love.Image  Returns the texture (resolved lazily at draw time)
-
----@type table<string, ItemDef>
 
 local items = {
     rock = {
         name = "rock",
-        texture = assets.textures.block.god,
         isConsumable = true,
         onUse = function(x, y)
         	local mobs = require("src.mobs")
@@ -18,26 +12,33 @@ local items = {
         end
     },
     stone = {
-        name = "stone",
-        texture = assets.textures.item.stone,
+        name = "Stone",
         isConsumable = false,
-        onUse = function(x, y)
-            local map = require("src.map")
-            local blocks = require("src.data.blocks")
-            local camera = require("src.camera")
-            local screen = require("src.display.screen")
-
-            local world_x = (x - screen.width / 2) / camera.zoom + camera.x
-            local world_y = (y - screen.height / 2) / camera.zoom + camera.y
-            local x_place = math.floor(world_x / 64)
-            local y_place = math.floor(world_y / 64)
-            print( x_place .. "," .. y_place )
-            map.world[ x_place .. "," .. y_place ] = blocks.stone.texture()
-        end
+        type = "block"
+    },
+    sand = {
+        name = "Stone",
+        isConsumable = false,
+        type = "block"
+    },
+    grass = {
+        name = "Stone",
+        isConsumable = false,
+        type = "block"
+    },
+    water = {
+        name = "Water",
+        isConsumable = false,
+        type = "block"
+    },
+    snow = {
+        name = "Stone",
+        isConsumable = false,
+        type = "block"
     },
     snowflake = {
         name = "Snowflake",
-        texture = assets.textures.item.snowflake,
+        type = "custom",
         isConsumable = false,
         onUse = function(x, y)
         	local mobs = require("src.mobs")
@@ -48,19 +49,14 @@ local items = {
         },
     apple = {
         name = "Apple",
-        texture = assets.textures.apple,
         isConsumable = true,
-        onUse = function(x, y)
-        	assets.audios.sfx.bell:stop()
-        	assets.audios.sfx.bell:play()
-            local player = require("src.player")
-            player.hp = player.hp + 5
-        end
+        type = "stat",
+        amount = 13,
+        stat = "hp",
 		},
-    mushroom = { name = "mushroom", texture = assets.textures.mushroom },
+    mushroom = { name = "mushroom"},
     turnip = {
         name = "turnip", 
-        texture = assets.textures.turnip,
         isConsumable = true,
         onUse = function(x, y)
         	assets.audios.sfx.crunch:stop()
@@ -73,8 +69,8 @@ local items = {
         end
     },
     sword = {
-        name = "sword", 
-        texture = assets.textures.sword,
+        name = "sword",
+        type = "custom",
         isConsumable = false,
         onUse = function(x, y)
             assets.audios.sfx.swing:stop()
@@ -94,6 +90,7 @@ local items = {
         end 
     },
     pumpkin = {name = "pumpkin", texture = assets.textures.pumpkin},
-    slingshot = { name = "slingshot", texture = assets.textures.slingshot}
+    slingshot = { name = "slingshot", texture = assets.textures.slingshot},
+
 }
 return items

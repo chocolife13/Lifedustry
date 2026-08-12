@@ -20,7 +20,7 @@ local function getOrGenerateTile(ix, iy)
 		for list, _ in ipairs(biomes) do
 			if height > biomes[list].noises.height.min and height < biomes[list].noises.height.max then
 				if temp > biomes[list].noises.temperature.min and temp < biomes[list].noises.temperature.max then
-					map.world[key] = blocks[biomes[list].floor].texture()
+					map.world[key] = blocks[biomes[list].floor].texture
 				end
 			end
 		end

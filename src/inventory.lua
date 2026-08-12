@@ -4,7 +4,17 @@ local items = require("src.data.items")
 
 local inventory = {}
 
-inventory.list = {[1] = {name="sword", number = 1}, [2] = {name = "snowflake", number = -1}, [3] = {name = "turnip", number = 999}, [4] = {name = "stone", number = 999}}
+
+inventory.list = {
+    [1] = {name = "apple", number = -1},
+    [2] = {name = "snowflake", number = -1},
+    [3] = {name = "sword", number = 1},
+    [4] = {name = "water", number = -1},
+    [5] = {name = "stone", number = -1},
+    [6] = {name = "grass", number = -1},
+    [7] = {name = "sand", number = -1},
+    [8] = {name = "snow", number = -1}
+}
 
 inventory.selected = 1
 

@@ -1,10 +1,12 @@
 local assets = require("src.assets")
+local items = require("src.data.items")
 local ui = require("src.display.ui")
 local lmath = require("src.core.math")
 local player = require("src.player")
 local screen = require("src.display.screen")
 local inventory = require("src.inventory")
 local entities = require("src.data.entities")
+
 
 ---@class Mob
 ---@field x        number
@@ -108,7 +110,7 @@ function mobs.draw()
             ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
         end
         if mob.type == "item" then
-            mobs.currentTexture = assets.textures.item[mob.item]
+            mobs.currentTexture = items[mob.item].texture
         else
             
             mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]

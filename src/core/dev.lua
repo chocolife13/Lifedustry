@@ -57,7 +57,7 @@ function dev.keycheck()
         end
 
         if key == "m" then 
-        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "stone", type = "item"})
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "water", type = "item"})
         end
         
         if key == "l" then 

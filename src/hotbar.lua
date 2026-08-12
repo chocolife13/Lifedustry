@@ -1,8 +1,8 @@
 local assets = require("src.assets")
-local screen = require("src.display.screen")
 local items = require("src.data.items")
+local screen = require("src.display.screen")
 local inventory = require("src.inventory")
-
+local itemType = require("src.data.itemType")
 local hotbar = {}
 
 
@@ -12,10 +12,10 @@ function hotbar.draw()
     for i, item in ipairs(inventory.list) do
     	if item.name then
         	if i == inventory.selected then
-            	love.graphics.draw(assets.textures.item[inventory.list[inventory.selected].name], screen.mouse.x, screen.mouse.y, 0, 0.5, 0.5)
+            	love.graphics.draw(items[inventory.list[i].name].texture, screen.mouse.x, screen.mouse.y, 0, 0.5, 0.5)
              	love.graphics.setColor(0.5, 0.5, 0.5)
          	end
-          	love.graphics.draw(assets.textures.item[inventory.list[i].name], screen.pct_x(50) - ((assets.textures.inventory:getWidth() / 2)) + (i * 64) - 64, (screen.height - 20) - assets.textures.inventory:getHeight())
+          	love.graphics.draw(items[inventory.list[i].name].texture, screen.pct_x(50) - ((assets.textures.inventory:getWidth() / 2)) + (i * 64) - 64, (screen.height - 20) - assets.textures.inventory:getHeight())
            	if i == inventory.selected then
             	love.graphics.setColor(1, 1, 1)
             end
@@ -66,10 +66,12 @@ function hotbar.update(dt)
         if button == 1 then
         	local usedItem = inventory.list[inventory.selected]
         	if usedItem and usedItem.name then
-                	if items[inventory.list[inventory.selected].name].onUse then
+                	local type = items[inventory.list[inventory.selected].name].type
+					
+					if type == "custom" then
                  		items[inventory.list[inventory.selected].name].onUse(screen.mouse.x, screen.mouse.y)
                    	else
-                   		print("No action are defined in src/data/items for the item: " .. inventory.list[inventory.selected].name)
+                   		itemType[type].onUse(inventory.list[inventory.selected].name)
                    	end
                     if items[inventory.list[inventory.selected].name].isConsumable then -- only cosum consumabvle item
 						inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1

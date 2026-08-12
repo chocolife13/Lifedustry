@@ -8,33 +8,18 @@ local assets = require("src.assets")
 local blocks = {
 	grass = {
 		name = "grass",
-		texture = function()
-			return assets.textures.block.grass
-		end,
 	},
 	stone = {
 		name = "stone",
-		texture = function()
-			return assets.textures.block.stone
-		end,
 	},
 	sand = {
 		name = "sand",
-		texture = function()
-			return assets.textures.block.sand
-		end,
 	},
 	water = {
 		name = "water",
-		texture = function()
-			return assets.textures.block.water
-		end,
 	},
 	snow = {
 		name = "snow",
-		texture = function()
-			return assets.textures.block.snow
-		end,
 	},
 }
 

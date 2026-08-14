@@ -2,6 +2,10 @@
 const isMobile = window.innerWidth < 768;
 
 if (!isMobile) {
+const img = document.getElementById('img');
+img.style.width = '80%';
+ 
+
   document.addEventListener('mousemove', (e) => {
     // 1. On calcule la position de la souris par rapport au centre de l'écran
     const xRatio = (e.clientX / window.innerWidth) - 0.5;
@@ -16,3 +20,6 @@ if (!isMobile) {
     document.documentElement.style.setProperty('--bg-y', `${moveY}px`);
   });
 }
+else {
+  // Si c'est "pas tel"
+  monElement.style.width = '20%';}

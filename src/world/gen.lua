@@ -1,4 +1,4 @@
-require("src.World.map")
+require("src.world.map")
 require("src.data.biomes")
 gen = {}
 

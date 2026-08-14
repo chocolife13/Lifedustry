@@ -1,4 +1,4 @@
-require("src.World.map")
+require("src.world.map")
 require("src.func")
 player = {}
 player.x = ((map.size / 2) - (screenWidth/2)/(32 * camera.zoom))* 32

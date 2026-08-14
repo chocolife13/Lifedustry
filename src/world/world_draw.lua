@@ -1,4 +1,4 @@
-require("src.World.map")
+require("src.world.map")
 require("src.camera")
 require("src.data.tiles")
 draw = {}

@@ -66,19 +66,30 @@ function hotbar.update(dt)
         if button == 1 then
         	local usedItem = inventory.list[inventory.selected]
         	if usedItem and usedItem.name then
-                	local type = items[inventory.list[inventory.selected].name].type
-					
+                local type = items[inventory.list[inventory.selected].name].type
+				if type then
 					if type == "custom" then
-                 		items[inventory.list[inventory.selected].name].onUse(screen.mouse.x, screen.mouse.y)
-                   	else
-                   		itemType[type].onUse(inventory.list[inventory.selected].name)
-                   	end
-                    if items[inventory.list[inventory.selected].name].isConsumable then -- only cosum consumabvle item
-						inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1
-                    	if inventory.list[inventory.selected].number == 0 then
-                    		inventory.list[inventory.selected] = {}
-                    	end
+						if items[inventory.list[inventory.selected].name].onUse then
+                 			items[inventory.list[inventory.selected].name].onUse(screen.mouse.x, screen.mouse.y)
+						else
+							print("no custom script for custom type in src/data/items for the item " .. usedItem.name)
+						end
+                	else
+						if itemType[type] then
+                			itemType[type].onUse(inventory.list[inventory.selected].name)
+						else
+							print("this type of item doesnt exist look in src/data/itemsTypes -->" .. type)
+						end
 					end
+				else
+					print("no type of item def in src/data/items on " .. usedItem.name)
+				end
+            end
+            if items[inventory.list[inventory.selected].name].isConsumable then -- only cosum consumabvle item
+				inventory.list[inventory.selected].number = inventory.list[inventory.selected].number - 1
+                if inventory.list[inventory.selected].number == 0 then
+                	inventory.list[inventory.selected] = {}
+                end
          	end
         end
     end

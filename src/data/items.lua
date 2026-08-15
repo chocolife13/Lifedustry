@@ -56,7 +56,8 @@ local items = {
 		},
     mushroom = { name = "mushroom"},
     turnip = {
-        name = "turnip", 
+        name = "turnip",
+        type = "custom",
         isConsumable = true,
         onUse = function(x, y)
         	assets.audios.sfx.crunch:stop()
@@ -89,7 +90,7 @@ local items = {
             end
         end 
     },
-    pumpkin = {name = "pumpkin", texture = assets.textures.pumpkin},
+    pumpkin = {name = "pumpkin", type = "custom", texture = assets.textures.pumpkin},
     slingshot = { name = "slingshot", texture = assets.textures.slingshot},
 
 }

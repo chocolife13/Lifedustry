@@ -82,9 +82,15 @@ end
 
 
 function mobs.update(dt)
-    -- Update movement for all NPCs
+    local camera = require("src.camera")
     for i, mob in ipairs(mobs.list) do
-        entities[mob.type].update(dt, i)
+        if mob.x > ((0 - (screen.width / camera.zoom)/2) + camera.x)
+        and mob.x < (((screen.width / camera.zoom)/2) + camera.x)
+        and mob.y > ((0 - (screen.height / camera.zoom)/2) + camera.y) 
+        and mob.y < (((screen.height / camera.zoom)/2) + camera.y)
+        then 
+            entities[mob.type].update(dt, i)
+        end
     end
 end
 
@@ -103,24 +109,27 @@ end
 
 
 function mobs.draw()
+    local camera = require("src.camera")
     for _, mob in ipairs(mobs.list) do
-        -- Draw name and texture
-        -- if api[i].x > player.x + (screen.width)/2 then -- try cliping
+        if mob.x > ((0 - (screen.width / camera.zoom)/2) + camera.x)
+        and mob.x < (((screen.width / camera.zoom)/2) + camera.x)
+        and mob.y > ((0 - (screen.height / camera.zoom)/2) + camera.y) 
+        and mob.y < (((screen.height / camera.zoom)/2) + camera.y) then 
         if mob.name then
             ui.print_centered(tostring(mob.name), mob.x, mob.y - 20)
         end
         if mob.type == "item" then
             mobs.currentTexture = items[mob.item].texture
         else
-            
             mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]
-            
         end
         if mob.damaged then love.graphics.setColor(1, 0.5, 0, 1) end
-        love.graphics.draw(mobs.currentTexture, mob.x, mob.y, 0, 1, 1, mob.offset.x, mob.offset.y)
-        love.graphics.setColor(1, 1, 1, 1)
+            love.graphics.draw(mobs.currentTexture, mob.x, mob.y, 0, 1, 1, mob.offset.x, mob.offset.y)
+            love.graphics.setColor(1, 1, 1, 1)
+        end
     end
 end
+
 
 return mobs
 

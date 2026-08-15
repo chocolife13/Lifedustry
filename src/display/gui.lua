@@ -1,54 +1,106 @@
--- chance that these will be rewritten on UI update.
-
 local ui = require("src.display.ui")
 local screen = require("src.display.screen")
 local assets = require("src.assets")
+local M = require("src.core.math")
 
 local gui = {}
+gui.list = {}
 
----@type table[]
-local buttons = {}
+function gui.add(args)
+	local stat = {}
 
---- Must be called at the start of every `love.draw()` to reset the hit-test list.
-function gui.begin_frame()
-	buttons = {}
+	for k, v in pairs(args) do
+        stat[k] = v
+    end
+	
+	table.insert(gui.list, stat)
+
+    
 end
 
---- Draws a labelled button and registers it for mouse hit-testing.
---- Position is expressed as a percentage of screen dimensions (0–100).
----@param text     string
----@param pct_x   number   horizontal centre, in percent
----@param pct_y   number   vertical centre, in percent
----@param width   number   button width in pixels
----@param height  number   button height in pixels
----@param callback fun()   called when the button is clicked
-function gui.button(text, pct_x, pct_y, width, height, callback)
-	local bx = screen.pct_x(pct_x) - width / 2
-	local by = screen.pct_y(pct_y) - height / 2
-
-	table.insert(buttons, {
-		x = bx,
-		y = by,
-		width = width,
-		height = height,
-		callback = callback,
-	})
-
-    if _G.DEV then love.graphics.rectangle("line", bx, by, width, height) end
-	love.graphics.draw(assets.textures.ui.button, bx, by, 0, width / assets.textures.ui.button:getWidth(), height / assets.textures.ui.button:getHeight())
-	ui.print_centered(text, bx + width / 2, by + height / 2)
+function gui.reset()
+	gui.list = {}
 end
 
---- Internal: tests a mouse-release against every registered button and callback the button. May be a bad practice? Iterating over several buttons is bad for perfomance but I'm quite unsure (Note left by Fsy)
----@param x      number
----@param y      number
----@param button integer
+function gui.edit(id, value, key)
+	for i, v in ipairs(gui.list) do
+		if v.id then
+			if v.id == id then
+				v[value] = key
+			end
+		end
+	end
+end
+
+function gui.delete(id)
+	for i, v in ipairs(gui.list) do
+		if v.id then
+			if v.id == id then
+				v = {}
+			end
+		end
+	end
+end
+
+function gui.update(dt)
+	if gui.list then
+		for i, v in ipairs(gui.list) do
+			if v.type == "button" then
+				
+				local x = screen.pct_x(v.x) - (v.width / 2)
+				local y = screen.pct_y(v.y) - (v.height / 2)
+				if screen.mouse.x > x and screen.mouse.x < x + v.width and screen.mouse.y > y and screen.mouse.y < y + v.height then
+					v.height = M.lerp(v.height, (v.h * v.hover), 0.1)
+					v.width = M.lerp(v.width, (v.w * v.hover), 0.1)
+					function love.mousereleased(_, _, button)
+    					if button ~= 0 then
+        					v.callback()
+    					end
+					end
+				else
+					v.height = M.lerp(v.height, v.h, 0.1)
+					v.width = M.lerp(v.width, v.w, 0.1)
+				end
+			end	
+		end
+	end
+end
+
+function gui.draw()
+	if gui.list then
+		for i, v in ipairs(gui.list) do
+			if v.type == "button" then
+
+				local x = screen.pct_x(v.x) - (v.width / 2)
+				local y = screen.pct_y(v.y) - (v.height / 2)
+
+				if _G.DEV then love.graphics.rectangle("line", x, y, v.width, v.height) end
+				love.graphics.draw(assets.textures.ui.button, x, y, 0, v.width / assets.textures.ui.button:getWidth(), v.height / assets.textures.ui.button:getHeight())
+				ui.print_centered(v.text, x + (v.width / 2), y + (v.height / 2), 0, v.width / v.w, v.height / v.h)
+			end
+		end
+	end
+end
+
+
+return gui
+
+
+
+
+
+--[[
+
+
 function gui.mousereleased(x, y, button)
     if button ~= 1 then
         return
     end
 	for _, btn in ipairs(buttons) do
         if x > btn.x and x < btn.x + btn.width and y > btn.y and y < btn.y + btn.height then
+			if _G.DEV then love.graphics.rectangle("line", bx, by, width, height) end
+	love.graphics.draw(assets.textures.ui.button, bx, by, 0, width / assets.textures.ui.button:getWidth(), height / assets.textures.ui.button:getHeight())
+	ui.print_centered(text, bx + width / 2, by + height / 2)
         	assets.audios.sfx.click:play()
 			btn.callback()
 			return
@@ -60,4 +112,5 @@ function love.mousereleased(x, y, button)
 	gui.mousereleased(x, y, button)
 end
 
-return gui
+
+]]

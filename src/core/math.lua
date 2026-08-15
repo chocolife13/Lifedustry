@@ -6,6 +6,7 @@ local M = {}
 ---@param t number
 ---@return number
 function M.cerp(a, b, t)
+    if not a or not b then return 0 end
     local f = (1 - math.cos(t * math.pi))
     return a * (1 - f) + b * f
 end

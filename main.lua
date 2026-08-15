@@ -22,7 +22,6 @@ function love.update(dt)
 end
 
 function love.draw()
-    gui.begin_frame()
     SceneManager.draw()
     if DEV then dev.info() end
 end

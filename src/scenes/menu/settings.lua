@@ -7,10 +7,33 @@ local assets = require("src.assets")
 
 local settings = {}
 
-local BTN_W = 250
-local BTN_H = 35
-
-function settings.load() end
+function settings.load() 
+	gui.reset()
+gui.add({type = "button",
+			id = "fullscreen",
+			text = screen.fullscreen,
+			w = 250,
+			h = 35,
+			x = 50, 
+			y = 50,
+			width = 230,
+			height = 35,
+			hover = 1.30,
+			callback = function() love.window.setFullscreen(not screen.fullscreen) end
+		})
+gui.add({type = "button",
+			id = "vsync",
+			text = screen.vsync,
+			w = 250,
+			h = 35,
+			x = 50, 
+			y = 60,
+			width = 230,
+			height = 35,
+			hover = 1.30,
+			callback = function() love.window.setVSync(screen.vsync == 1 and 0 or 1) end
+		})
+end
 
 function settings.draw()
 	love.graphics.draw(assets.textures.bg, 0, 0, 0, screen.width/640, screen.height/480)
@@ -22,17 +45,16 @@ function settings.draw()
 		screen.pct_x(50),
 		screen.pct_y(70)
 	)
-
-	gui.button(("Fullscreen : %s"):format(util.bool_to_string(screen.fullscreen)), 50, 50, BTN_W, BTN_H, function()
-		love.window.setFullscreen(not screen.fullscreen)
-	end)
-	gui.button(("VSync : %s"):format(util.bool_to_string(screen.vsync)), 50, 60, BTN_W, BTN_H, function()
-		love.window.setVSync(screen.vsync == 1 and 0 or 1)
-	end)
+	gui.draw()
 end
 
-function settings.update()
+function settings.update(dt)
+	gui.update(dt)
+	gui.edit("vsync", "text", ("VSync : %s"):format(util.bool_to_string(screen.vsync)))
+	gui.edit("fullscreen", "text", ("Fullscreen : %s"):format(util.bool_to_string(screen.fullscreen)))
+
 	if love.keyboard.isDown("escape") then
+		gui.reset()
 		SceneManager.switch("main")
 	end
 end

@@ -6,7 +6,7 @@ local player = require("src.player")
 local screen = require("src.display.screen")
 local inventory = require("src.inventory")
 local entities = require("src.data.entities")
-
+local time = require("src.time")
 
 ---@class Mob
 ---@field x        number
@@ -123,17 +123,13 @@ function mobs.draw()
         else
             mobs.currentTexture = assets.textures[mob.type] or assets.textures["player"]
         end
-        if mob.damaged then love.graphics.setColor(1, 0.5, 0, 1) end
-            love.graphics.draw(mobs.currentTexture, mob.x, mob.y, 0, 1, 1, mob.offset.x, mob.offset.y)
-            love.graphics.setColor(1, 1, 1, 1)
-        end
+        
+        love.graphics.setColor(time.timer /10000, time.timer/10000, time.timer/10000)
+        love.graphics.draw(mobs.currentTexture, mob.x, mob.y, 0, 1, 1, mob.offset.x, mob.offset.y)
+        love.graphics.setColor(1, 1, 1, 1)
+    end
     end
 end
 
 
 return mobs
-
--- TODO: random part of i think somting can help cliping
-
--- (start_x - (screen.width / 2)/64)/zoom, (start_x + (screen.width / 2) / 64)/zoom do -- cliping for x and y and btw 64 is the tile dimmension 64x64
--- for iy = (start_y - (screen.height / 2)/64)/zoom, (start_y + ((screen.height / 2)/64)+1)/zoom do

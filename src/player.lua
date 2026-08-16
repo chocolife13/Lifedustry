@@ -4,6 +4,7 @@ local SceneManager = require("src.scene_manager")
 local screen = require("src.display.screen")
 local inventory = require("src.inventory")
 local items = require("src.data.items")
+local time = require("src.time")
 local player = {}
 
 player.speed = 500
@@ -15,10 +16,12 @@ player.hp = 20
 player.velocity = { x = 0, y = 0 }
 
 function player.draw()
+    love.graphics.setColor(time.timer /10000, time.timer/10000, time.timer/10000)
     love.graphics.draw(assets.textures.player, player.x, player.y, player.rotation - (math.pi / 2), 1, 1, assets.textures.player:getWidth() / 2, assets.textures.player:getHeight() /2)
     if inventory.list[inventory.selected].name then
         love.graphics.draw(items[inventory.list[inventory.selected].name].texture, player.x, player.y, player.rotation - (math.pi / 2), 0.5, 0.5, -20)
     end
+    love.graphics.setColor(1, 1, 1)
 end
 
 function player.update(dt)

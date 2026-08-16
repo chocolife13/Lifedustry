@@ -6,6 +6,7 @@ local screen = require("src.display.screen")
 local hud = require("src.hud")
 local gui = require("src.display.gui")
 local event = require("src.event")
+local time = require("src.time")
 
 local game = {}
 
@@ -24,6 +25,7 @@ end
 function game.update(dt)
 	if _G.DEV and love.keyboard.isDown("t") then game.timeStop = not game.timeStop end
     if not game.timeStop then mobs.update(dt) end
+    time.update(dt)
     event.update(dt)
 	player.update(dt)
 	camera.update(dt)

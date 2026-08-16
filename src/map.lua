@@ -4,6 +4,7 @@ local screen = require("src.display.screen")
 local mobs = require("src.mobs")
 local assets = require("src.assets")
 local player = require("src.player")
+local time = require("src.time")
 
 local map = {}
 
@@ -57,8 +58,9 @@ function map.draw(camera_x, camera_y, camera_zoom)
         for iy = origin_y - half_h, origin_y + half_h do
             local key = ix .. "," .. iy
             if map.world[key] then
-                -- On multiplie par TileSize pour replacer en pixels réels à l'écran
+                love.graphics.setColor(time.timer /10000, time.timer/10000, time.timer/10000)
                 love.graphics.draw(map.world[key], ix * TileSize, iy * TileSize)
+                love.graphics.setColor(1, 1, 1)
             end
         end
     end

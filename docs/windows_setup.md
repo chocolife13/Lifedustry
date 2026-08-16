@@ -30,7 +30,7 @@ For windows users download in the official website here --> [love2d.org](https:/
 make sure you have Git downloaded
 `git clone https://github.com/chocolife13/Lifedustry.git`
 
-## Open Love2D with the main folder example with a terminal
+## Open Love2D with the main folder example with a terminal (Need administator)
 For Windows users start love2D with arg the main folder like shortcut, put the folder in the love.exe, and terminal
 Make sure Love2D is in your Windows PATH :\
 1- Press Windows+R and type 'sysdm.cpl ,3'\

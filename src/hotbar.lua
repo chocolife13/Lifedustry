@@ -9,7 +9,9 @@ local hotbar = {}
 
 function hotbar.draw()
     love.graphics.draw(assets.textures.inventory, screen.pct_x(50), screen.height - 20, 0, 1, 1,assets.textures.inventory:getWidth() / 2, assets.textures.inventory:getHeight())
-    for i, item in ipairs(inventory.list) do
+    local hotbar_items = math.min(#inventory.list, 10) --take only the 10 minimum of the inventory
+	for i = 1, hotbar_items do
+		local item = inventory.list[i]
     	if item.name then
         	if i == inventory.selected then
             	love.graphics.draw(items[inventory.list[i].name].texture, screen.mouse.x, screen.mouse.y, 0, 0.5, 0.5)

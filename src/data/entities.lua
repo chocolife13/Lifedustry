@@ -50,7 +50,10 @@ local entities = {
             mobs.list[id].y = mobs.list[id].y + mobs.list[id].vy
             if mobs.list[id].distance > 3000 then
                 mobs.delete(id)
-            elseif mobs.list[id].distance < assets.textures.player:getWidth() then
+            elseif  mobs.list[id].x > player.x - 32 and
+                    mobs.list[id].x < player.x + 32 and
+                    mobs.list[id].y > player.y - 32 and
+                    mobs.list[id].y < player.y + 32 then
                 mobs.delete(id)
                 player.hit(1)
             end

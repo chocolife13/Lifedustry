@@ -18,7 +18,12 @@ player.velocity = { x = 0, y = 0 }
 
 function player.draw()
     love.graphics.setColor(time.timer /10000, time.timer/10000, time.timer/10000)
-    love.graphics.draw(assets.textures.player, player.x, player.y, player.rotation - (math.pi / 2), 1, 1, assets.textures.player:getWidth() / 2, assets.textures.player:getHeight() /2)
+    love.graphics.draw(assets.textures.player, player.x, player.y, player.rotation - (math.pi / 2), 0.75, 0.75, assets.textures.player:getWidth() / 2, assets.textures.player:getHeight() /2)
+    if _G.DEV then 
+        love.graphics.setColor(1, 0, 0)
+        love.graphics.rectangle("line", player.x - (assets.textures.player:getWidth() * 0.75) / 2, player.y - (assets.textures.player:getHeight() * 0.75) / 2, assets.textures.player:getWidth() * 0.75, assets.textures.player:getHeight() * 0.75)
+         love.graphics.setColor(1, 1, 1)
+    end
     if inventory.list[inventory.selected].name then
         love.graphics.draw(items[inventory.list[inventory.selected].name].texture, player.x, player.y, player.rotation - (math.pi / 2), 0.5, 0.5, -20)
     end

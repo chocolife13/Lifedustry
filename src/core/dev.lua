@@ -65,8 +65,10 @@ function dev.keycheck()
         	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "slingshot", type = "item"})
         end
 
-        if key == "b" then 
-        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "pumpkin", type = "item"})
+        if key == "b" then
+            for i = 1, 100 do
+        	    mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, type = "snowman"})
+            end
         end
         if key == "n" then -- spawn mob
         	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "turnip", type = "item"})

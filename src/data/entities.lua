@@ -55,7 +55,7 @@ local entities = {
                     mobs.list[id].y > player.y - 32 and
                     mobs.list[id].y < player.y + 32 then
                 mobs.delete(id)
-                player.hit(1)
+                player.hit(25)
             end
         end
     },

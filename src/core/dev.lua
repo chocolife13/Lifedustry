@@ -4,6 +4,7 @@ local screen = require("src.display.screen")
 local camera = require("src.camera")
 local SceneManager = require("src.scene_manager")
 local keys = require("src.data.keys")
+local time = require("src.time")
 local dev = {}
 
 --- Dev mode: prints a notice and disables VSync for raw FPS.
@@ -70,9 +71,6 @@ function dev.keycheck()
         if key == "n" then -- spawn mob
         	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "turnip", type = "item"})
         end
-        if key == "k" then -- spawn mob
-        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "sword", type = "item"})
-        end
 
         if key == "g" then -- force GC
             collectgarbage("collect")
@@ -83,6 +81,11 @@ function dev.keycheck()
             player.speed = 5000
         else
             player.speed = 500
+        end
+        if love.keyboard.isDown("k") then
+            time.speed = 5000
+        else
+            time.speed = 50
         end
 
        

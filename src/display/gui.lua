@@ -32,6 +32,16 @@ function gui.edit(id, value, key)
 	end
 end
 
+function gui.get(id, value)
+	for i, v in ipairs(gui.list) do
+		if v.id then
+			if v.id == id then
+				return v[value]
+			end
+		end
+	end
+end
+
 function gui.delete(id)
 	for i, v in ipairs(gui.list) do
 		if v.id then
@@ -46,7 +56,6 @@ function gui.update(dt)
 	if gui.list then
 		for i, v in ipairs(gui.list) do
 			if v.type == "button" then
-				
 				local x = screen.pct_x(v.x) - (v.width / 2)
 				local y = screen.pct_y(v.y) - (v.height / 2)
 				if screen.mouse.x > x and screen.mouse.x < x + v.width and screen.mouse.y > y and screen.mouse.y < y + v.height then
@@ -61,7 +70,41 @@ function gui.update(dt)
 					v.height = M.lerp(v.height, v.h, 0.1)
 					v.width = M.lerp(v.width, v.w, 0.1)
 				end
-			end	
+			end
+			if v.type == "input" then
+				local x = screen.pct_x(v.x) - (v.width / 2)
+				local y = screen.pct_y(v.y) - (v.height / 2)
+				if screen.mouse.x > x and screen.mouse.x < x + v.width and screen.mouse.y > y and screen.mouse.y < y + v.height then
+					v.height = M.lerp(v.height, (v.h * v.hover), 0.1)
+					v.width = M.lerp(v.width, (v.w * v.hover), 0.1)
+					function love.mousereleased(_, _, button)
+						if button ~= 0 then
+							v.selected = true
+							love.keyboard.setTextInput(true)
+							love.keyboard.setKeyRepeat(true)
+						end
+					end
+						
+					if v.selected then
+						function love.keypressed(key)
+							if key == "escape" or key == "return" then
+								love.keyboard.setTextInput(false)
+							 	love.keyboard.setKeyRepeat(false)
+								v.selected = false
+							end
+							if key == "backspace" and v.selected then
+								v.text = string.sub(v.text, 1, -2)
+							end
+							function love.textinput(t)
+								v.text = v.text .. t
+							end
+						end
+					end
+				else
+					v.height = M.lerp(v.height, v.h, 0.1)
+					v.width = M.lerp(v.width, v.w, 0.1)
+				end
+			end
 		end
 	end
 end
@@ -70,6 +113,15 @@ function gui.draw()
 	if gui.list then
 		for i, v in ipairs(gui.list) do
 			if v.type == "button" then
+
+				local x = screen.pct_x(v.x) - (v.width / 2)
+				local y = screen.pct_y(v.y) - (v.height / 2)
+
+				if _G.DEV then love.graphics.rectangle("line", x, y, v.width, v.height) end
+				love.graphics.draw(assets.textures.ui.button, x, y, 0, v.width / assets.textures.ui.button:getWidth(), v.height / assets.textures.ui.button:getHeight())
+				ui.print_centered(v.text, x + (v.width / 2), y + (v.height / 2), 0, v.width / v.w, v.height / v.h)
+			end
+			if v.type == "input" then
 
 				local x = screen.pct_x(v.x) - (v.width / 2)
 				local y = screen.pct_y(v.y) - (v.height / 2)

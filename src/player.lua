@@ -10,7 +10,8 @@ local player = {}
 player.speed = 500
 player.x = 0
 player.y = 0
-player.hp = 20
+player.hp = 100
+player.maxhp = 100
 
 ---@type { x: number, y: number }
 player.velocity = { x = 0, y = 0 }
@@ -67,7 +68,7 @@ function player.hit(number)
     player.hp = player.hp - number
          
     if player.hp < 1 then
-        player.hp = 20
+        player.hp = 100
         SceneManager.switch("gameover")
     end
 end

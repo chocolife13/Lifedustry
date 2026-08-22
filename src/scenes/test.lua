@@ -7,6 +7,7 @@ local test = {}
 
 
 function test.load()
+	gui.reset()
 	gui.add({type = "input",
 			text = "Text here",
 			selected = false,

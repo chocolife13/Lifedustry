@@ -43,12 +43,7 @@ function dev.keycheck()
             end
         end
         if key == "t" then
-            for _, mob in ipairs(mobs.list) do
-                if mob.type == "gilbert" then
-                    player.x = mob.x
-                    player.y = mob.y
-                end
-            end
+            SceneManager.switch("test")
         end
         if key == "e" then 
             mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "rock", type = "item"})

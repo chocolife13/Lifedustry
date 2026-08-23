@@ -5,6 +5,7 @@ local camera = require("src.camera")
 local SceneManager = require("src.scene_manager")
 local keys = require("src.data.keys")
 local time = require("src.time")
+local map = require("src.map")
 local dev = {}
 
 --- Dev mode: prints a notice and disables VSync for raw FPS.
@@ -46,7 +47,7 @@ function dev.keycheck()
             SceneManager.switch("test")
         end
         if key == "e" then 
-            mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "rock", type = "item"})
+            map.seed = love.math.random(0, 99999)
         end
         if key == "a" then 
         	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "apple", type = "item"})

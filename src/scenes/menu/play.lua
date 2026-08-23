@@ -17,7 +17,9 @@ gui.add({type = "button",
 			width = 230,
 			height = 35,
 			hover = 1.30,
-			callback = function() SceneManager.switch("game") end
+			callback = function()
+				SceneManager.switch("game")
+			end
 		})
 end
 

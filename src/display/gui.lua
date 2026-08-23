@@ -63,8 +63,15 @@ function gui.update(dt)
 					v.width = M.lerp(v.width, (v.w * v.hover), 0.1)
 					function love.mousereleased(_, _, button)
     					if button ~= 0 then
-        					v.callback()
+							if v then
+								if screen.mouse.x > x and screen.mouse.x < x + v.width and screen.mouse.y > y and screen.mouse.y < y + v.height then
+									assets.audios.sfx.click:stop()
+    								assets.audios.sfx.click:play()
+        							v.callback()
+								end
+							end
     					end
+						return
 					end
 				else
 					v.height = M.lerp(v.height, v.h, 0.1)

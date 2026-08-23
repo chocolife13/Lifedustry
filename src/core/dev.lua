@@ -24,6 +24,7 @@ function dev.info()
     love.graphics.print(string.format("DrawCalls: %d", love.graphics.getStats().drawcalls), 10, 90)
     love.graphics.print("Entity Count: " .. tostring(#mobs.list), 10, 110)
     love.graphics.print("HP: " .. player.hp, 10, 130)
+    love.graphics.print("seed: " .. (map.seed or "no seed"), 10, 150)
     love.graphics.setColor(1, 1, 1)
 end
 
@@ -69,7 +70,9 @@ function dev.keycheck()
         if key == "n" then -- spawn mob
         	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "turnip", type = "item"})
         end
-
+        if key == "j" then -- spawn mob
+        	mobs.create({x = (screen.mouse.x + camera.x) - screen.width / 2, y = (screen.mouse.y + camera.y) - screen.height / 2, item = "rock", type = "item"})
+        end
         if key == "g" then -- force GC
             collectgarbage("collect")
             print("dev: garbage collected")

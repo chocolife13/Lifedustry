@@ -8,7 +8,6 @@ local time = require("src.time")
 
 local map = {}
 
-map.seed = love.math.random(0, 99999)
 local TileSize = 64
 map.world = {}
 

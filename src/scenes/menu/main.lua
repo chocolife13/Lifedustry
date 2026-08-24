@@ -26,6 +26,17 @@ function main.load()
 			callback = function() SceneManager.switch("play") end
 		})
 	gui.add({type = "button",
+			text = "Play Online",
+			w = 230,
+			h = 35,
+			x = 50, 
+			y = 63,
+			width = 230,
+			height = 35,
+			hover = 1.30,
+			callback = function() SceneManager.switch("play_online") end
+		})
+	gui.add({type = "button",
 			text = "Settings",
 			w = 230,
 			h = 35,

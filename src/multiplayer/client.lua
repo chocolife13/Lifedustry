@@ -1,7 +1,7 @@
 local client = {}
 local enet = require "enet"
 local map = require("src.map")
-
+local player = require("src.player")
 
 local function deserialize(str)
     local tbl = {}
@@ -28,9 +28,9 @@ end
 
 function client.update()
     client.event = client.host:service(0)
+    client.server:send(serialize({ x = player.x, y = player.y }))
     if client.event then
         if client.event.type == "receive" then
-            --print("Got message: ", client.event.data, client.event.peer)
             local data = deserialize(client.event.data)
             print(data.seed)
             map.seed = tonumber(data.seed)

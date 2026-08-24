@@ -11,7 +11,7 @@ local play_online = {}
 function play_online.load() 
 	gui.reset()
 	gui.add({type = "input",
-			text = "ip",
+			text = "",
 			id = "ip",
 			w = 250,
 			h = 35,

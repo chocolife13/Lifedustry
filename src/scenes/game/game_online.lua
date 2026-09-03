@@ -12,8 +12,9 @@ local map = require("src.map")
 local game = {}
 
 function game.load()
-    local ip = gui.get("ip", "text")
-	client.connect(ip)
+    client.host_ip = gui.get("ip", "text")
+    client.local_username = gui.get("username", "text")
+	client.connect()
     map.seed = nil
     gui.reset()
     game.timeStop = false

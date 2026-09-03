@@ -21,9 +21,9 @@ end
 
 
 
-function client.connect(ip)
+function client.connect()
     client.host = enet.host_create()
-    client.server = client.host:connect(ip .. ":9111")
+    client.server = client.host:connect(client.host_ip .. ":9111")
 end
 
 function client.update()

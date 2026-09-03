@@ -49,7 +49,7 @@ while true do -- holy infinte loop
      if event then -- if new thing on serv
 
         if event.type == "connect" then
-            event.peer:send(serialize({"seed" = 123})) -- send to the new player the seed
+            event.peer:send(serialize({seed = 123})) -- send to the new player the seed
             server.player[event.peer] = {} -- make a table 4 the new player
         end
         

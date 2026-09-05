@@ -47,6 +47,9 @@ function dev.keycheck()
         if key == "t" then
             SceneManager.switch("test")
         end
+        if key == "w" then
+            error("yes its a error :3")
+        end
         if key == "e" then 
             map.seed = love.math.random(0, 99999)
         end

@@ -15,7 +15,7 @@ function main.load()
     assets.audios.music.menu:setVolume(0.1)
     assets.audios.music.menu:play()
 	gui.add({type = "button",
-			text = "Play",
+			text = locales.texts.play,
 			w = 230,
 			h = 35,
 			x = 50, 
@@ -26,7 +26,7 @@ function main.load()
 			callback = function() SceneManager.switch("play") end
 		})
 	gui.add({type = "button",
-			text = "Play Online",
+			text = locales.texts.play_online,
 			w = 230,
 			h = 35,
 			x = 50, 
@@ -37,7 +37,7 @@ function main.load()
 			callback = function() SceneManager.switch("play_online") end
 		})
 	gui.add({type = "button",
-			text = "Settings",
+			text = locales.texts.settings,
 			w = 230,
 			h = 35,
 			x = 50, 

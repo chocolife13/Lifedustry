@@ -4,6 +4,7 @@ local ui = require("src.display.ui")
 local SceneManager = require("src.scene_manager")
 local args = require("src.args")
 
+
 local loading = {}
 local WAIT_FRAMES = 200
 local timer = 0

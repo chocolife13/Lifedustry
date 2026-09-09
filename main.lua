@@ -4,6 +4,7 @@ local dev = require("src.core.dev")
 local screen = require("src.display.screen")
 local gui = require("src.display.gui")
 local args = require("src.args")
+local locales = require("src.locales")
 
 ---@type boolean
 _G.DEV = false -- set devmode by default ex for android if u want dev mode enable here
@@ -11,6 +12,7 @@ _G.DEV = false -- set devmode by default ex for android if u want dev mode enabl
 function love.load(arg)
     args.start(arg)
     if DEV then dev.load() end
+    locales.load()
     assets.preload()
     SceneManager.load()
 end

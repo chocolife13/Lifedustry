@@ -11,10 +11,6 @@ Debian n' friends (with 'apt')
 
  `sudo apt install love`
 
-Android ([termux](https://github.com/LinuxDroidMaster/Termux-Desktops/blob/main/Documentation/native/termux_native.md))
-
- `pkg i love`
-
 ## Download the repo or Clone the repo
 ### for downloading
 <a href="src/scene/test.lua"><img src="/docs/tutorial_github_download_repo.png" alt="Screenshot" width="450"></img></a>

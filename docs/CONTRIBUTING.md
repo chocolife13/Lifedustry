@@ -1,7 +1,8 @@
-# Quickstart
+# Setup Lifedustry
 
 
-for [Windows](/docs/windows_setup.md) and [linux and android](/docs/linux_setup.md)
+- [Windows](/docs/windows_setup.md)
+- [linux and android](/docs/linux_setup.md)
  
 
 

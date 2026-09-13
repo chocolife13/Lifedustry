@@ -56,7 +56,7 @@ function main.draw()
 	local logo = assets.textures.ui.logo
 	love.graphics.draw(logo, screen.pct_x(50), screen.pct_y(15), 0, 0.1, 0.1, logo:getWidth() / 2, logo:getHeight() / 2)
 
-	ui.print_percent(funfact.list[main.funfact], 50, 22)
+	ui.print_percent(locales.texts.funfact[main.funfact], 50, 22)
 
 	gui.draw()
 	

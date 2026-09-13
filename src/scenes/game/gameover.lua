@@ -9,7 +9,7 @@ local gameover = {}
 function gameover.load()
 	gui.reset()
 	gui.add({type = "button",
-			text = "Respawn",
+			text = locales.texts.respawn,
 			w = 230,
 			h = 35,
 			x = 25, 
@@ -20,7 +20,7 @@ function gameover.load()
 			callback = function() SceneManager.switch("game") end
 		})
 	gui.add({type = "button",
-			text = "Ragequit",
+			text = locales.texts.quit,
 			w = 230,
 			h = 35,
 			x = 75, 
@@ -35,7 +35,7 @@ end
 
 function gameover.draw()
 	gui.draw()
-	ui.print_centered("Gameover bro", screen.pct_x(50), screen.pct_y(15))	
+	ui.print_centered(locales.texts.game_over, screen.pct_x(50), screen.pct_y(15))	
 	love.graphics.draw(assets.textures.ui.annoying_cat, screen.pct_x(50), screen.pct_y(50), gameover.rotation, 0.2, 0.2, assets.textures.ui.annoying_cat:getWidth()/2, assets.textures.ui.annoying_cat:getHeight()/2)
 end
 

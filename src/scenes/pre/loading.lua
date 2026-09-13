@@ -16,7 +16,7 @@ end
 
 function loading.draw()
     love.graphics.setBackgroundColor(0, 0, 0)
-    ui.print_centered("Loading ...", screen.pct_x(50), screen.pct_y(50))
+    ui.print_centered(locales.texts.loading, screen.pct_x(50), screen.pct_y(50))
 end
 
 function loading.update()

@@ -5,10 +5,10 @@ local util = {}
 ---@return string
 function util.bool_to_string(value)
 	if value == true or value == 1 then
-		return "On"
+		return locales.texts.on
 	end
 	if value == false or value == 0 then
-		return "Off"
+		return locales.texts.off
 	end
 	return "?"
 end

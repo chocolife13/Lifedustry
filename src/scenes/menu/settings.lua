@@ -38,10 +38,10 @@ end
 function settings.draw()
 	love.graphics.draw(assets.textures.bg, 0, 0, 0, screen.width/640, screen.height/480)
 
-	ui.print_centered("Settings", screen.pct_x(50), screen.pct_y(15))
-	ui.print_centered("Press Escape to go back", screen.pct_x(50), screen.pct_y(20))
+	ui.print_centered(locales.texts.settings, screen.pct_x(50), screen.pct_y(15))
+	ui.print_centered(locales.texts.Press_Escape_to_go_back, screen.pct_x(50), screen.pct_y(20))
 	ui.print_centered(
-		("Current resolution: %dx%d"):format(screen.width, screen.height),
+		(locales.texts.resolution .. ": %dx%d"):format(screen.width, screen.height),
 		screen.pct_x(50),
 		screen.pct_y(70)
 	)
@@ -50,8 +50,8 @@ end
 
 function settings.update(dt)
 	gui.update(dt)
-	gui.edit("vsync", "text", ("VSync : %s"):format(util.bool_to_string(screen.vsync)))
-	gui.edit("fullscreen", "text", ("Fullscreen : %s"):format(util.bool_to_string(screen.fullscreen)))
+	gui.edit("vsync", "text", (locales.texts.vsync .. ": %s"):format(util.bool_to_string(screen.vsync)))
+	gui.edit("fullscreen", "text", (locales.texts.fullscreen .. ": %s"):format(util.bool_to_string(screen.fullscreen)))
 
 	if love.keyboard.isDown("escape") then
 		gui.reset()

@@ -12,7 +12,7 @@ _G.DEV = false -- set devmode by default ex for android if u want dev mode enabl
 function love.load(arg)
     args.start(arg)
     if DEV then dev.load() end
-    locales.load()
+    locales.load(args.lang or locales.lang)
     assets.preload()
     SceneManager.load()
 end

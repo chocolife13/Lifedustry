@@ -98,6 +98,7 @@ function gui.update(dt)
 								love.keyboard.setTextInput(false)
 							 	love.keyboard.setKeyRepeat(false)
 								v.selected = false
+								v.callback()
 							end
 							if key == "backspace" and v.selected then
 								v.text = string.sub(v.text, 1, -2)

@@ -33,6 +33,18 @@ gui.add({type = "button",
 			hover = 1.30,
 			callback = function() love.window.setVSync(screen.vsync == 1 and 0 or 1) end
 		})
+gui.add({type = "input",
+			id = "lang",
+			text = locales.lang,
+			w = 250,
+			h = 35,
+			x = 50, 
+			y = 70,
+			width = 230,
+			height = 35,
+			hover = 1.30,
+			callback = function() locales.load(gui.get("lang", "text")) end
+		})
 end
 
 function settings.draw()
@@ -43,7 +55,7 @@ function settings.draw()
 	ui.print_centered(
 		(locales.texts.resolution .. ": %dx%d"):format(screen.width, screen.height),
 		screen.pct_x(50),
-		screen.pct_y(70)
+		screen.pct_y(80)
 	)
 	gui.draw()
 end

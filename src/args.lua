@@ -8,6 +8,9 @@ function args.start(arg)
         if arg[i] == "--scene" and arg[i + 1] then
             args.target_scene = arg[i + 1]
         end
+        if arg[i] == "--lang" and arg[i + 1] then
+            args.lang = arg[i + 1]
+        end
         if arg[i] == "--dev" then
             _G.DEV = true
         end

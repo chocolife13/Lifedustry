@@ -24,7 +24,9 @@ Write-Host '"git commit" -m "ur message XD" for save modification' -ForegroundCo
 Write-Host '"git push" to send modificatoin' -ForegroundColor Blue
 Write-Host ''
 
-
+$env:PATH += ";$PWD\Git\cmd"
+$env:PATH += ";$PWD\githubcli\bin"
+$env:PATH += ";$PWD\love"
 
 if (Test-Path "./Lifedustry") {
 	Write-Host 'Lifedustry installed' -ForegroundColor Green
@@ -35,7 +37,3 @@ if (Test-Path "./Lifedustry") {
     Write-Host 'else "gh repo fork chocolife13/Lifedustry --clone" for cloning lifedustry on ur github ' -ForegroundColor Red
    
 }
-
-$env:PATH += ";$PWD\Git\cmd"
-$env:PATH += ";$PWD\githubcli\bin"
-$env:PATH += ";$PWD\love"
